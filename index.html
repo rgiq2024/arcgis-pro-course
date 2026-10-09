@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Introduction to ArcGIS Pro</title>
+<meta name="description" content="A free, step-by-step video course: install ArcGIS Pro, learn the interface, create shapefiles, add data and master symbology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>html{color-scheme:light dark}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+<style>
+/* Layout: a field-survey workbook — lesson index rail on the left, the active lesson sheet on the right (video slot over the narration script). */
+:root{
+  --paper:#EDF1EF; --sheet:#FBFCFB; --ink:#15231F; --muted:#5B6B66; --rule:#D3DCD8;
+  --water:#1D6A86; --water-soft:#DCEBF0; --contour:#3E7D4F; --contour-soft:#DFEEDF; --survey:#B85A1C; --survey-soft:#F6E5D8;
+  --display:"Chivo","Helvetica Neue",Arial,sans-serif; --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#101816; --sheet:#16201D; --ink:#E4ECE8; --muted:#97A8A2; --rule:#2B3934;
+  --water:#6FB6D0; --water-soft:#183039; --contour:#7CC08E; --contour-soft:#1A2E21; --survey:#E8935A; --survey-soft:#36251A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#101816; --sheet:#16201D; --ink:#E4ECE8; --muted:#97A8A2; --rule:#2B3934;
+  --water:#6FB6D0; --water-soft:#183039; --contour:#7CC08E; --contour-soft:#1A2E21; --survey:#E8935A; --survey-soft:#36251A; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;padding-inline:16px;padding-block:0 40px}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--water);outline-offset:2px}
+header.top{max-width:1240px;margin:0 auto;padding-block:22px 18px;display:flex;flex-wrap:wrap;gap:16px 28px;align-items:end;justify-content:space-between;border-bottom:1px solid var(--rule)}
+.brand .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.brand h1{font-family:var(--display);font-weight:800;font-size:clamp(24px,3.4vw,34px);line-height:1.1;margin:4px 0 0;text-wrap:balance}
+.controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.meter{min-width:200px}
+.meter .lbl{font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:12px}
+.meter .bar{height:8px;background:var(--rule);border-radius:4px;overflow:hidden;margin-top:6px}
+.meter .bar i{display:block;height:100%;background:var(--contour);width:0;transition:width .4s}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--sheet)}
+.seg button{border:0;background:none;padding:7px 14px;cursor:pointer;font-weight:500;font-size:14px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.btn{border:1px solid var(--rule);background:var(--sheet);padding:7px 14px;border-radius:8px;cursor:pointer;font-weight:500;font-size:14px}
+.btn:hover{border-color:var(--water)}
+.btn.primary{background:var(--water);border-color:var(--water);color:var(--sheet)}
+.btn.danger{color:var(--survey)}
+.wrap{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:320px minmax(0,1fr);gap:28px;padding-top:24px}
+nav.index{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);align-self:start;max-height:calc(100vh - 24px);overflow:auto;padding-right:4px}
+.mod{margin-bottom:18px}
+.mod h2{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px;display:flex;justify-content:space-between}
+.mod ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.mod li button{width:100%;text-align:left;border:0;background:none;padding:7px 10px;border-radius:6px;cursor:pointer;display:grid;grid-template-columns:34px minmax(0,1fr) 10px;gap:8px;align-items:center;font-size:14px}
+.mod li button:hover{background:var(--sheet)}
+.mod li button[aria-current="true"]{background:var(--sheet);box-shadow:inset 3px 0 0 var(--water)}
+.num{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.dot{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--muted)}
+.dot.video{background:var(--contour);border-color:var(--contour)}
+.dot.link{background:var(--water);border-color:var(--water)}
+.dot.progress{background:var(--survey);border-color:var(--survey)}
+main.sheet{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:clamp(18px,3vw,34px);min-width:0}
+.lhead .crumb{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em}
+.lhead h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,2.8vw,30px);line-height:1.15;margin:6px 0 8px;text-wrap:balance}
+.lhead .obj{color:var(--muted);margin:0;max-width:65ch}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;align-items:center}
+.pill{font-family:var(--mono);font-size:12px;padding:3px 9px;border-radius:999px;background:var(--water-soft);color:var(--water)}
+label.inline{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+select{border:1px solid var(--rule);background:var(--sheet);border-radius:6px;padding:4px 8px}
+.slot{margin-top:22px;border:1.5px dashed var(--rule);border-radius:10px;padding:22px;display:grid;gap:14px;background:var(--paper)}
+.slot.drag{border-color:var(--water);background:var(--water-soft)}
+.slot h3{margin:0;font-family:var(--display);font-size:17px}
+.slot p{margin:0;color:var(--muted);font-size:14px}
+.slot .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.slot input[type=url]{flex:1 1 260px;min-width:0;border:1px solid var(--rule);background:var(--sheet);border-radius:8px;padding:7px 10px}
+video{width:100%;max-width:100%;aspect-ratio:16/9;background:#000;border-radius:8px;display:block}
+.linkcard{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;border:1px solid var(--rule);border-radius:10px;padding:14px 16px;background:var(--sheet)}
+.linkcard a{color:var(--water);font-weight:600;word-break:break-all}
+.msg{font-size:13px;color:var(--survey);min-height:1em}
+.tabs{display:flex;gap:4px;margin-top:28px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.tabs button{border:0;background:none;padding:9px 14px;cursor:pointer;font-weight:600;font-size:14px;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--water)}
+.panel{padding-top:18px}
+.script{max-width:68ch;display:grid;gap:12px}
+.script p{margin:0}
+.cue{font-family:var(--mono);font-size:12px;background:var(--water-soft);color:var(--water);padding:6px 10px;border-radius:6px;justify-self:start}
+.say-intro,.say-outro{border-left:3px solid var(--survey);padding-left:12px}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--survey);display:block;margin-bottom:2px}
+.tip{background:var(--contour-soft);border-radius:8px;padding:10px 14px;font-size:14px}
+.tip b{color:var(--contour)}
+.panelbar{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-bottom:14px;font-size:13px;color:var(--muted)}
+.field{display:grid;gap:6px;margin-bottom:16px;max-width:72ch}
+.field .k{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.field pre{margin:0;white-space:pre-wrap;font-family:var(--body);font-size:14px;background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:10px 12px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 20px);background:var(--ink);color:var(--sheet);padding:9px 16px;border-radius:8px;font-size:14px}
+.notice{font-size:13px;color:var(--muted);margin-top:8px}
+@media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr)}nav.index{position:static;max-height:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<style>
+.player{margin-top:22px}
+.frame{position:relative;width:100%;max-width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#000}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.below{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}
+a.btn{text-decoration:none;display:inline-block}
+code{font-family:var(--mono);font-size:13px;background:var(--water-soft);color:var(--water);padding:1px 6px;border-radius:4px}
+footer{max-width:1240px;margin:28px auto 0;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="eyebrow">Free video course · ArcGIS Pro for beginners</div>
+    <h1>Introduction to ArcGIS Pro</h1>
+  </div>
+  <div class="controls">
+    <div class="meter" aria-live="polite"><div class="lbl"><span>Lessons with video</span><span id="meterTxt">0 / 0</span></div><div class="bar"><i id="meterBar"></i></div></div>
+    <div class="seg" role="group" aria-label="Script version">
+      <button id="pfYT" aria-pressed="true">YouTube</button><button id="pfLI" aria-pressed="false">LinkedIn</button>
+    </div>
+    <button class="btn" id="dlAll">Download all scripts</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="index" id="index" aria-label="Lessons"></nav>
+  <main class="sheet" id="sheet"></main>
+</div>
+<footer>Scripts and course structure for <i>Introduction to ArcGIS Pro</i>. ArcGIS and ArcGIS Pro are trademarks of Esri; this course is independent.</footer>
+<div class="toast" id="toast" hidden></div>
+
+<script src="course.js"></script>
+<script src="videos.js"></script>
+<script>
+const COURSE = window.COURSE || [];
+const VIDEOS = window.VIDEOS || {};
+const LESSONS = COURSE.flatMap(m => m.lessons.map(l => ({...l, mod:m})));
+let platform = "yt", tab = "script", preview = {};
+let current = LESSONS[0].id;
+try{ const s = localStorage.getItem("pf"); if(s) platform = s; }catch(e){}
+const fromHash = () => { const h = decodeURIComponent(location.hash.slice(1)).replace(/^lesson-/,"").replace(/-/g,"."); return LESSONS.some(l=>l.id===h) ? h : null; };
+current = fromHash() || current;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const lcFirst = s => s.charAt(0).toLowerCase()+s.slice(1);
+function toast(t){ const el=$("toast"); el.textContent=t; el.hidden=false; clearTimeout(toast._t); toast._t=setTimeout(()=>el.hidden=true,2200); }
+
+function ytId(u){
+  if(!u) return "";
+  const m = u.match(/(?:youtu\.be\/|v=|embed\/|shorts\/|live\/)([\w-]{11})/);
+  return m ? m[1] : "";
+}
+function vid(id){ return VIDEOS[id] || {}; }
+function statusOf(id){
+  const v = vid(id);
+  if(v.youtube || v.file) return "video";
+  if(v.linkedin) return "link";
+  if(v.status && v.status!=="todo") return "progress";
+  return "";
+}
+
+function intro(l){
+  if(platform==="yt") return `Hi, and welcome back to the Introduction to ArcGIS Pro series. This is lesson ${l.id}: ${l.title}. By the end of this video, you'll be able to ${lcFirst(l.obj.replace(/\.$/,""))}.`;
+  return `In this video, we'll look at ${lcFirst(l.title)}. ${l.obj}`;
+}
+function outro(l){
+  const i = LESSONS.findIndex(x=>x.id===l.id), next = LESSONS[i+1];
+  if(platform==="yt") return `That's it for ${l.title}. If this helped, give the video a like and subscribe so you don't miss the next lesson${next?`, where we cover ${lcFirst(next.title)}`:""}. Questions? Leave them in the comments. See you in the next one.`;
+  return next ? `Up next: ${next.title}.` : `Thanks for taking this course. Keep practising with your own data, and you'll be confident in ArcGIS Pro in no time.`;
+}
+function scriptText(l){
+  const out=[`LESSON ${l.id}: ${l.title} (${l.dur})`, `Objective: ${l.obj}`, "", `[INTRO] ${intro(l)}`, ""];
+  l.body.forEach(b=>out.push(b));
+  if(l.tip) out.push("", `TIP: ${l.tip}`);
+  out.push("", `[OUTRO] ${outro(l)}`);
+  return out.join("\n");
+}
+function meta(l){
+  const title = `ArcGIS Pro Tutorial ${l.id}: ${l.title}`;
+  const tags = ["ArcGIS Pro","ArcGIS Pro tutorial","GIS","Esri","ArcGIS Pro for beginners", l.mod.title, l.title].join(", ");
+  const desc = `${l.obj}\n\nPart of the free "Introduction to ArcGIS Pro" course — ${l.mod.title}.\n\nIn this lesson:\n` +
+    l.body.filter(b=>/^\[ON SCREEN/.test(b)).map(b=>"• "+b.replace(/^\[ON SCREEN:\s*|\]$/g,"")).join("\n") + `\n\n#ArcGISPro #GIS #Esri`;
+  const li = `${l.title}\n\n${l.obj} This video is part of the Introduction to ArcGIS Pro course, chapter "${l.mod.title}".`;
+  return {title,tags,desc,li};
+}
+
+function renderIndex(){
+  $("index").innerHTML = COURSE.map(m=>{
+    const done = m.lessons.filter(l=>statusOf(l.id)==="video").length;
+    return `<section class="mod"><h2><span>${esc(m.id)} · ${esc(m.title)}</span><span>${done}/${m.lessons.length}</span></h2><ol>` +
+      m.lessons.map(l=>{ const s=statusOf(l.id); return `<li><button data-id="${l.id}" aria-current="${l.id===current}"><span class="num">${l.id}</span><span>${esc(l.title)}</span><span class="dot ${s}" title="${({video:"Video available",link:"On LinkedIn",progress:"In production"})[s]||"Coming soon"}"></span></button></li>`; }).join("") +
+      `</ol></section>`;
+  }).join("");
+  const n = LESSONS.filter(l=>statusOf(l.id)==="video").length;
+  $("meterTxt").textContent = `${n} / ${LESSONS.length}`;
+  $("meterBar").style.width = (100*n/LESSONS.length)+"%";
+}
+
+function renderPlayer(l){
+  const v = vid(l.id), y = ytId(v.youtube);
+  let main;
+  if(preview[l.id]) main = `<video controls src="${preview[l.id]}"></video><p class="notice">Local preview only. To publish it, add the file to <code>videos/</code> and its path to <code>videos.js</code>.</p>`;
+  else if(y) main = `<div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/${y}" title="${esc(l.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>`;
+  else if(v.file) main = `<video controls preload="metadata" src="${esc(v.file)}"></video>`;
+  else main = `<div class="slot"><h3>Video coming soon</h3>
+      <p>Course owner: add this lesson's YouTube link or file path to <code>videos.js</code> under <code>"${l.id}"</code>, then push to GitHub.</p>
+      <div class="row"><button class="btn" id="pick">Preview a local video file</button><input type="file" id="fileIn" accept="video/*" hidden></div></div>`;
+  const links = [
+    v.youtube ? `<a class="btn" href="${esc(v.youtube)}" target="_blank" rel="noopener">Open on YouTube</a>` : "",
+    v.linkedin ? `<a class="btn" href="${esc(v.linkedin)}" target="_blank" rel="noopener">Watch on LinkedIn Learning</a>` : ""
+  ].join("");
+  return `<div class="player">${main}${links?`<div class="below">${links}</div>`:""}</div>`;
+}
+
+function renderSheet(){
+  const l = LESSONS.find(x=>x.id===current), m = meta(l), v = vid(l.id);
+  const i = LESSONS.indexOf(l), prev = LESSONS[i-1], next = LESSONS[i+1];
+  const body = l.body.map(b=>/^\[ON SCREEN/.test(b) ? `<div class="cue">${esc(b.replace(/^\[|\]$/g,""))}</div>` : `<p>${esc(b)}</p>`).join("");
+  const st = {todo:"Not started",recording:"Recording",editing:"Editing",published:"Published"}[v.status||"todo"];
+  $("sheet").innerHTML = `
+  <div class="lhead"><div class="crumb">${esc(l.mod.id)} · ${esc(l.mod.title)} — Lesson ${l.id}</div>
+    <h2>${esc(l.title)}</h2><p class="obj">${esc(l.obj)}</p>
+    <div class="meta"><span class="pill">≈ ${esc(l.dur)}</span><span class="pill" style="background:var(--survey-soft);color:var(--survey)">${st}</span></div></div>
+  ${renderPlayer(l)}
+  <div class="tabs" role="tablist">
+    <button role="tab" data-tab="script" aria-selected="${tab==="script"}">Script</button>
+    <button role="tab" data-tab="meta" aria-selected="${tab==="meta"}">Upload details</button>
+  </div>
+  <div class="panel" ${tab==="script"?"":"hidden"}>
+    <div class="panelbar"><span>${platform==="yt"?"YouTube version: hook and subscribe call-to-action":"LinkedIn Learning version: neutral intro, “Up next” close"}</span><button class="btn" data-copy="script">Copy script</button></div>
+    <div class="script">
+      <div class="say-intro"><span class="tag">Intro</span>${esc(intro(l))}</div>
+      ${body}
+      ${l.tip?`<div class="tip"><b>Tip:</b> ${esc(l.tip)}</div>`:""}
+      <div class="say-outro"><span class="tag">Outro</span>${esc(outro(l))}</div>
+    </div>
+  </div>
+  <div class="panel" ${tab==="meta"?"":"hidden"}>
+    <div class="field"><div class="k">YouTube title <button class="btn" data-copy="title">Copy</button></div><pre>${esc(m.title)}</pre></div>
+    <div class="field"><div class="k">YouTube description <button class="btn" data-copy="desc">Copy</button></div><pre>${esc(m.desc)}</pre></div>
+    <div class="field"><div class="k">YouTube tags <button class="btn" data-copy="tags">Copy</button></div><pre>${esc(m.tags)}</pre></div>
+    <div class="field"><div class="k">LinkedIn video description <button class="btn" data-copy="li">Copy</button></div><pre>${esc(m.li)}</pre></div>
+  </div>
+  <div class="below" style="justify-content:space-between;margin-top:28px;border-top:1px solid var(--rule);padding-top:16px">
+    ${prev?`<button class="btn" data-id="${prev.id}">← ${prev.id} ${esc(prev.title)}</button>`:"<span></span>"}
+    ${next?`<button class="btn primary" data-id="${next.id}">${next.id} ${esc(next.title)} →</button>`:""}
+  </div>`;
+}
+
+function render(){ renderIndex(); renderSheet(); document.title = `${current} · Introduction to ArcGIS Pro`; }
+
+async function copyText(t, btn){
+  try{ await navigator.clipboard.writeText(t); toast("Copied"); }
+  catch(e){ const pre = btn.closest(".field")?.querySelector("pre") || document.querySelector(".script"); const r=document.createRange(); r.selectNodeContents(pre); const sel=getSelection(); sel.removeAllRanges(); sel.addRange(r); toast("Selected — press Ctrl+C to copy"); }
+}
+function go(id){ current=id; history.replaceState(null,"","#lesson-"+id.replace(/\./g,"-")); render(); if(innerWidth<860) $("sheet").scrollIntoView({behavior:"smooth"}); else scrollTo({top:0,behavior:"smooth"}); }
+
+document.addEventListener("click", ev=>{
+  const b = ev.target.closest("button"); if(!b) return;
+  if(b.dataset.id) return go(b.dataset.id);
+  if(b.dataset.tab){ tab=b.dataset.tab; renderSheet(); return; }
+  if(b.id==="pfYT"||b.id==="pfLI"){ platform = b.id==="pfYT"?"yt":"li"; $("pfYT").setAttribute("aria-pressed",platform==="yt"); $("pfLI").setAttribute("aria-pressed",platform==="li"); try{localStorage.setItem("pf",platform)}catch(e){} renderSheet(); return; }
+  const l = LESSONS.find(x=>x.id===current);
+  if(b.dataset.copy){ copyText(b.dataset.copy==="script"?scriptText(l):meta(l)[b.dataset.copy], b); return; }
+  if(b.id==="pick"){ $("fileIn").click(); return; }
+  if(b.id==="dlAll"){
+    const md = `# Introduction to ArcGIS Pro — ${platform==="yt"?"YouTube":"LinkedIn Learning"} scripts\n\n` + COURSE.map(m=>`# ${m.id} — ${m.title}\n\n`+m.lessons.map(l=>scriptText({...l,mod:m}).replace(/^LESSON/,"## LESSON")).join("\n\n---\n\n")).join("\n\n");
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([md],{type:"text/markdown"}));
+    a.download = `arcgis-pro-scripts-${platform==="yt"?"youtube":"linkedin"}.md`; document.body.appendChild(a); a.click(); a.remove();
+  }
+});
+document.addEventListener("change", ev=>{
+  if(ev.target.id==="fileIn" && ev.target.files[0]){ preview[current] = URL.createObjectURL(ev.target.files[0]); renderSheet(); }
+});
+addEventListener("hashchange", ()=>{ const h=fromHash(); if(h && h!==current){ current=h; render(); } });
+
+$("pfYT").setAttribute("aria-pressed",platform==="yt"); $("pfLI").setAttribute("aria-pressed",platform==="li");
+render();
+</script>
+</body>
+</html>
