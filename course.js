@@ -1,5 +1,5 @@
 // Lesson scripts and quizzes for all tracks. Edit text here; the site rebuilds itself from this file.
-// level: basics | intermediate | advanced | apps. quiz: q = question, a = right answer, w = wrong answers, x = explanation.
+// level: basics | intermediate | advanced | apps (ArcGIS), q-basics | q-intermediate | q-advanced (QGIS), giq (gIQ). quiz: q = question, a = right answer, w = wrong answers, x = explanation.
 window.COURSE = [
  {
   "id": "M1",
@@ -3252,6 +3252,1563 @@ window.COURSE = [
      "Step four, sharing: an Experience Builder app for city staff and a StoryMap explaining the urban forest to the public, with live maps from Living Atlas for context.",
      "[ON SCREEN: course recap]",
      "That's the whole ArcGIS system working together. Congratulations on completing the course!"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "Q1",
+  "title": "Getting Started with QGIS",
+  "level": "q-basics",
+  "quiz": [
+   {
+    "q": "Which QGIS version is recommended for production work?",
+    "a": "The Long Term Release (LTR)",
+    "w": [
+     "The nightly build",
+     "Any 2.x version",
+     "The oldest available"
+    ],
+    "x": "LTR versions get a year of bug fixes and are built for stability."
+   },
+   {
+    "q": "What file extension does a QGIS project use?",
+    "a": ".qgz",
+    "w": [
+     ".aprx",
+     ".mxd",
+     ".shp"
+    ],
+    "x": "QGIS saves projects as .qgz (a zipped .qgs)."
+   },
+   {
+    "q": "Which panel lets you browse folders, databases and web services?",
+    "a": "Browser",
+    "w": [
+     "Layers",
+     "Processing Toolbox",
+     "Layer Styling"
+    ],
+    "x": "The Browser panel works like a file explorer for spatial data."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "Q1.1",
+    "title": "What Is QGIS? Download and Install",
+    "dur": "6 min",
+    "obj": "Install QGIS and choose between the Long Term Release and the latest release.",
+    "tip": "You can install the LTR and the latest release side by side to try new features safely.",
+    "body": [
+     "[ON SCREEN: qgis.org home page]",
+     "QGIS is a free and open-source desktop GIS. It runs on Windows, macOS and Linux, it's used by governments, universities and companies worldwide, and there are no licence fees.",
+     "[ON SCREEN: download page: LTR vs Latest]",
+     "On qgis.org, open Download. You'll see two versions. The Long Term Release, or LTR, is the stable choice for everyday work and training. The latest release has the newest features but changes every four months. For this course, install the LTR.",
+     "[ON SCREEN: QGIS 4 splash screen]",
+     "QGIS 4 moved to a new graphics framework, Qt6. Day to day, the interface is very close to QGIS 3, so most tutorials still apply. Some older plugins need updating to work with QGIS 4.",
+     "[ON SCREEN: Windows installer]",
+     "On Windows, run the standalone installer and accept the defaults. On macOS, open the disk image and drag QGIS to Applications. On Linux, use your distribution's packages from qgis.org."
+    ]
+   },
+   {
+    "id": "Q1.2",
+    "title": "A Tour of the QGIS Interface",
+    "dur": "7 min",
+    "obj": "Name the main parts of the QGIS window.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: QGIS with a project open, regions highlighted]",
+     "At the top is the menu bar: Project, Edit, View, Layer, Settings, Plugins, Vector, Raster, Database, Web, Mesh, Processing and Help. Below it are toolbars with the most-used tools.",
+     "[ON SCREEN: Browser and Layers panels]",
+     "On the left are two key panels. The Browser shows your folders, GeoPackages, databases and web services. The Layers panel lists what's on the map; drag layers to change drawing order.",
+     "[ON SCREEN: map canvas]",
+     "In the middle is the map canvas. Scroll to zoom, hold the mouse wheel to pan, or use the Pan tool.",
+     "[ON SCREEN: status bar: coordinate, scale, magnifier, rotation, CRS button]",
+     "The status bar shows the pointer coordinates, scale, magnifier, rotation and, at the far right, the project's coordinate reference system.",
+     "[ON SCREEN: locator bar, type 'buffer']",
+     "Bottom left is the locator bar. Press Ctrl+K and type the name of any tool, layer or setting to find it instantly.",
+     "[ON SCREEN: View > Panels]",
+     "Turn panels on and off from View, Panels, or by right-clicking any toolbar."
+    ]
+   },
+   {
+    "id": "Q1.3",
+    "title": "Projects, Settings and Plugins at a Glance",
+    "dur": "5 min",
+    "obj": "Save projects safely and set useful options.",
+    "tip": "Keep data in the project folder with relative paths, then zip the folder to share a complete project.",
+    "body": [
+     "[ON SCREEN: Project > Save As]",
+     "Save your work with Project, Save As. QGIS projects use the .qgz extension. Like ArcGIS projects, a QGIS project points to data; it doesn't contain it.",
+     "[ON SCREEN: Project > Properties > General > relative paths]",
+     "In Project Properties, General, keep paths relative. That way you can move the project folder, or zip it for a colleague, without breaking links.",
+     "[ON SCREEN: Settings > Options]",
+     "Settings, Options holds application-wide preferences: default CRS for new projects, rendering, and the language of the interface.",
+     "[ON SCREEN: Plugins > Manage and Install Plugins]",
+     "Plugins add features. Plugins, Manage and Install Plugins opens the plugin manager; we'll install some favourites in the Advanced level."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "Q2",
+  "title": "Adding Data and Coordinate Systems",
+  "level": "q-basics",
+  "quiz": [
+   {
+    "q": "Which format is QGIS's recommended default for vector data?",
+    "a": "GeoPackage",
+    "w": [
+     "Shapefile",
+     "KML",
+     "DXF"
+    ],
+    "x": "GeoPackage stores many layers in one file without shapefile limits."
+   },
+   {
+    "q": "How do you add an OpenStreetMap basemap without a plugin?",
+    "a": "XYZ Tiles in the Browser",
+    "w": [
+     "Georeferencer",
+     "Field Calculator",
+     "Print Layout"
+    ],
+    "x": "QGIS ships with an OpenStreetMap XYZ tile connection."
+   },
+   {
+    "q": "The coordinates are fine but the layer has the wrong CRS assigned. What do you use?",
+    "a": "Set layer CRS",
+    "w": [
+     "Reproject layer",
+     "Clip",
+     "Dissolve"
+    ],
+    "x": "Setting the CRS fixes the label; reprojecting changes the coordinates."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "Q2.1",
+    "title": "Adding Vector and Raster Layers",
+    "dur": "6 min",
+    "obj": "Load spatial data with the Browser and the Data Source Manager.",
+    "tip": "Right-click a layer and choose Export, Save Features As, to convert shapefiles into a GeoPackage.",
+    "body": [
+     "[ON SCREEN: drag a GeoPackage layer from Browser to canvas]",
+     "The quickest way to add data is to drag it from the Browser panel onto the map.",
+     "[ON SCREEN: Layer > Data Source Manager]",
+     "For more control, open the Data Source Manager with Ctrl+L. Tabs on the left cover Vector, Raster, Delimited Text, GeoPackage, PostgreSQL, XYZ, WMS and more.",
+     "[ON SCREEN: Vector tab: browse to shapefile]",
+     "On the Vector tab, browse to a shapefile, GeoJSON or KML and click Add.",
+     "[ON SCREEN: GeoPackage in Browser]",
+     "QGIS's recommended format is GeoPackage, a single .gpkg file that can hold many vector and raster layers, with long field names and no 2 GB limit.",
+     "[ON SCREEN: Raster tab: GeoTIFF]",
+     "Rasters like GeoTIFF elevation models and satellite images are added on the Raster tab."
+    ]
+   },
+   {
+    "id": "Q2.2",
+    "title": "Basemaps, CSV Files and Web Services",
+    "dur": "6 min",
+    "obj": "Add basemaps, point data from spreadsheets, and web map services.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Browser > XYZ Tiles > OpenStreetMap]",
+     "In the Browser, expand XYZ Tiles and double-click OpenStreetMap to add a basemap. Add more tile services by right-clicking XYZ Tiles, New Connection.",
+     "[ON SCREEN: QuickMapServices plugin menu]",
+     "The QuickMapServices plugin adds a menu of popular basemaps in one click.",
+     "[ON SCREEN: Data Source Manager > Delimited Text]",
+     "To map a CSV of coordinates, use Delimited Text. Pick the file, check the delimiter, choose Point coordinates, set the X field to longitude and the Y field to latitude, and set the CRS — usually EPSG:4326.",
+     "[ON SCREEN: WMS/WFS connection]",
+     "Add web services from WMS and WFS servers, such as national mapping agencies, with a new connection on the WMS/WMTS or WFS tab."
+    ]
+   },
+   {
+    "id": "Q2.3",
+    "title": "Coordinate Reference Systems in QGIS",
+    "dur": "7 min",
+    "obj": "Manage the project CRS and fix or convert layer CRSs.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: CRS button in status bar]",
+     "Every project has a CRS, shown at the bottom right. QGIS reprojects layers on the fly, so different layers line up on screen.",
+     "[ON SCREEN: Project Properties > CRS, search EPSG]",
+     "Click the CRS button to change it. Search by name or EPSG code — 4326 for WGS 84, 3857 for web maps, or a UTM zone for measuring.",
+     "[ON SCREEN: Layer Properties > Source > Assigned CRS]",
+     "Each layer has its own CRS. If a layer's CRS is wrong but its coordinates are fine, fix it with Set Layer CRS. This is like Define Projection in ArcGIS.",
+     "[ON SCREEN: Processing > Reproject layer]",
+     "To convert the coordinates into a new CRS and save a new file, use Reproject Layer in the Processing Toolbox — like Project in ArcGIS.",
+     "[ON SCREEN: datum transformation dialog]",
+     "When layers use different datums, QGIS may ask which transformation to use. Pick the one with the best accuracy for your area."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "Q3",
+  "title": "Styling and Labeling",
+  "level": "q-basics",
+  "quiz": [
+   {
+    "q": "Which renderer gives each category its own colour?",
+    "a": "Categorized",
+    "w": [
+     "Single Symbol",
+     "Graduated",
+     "Heatmap"
+    ],
+    "x": "Categorized symbology assigns a symbol per unique value."
+   },
+   {
+    "q": "Which panel lets you style layers live without opening the properties dialog?",
+    "a": "Layer Styling panel (F7)",
+    "w": [
+     "Browser",
+     "Snapping toolbar",
+     "Locator bar"
+    ],
+    "x": "The Layer Styling panel applies changes instantly."
+   },
+   {
+    "q": "Rule-based styling lets you…",
+    "a": "Style features with your own expressions and scale ranges",
+    "w": [
+     "Only use one colour",
+     "Change the CRS",
+     "Export PDFs"
+    ],
+    "x": "Rules combine filters, symbols and visibility ranges."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "Q3.1",
+    "title": "Symbology Basics and the Layer Styling Panel",
+    "dur": "7 min",
+    "obj": "Style layers with single symbols and the Layer Styling panel.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: double-click layer > Symbology]",
+     "Double-click a layer to open Layer Properties, then Symbology. Or press F7 to open the Layer Styling panel, which applies changes as you make them.",
+     "[ON SCREEN: renderer drop-down]",
+     "The renderer drop-down lists the methods: Single Symbol, Categorized, Graduated, Rule-based, and for points, Point Cluster, Point Displacement and Heatmap. Polygons also offer Inverted Polygons and 2.5D.",
+     "[ON SCREEN: Single symbol: fill, stroke]",
+     "With Single Symbol, click the symbol layer to set fill colour, stroke colour and width. Add symbol layers with the plus button to build richer symbols, such as a dashed outline over a soft fill.",
+     "[ON SCREEN: data-defined override button]",
+     "The small button next to most settings is a data-defined override. It lets a field or expression control size, colour or rotation — like Vary symbology by attribute in ArcGIS.",
+     "[ON SCREEN: Style > Save Style]",
+     "Save a style as a .qml file, or to the GeoPackage, to reuse it later."
+    ]
+   },
+   {
+    "id": "Q3.2",
+    "title": "Categorized, Graduated and Rule-based Styles",
+    "dur": "8 min",
+    "obj": "Map categories and quantities and build custom rules.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Categorized on land use]",
+     "Categorized gives each unique value a symbol. Choose the field, pick a colour ramp and click Classify.",
+     "[ON SCREEN: Graduated on population density]",
+     "Graduated classifies numbers. Choose the value — you can type an expression like \"POP\" / $area to normalise — pick the mode: Equal Count (Quantile), Equal Interval, Natural Breaks (Jenks), Standard Deviation or Pretty Breaks, set the number of classes and click Classify. Switch the method from Color to Size for graduated symbols.",
+     "[ON SCREEN: Histogram tab]",
+     "The Histogram tab shows the data distribution and your class breaks.",
+     "[ON SCREEN: Rule-based]",
+     "Rule-based styling uses expressions you write: one rule for \"type\" = 'motorway', another for primary roads, each with its own symbol and scale range.",
+     "[ON SCREEN: Point cluster and heatmap]",
+     "For dense points, try Point Cluster or Heatmap renderers."
+    ]
+   },
+   {
+    "id": "Q3.3",
+    "title": "Labels and Expressions",
+    "dur": "6 min",
+    "obj": "Add clear, well-placed labels.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Layer Properties > Labels > Single Labels]",
+     "Open Layer Properties, Labels, and choose Single Labels. Pick the field to label with.",
+     "[ON SCREEN: expression builder: \"NAME\" || '\\n' || \"POP\"]",
+     "Click the expression button to combine fields. \"NAME\" || '\\n' || format_number(\"POP\", 0) shows the name with population below.",
+     "[ON SCREEN: Text, Buffer, Placement tabs]",
+     "Use the Text tab for font and size, Buffer for a halo that keeps labels readable, and Placement for positions: around the point, along lines, or inside polygons.",
+     "[ON SCREEN: Rule-based labeling]",
+     "Choose Rule-based Labeling to label large cities larger than small towns, each with its own scale range.",
+     "[ON SCREEN: Rendering tab: show all labels, priority]",
+     "In Rendering, set priority and whether labels may overlap."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "Q4",
+  "title": "Print Layouts",
+  "level": "q-basics",
+  "quiz": [
+   {
+    "q": "Which feature creates one map page per feature of a coverage layer?",
+    "a": "Atlas",
+    "w": [
+     "Locator bar",
+     "Georeferencer",
+     "Virtual field"
+    ],
+    "x": "Atlas generates a page for each feature."
+   },
+   {
+    "q": "How do you change what part of the map shows inside a layout map item?",
+    "a": "Move Item Content tool",
+    "w": [
+     "Toggle Editing",
+     "Field Calculator",
+     "Snapping"
+    ],
+    "x": "Move Item Content pans the map inside the frame."
+   },
+   {
+    "q": "Which export keeps vector quality for print?",
+    "a": "PDF or SVG",
+    "w": [
+     "Screenshot",
+     "JPEG at 72 dpi",
+     ".qgz"
+    ],
+    "x": "PDF and SVG keep vectors sharp."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "Q4.1",
+    "title": "Creating a Print Layout",
+    "dur": "8 min",
+    "obj": "Design a map page with legend, scale bar and north arrow.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Project > New Print Layout]",
+     "Click Project, New Print Layout, and give it a name. The layout designer opens in its own window.",
+     "[ON SCREEN: right-click page > Page Properties]",
+     "Right-click the page to set the size and orientation, such as A4 landscape.",
+     "[ON SCREEN: Add Map tool, drag rectangle]",
+     "Use Add Map and drag a rectangle. In Item Properties set an exact scale, and use the Move Item Content tool to pan the map inside the frame.",
+     "[ON SCREEN: Add Legend, Scale Bar, North Arrow, Label]",
+     "Add a Legend — untick Auto update to rename or remove entries — a Scale Bar with sensible units, a North Arrow, and a Label for the title. Labels can include expressions like the current date.",
+     "[ON SCREEN: Align and Distribute tools]",
+     "Use the alignment tools and guides to line things up."
+    ]
+   },
+   {
+    "id": "Q4.2",
+    "title": "Atlas and Exporting",
+    "dur": "6 min",
+    "obj": "Produce a map book automatically and export it.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Atlas panel: Generate an atlas]",
+     "An atlas makes one page per feature in a coverage layer — one map per district, for example. Open the Atlas panel, tick Generate an atlas and choose the coverage layer and page name.",
+     "[ON SCREEN: map item: Controlled by Atlas]",
+     "On the map item, tick Controlled by Atlas so it zooms to each feature. Add a label with the expression [% @atlas_pagename %] for page titles.",
+     "[ON SCREEN: Atlas toolbar preview]",
+     "Turn on Preview Atlas and step through the pages.",
+     "[ON SCREEN: Export as PDF, Image, SVG]",
+     "Export the layout as PDF for print, PNG for slides, or SVG for editing in design software. Atlases export as one PDF or one file per page."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "Q5",
+  "title": "Attribute Data and Expressions",
+  "level": "q-intermediate",
+  "quiz": [
+   {
+    "q": "Which keyboard shortcut opens the Field Calculator?",
+    "a": "Ctrl+I",
+    "w": [
+     "Ctrl+K",
+     "F7",
+     "Ctrl+L"
+    ],
+    "x": "Ctrl+I opens the Field Calculator when a layer is selected."
+   },
+   {
+    "q": "A virtual field…",
+    "a": "Is recalculated automatically and not stored in the data",
+    "w": [
+     "Is a new shapefile",
+     "Deletes the original field",
+     "Only works in rasters"
+    ],
+    "x": "Virtual fields live in the project and update when data changes."
+   },
+   {
+    "q": "Which tool joins attributes from polygons to the points inside them?",
+    "a": "Join attributes by location",
+    "w": [
+     "Join attributes by field value",
+     "Merge vector layers",
+     "Reproject layer"
+    ],
+    "x": "Spatial joins match features by location."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "Q5.1",
+    "title": "The Attribute Table and Selecting Features",
+    "dur": "6 min",
+    "obj": "Explore attributes and select features by expression.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: right-click layer > Open Attribute Table (F6)]",
+     "Open the attribute table with F6. Each row is a feature. Click a row number to select it; the feature turns yellow on the map.",
+     "[ON SCREEN: Show Selected Features filter]",
+     "The menu at the bottom left switches between all features, selected features and features visible on the map.",
+     "[ON SCREEN: Select Features Using an Expression]",
+     "Click Select Features Using an Expression (Ctrl+F3) and write \"POP\" > 100000 AND \"TYPE\" = 'City'.",
+     "[ON SCREEN: Layer > Filter]",
+     "To hide non-matching features entirely, use a filter: right-click the layer, Filter. It's like a definition query in ArcGIS.",
+     "[ON SCREEN: Statistics panel]",
+     "The Statistics panel gives count, sum, mean and more for any field."
+    ]
+   },
+   {
+    "id": "Q5.2",
+    "title": "The Field Calculator and Expressions",
+    "dur": "7 min",
+    "obj": "Create and update fields with QGIS expressions.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Field Calculator]",
+     "Open the Field Calculator (Ctrl+I). Create a new field or update an existing one, and write an expression.",
+     "[ON SCREEN: $area / 1000000]",
+     "Geometry functions are built in: $area for area, $length for length, $x and $y for point coordinates. \"POP\" / ($area / 1000000) gives density per square kilometre in a projected CRS.",
+     "[ON SCREEN: CASE WHEN expression]",
+     "For conditions use CASE: CASE WHEN \"DENSITY\" > 1000 THEN 'High' ELSE 'Low' END.",
+     "[ON SCREEN: Create virtual field checkbox]",
+     "Tick Create virtual field to make a field that updates automatically whenever the data changes.",
+     "[ON SCREEN: function list with help]",
+     "The function list on the right explains every function with examples — the same expressions work in labels, styles and layouts."
+    ]
+   },
+   {
+    "id": "Q5.3",
+    "title": "Table Joins and Spatial Joins",
+    "dur": "6 min",
+    "obj": "Combine data by a common field or by location.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Layer Properties > Joins > plus]",
+     "To join a table by a shared field, open Layer Properties, Joins, click plus, and choose the join layer, join field and target field. The join is live and temporary.",
+     "[ON SCREEN: Join attributes by field value]",
+     "To create a permanent new layer, use Join Attributes by Field Value in the Processing Toolbox.",
+     "[ON SCREEN: Join attributes by location]",
+     "Join Attributes by Location adds attributes based on where features are — for example, add the district name to every school.",
+     "[ON SCREEN: Count points in polygon]",
+     "For counts, Count Points in Polygon adds a field with the number of points inside each polygon."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "Q6",
+  "title": "Editing and Digitizing",
+  "level": "q-intermediate",
+  "quiz": [
+   {
+    "q": "What must you do before you can edit a layer?",
+    "a": "Toggle Editing",
+    "w": [
+     "Reproject it",
+     "Open a print layout",
+     "Install a plugin"
+    ],
+    "x": "The pencil icon puts a layer into edit mode."
+   },
+   {
+    "q": "Which tool moves, adds and deletes individual vertices?",
+    "a": "Vertex Tool",
+    "w": [
+     "Identify",
+     "Measure",
+     "Pan"
+    ],
+    "x": "The Vertex Tool edits feature geometry vertex by vertex."
+   },
+   {
+    "q": "Value Map in the attribute form…",
+    "a": "Shows a drop-down list of allowed values",
+    "w": [
+     "Changes the CRS",
+     "Draws a basemap",
+     "Exports a PDF"
+    ],
+    "x": "Widgets like Value Map control how fields are edited."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "Q6.1",
+    "title": "Digitizing Features with Snapping",
+    "dur": "7 min",
+    "obj": "Create and reshape features precisely.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Layer > Create Layer > New GeoPackage Layer]",
+     "Create a new layer with Layer, Create Layer, New GeoPackage Layer. Choose geometry type, CRS and fields.",
+     "[ON SCREEN: Toggle Editing pencil, Add Polygon Feature]",
+     "Select the layer and click Toggle Editing. Click Add Polygon Feature, left-click to add vertices, and right-click to finish. Fill in the attributes form.",
+     "[ON SCREEN: Snapping toolbar]",
+     "Turn on snapping from the Snapping toolbar so new features meet existing ones. Enable tracing to follow existing edges, and Avoid overlap to prevent gaps and overlaps between polygons.",
+     "[ON SCREEN: Vertex Tool]",
+     "Use the Vertex Tool to move, add or delete vertices. The Advanced Digitizing panel lets you enter exact distances and angles.",
+     "[ON SCREEN: Save Layer Edits]",
+     "Click Save Layer Edits often, and Toggle Editing again when you're done."
+    ]
+   },
+   {
+    "id": "Q6.2",
+    "title": "Attribute Forms and Widgets",
+    "dur": "6 min",
+    "obj": "Build easy, error-free data entry forms.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Layer Properties > Attributes Form]",
+     "Open Layer Properties, Attributes Form. Each field has a widget that controls how it's edited.",
+     "[ON SCREEN: Value Map widget]",
+     "Use Value Map for a drop-down list of allowed values, Range for numbers within limits, Date/Time for a calendar, and Attachment for photos.",
+     "[ON SCREEN: Drag and Drop Designer]",
+     "Switch to the Drag and Drop Designer to group fields into tabs and sections.",
+     "[ON SCREEN: Constraints and Defaults]",
+     "Set constraints, like not null, and default values, like now() for the date. These forms also travel to QField on mobile."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "Q7",
+  "title": "Processing and Vector Analysis",
+  "level": "q-intermediate",
+  "quiz": [
+   {
+    "q": "Which shortcut opens the Processing Toolbox?",
+    "a": "Ctrl+Alt+T",
+    "w": [
+     "Ctrl+I",
+     "F6",
+     "Ctrl+L"
+    ],
+    "x": "Ctrl+Alt+T toggles the Processing Toolbox panel."
+   },
+   {
+    "q": "Which tool keeps only the parts of a layer inside another layer?",
+    "a": "Clip",
+    "w": [
+     "Buffer",
+     "Dissolve",
+     "Merge"
+    ],
+    "x": "Clip cuts an input to the overlay layer's extent."
+   },
+   {
+    "q": "How can you run one tool on many files at once?",
+    "a": "Run as Batch Process",
+    "w": [
+     "The locator bar",
+     "Print Layout",
+     "Georeferencer"
+    ],
+    "x": "Batch processing runs a tool over a list of inputs."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "Q7.1",
+    "title": "The Processing Toolbox and Batch Processing",
+    "dur": "6 min",
+    "obj": "Find, run and repeat geoprocessing algorithms.",
+    "tip": "Edit in place lets some tools, like Buffer, change features directly in an editable layer.",
+    "body": [
+     "[ON SCREEN: Processing > Toolbox]",
+     "The Processing Toolbox (Ctrl+Alt+T) holds hundreds of algorithms from QGIS, GDAL and GRASS. Search by name at the top.",
+     "[ON SCREEN: tool dialog with Run button]",
+     "Open a tool, set inputs and parameters, and choose to save the output to a file or keep a temporary layer. Click Run.",
+     "[ON SCREEN: Run as Batch Process]",
+     "Click Run as Batch Process to run the same tool on many inputs, filling the table with Autofill.",
+     "[ON SCREEN: Processing > History]",
+     "Processing History records every run, so you can reopen a tool with the same settings."
+    ]
+   },
+   {
+    "id": "Q7.2",
+    "title": "Overlay Analysis: Buffer, Clip, Intersection and Dissolve",
+    "dur": "8 min",
+    "obj": "Answer proximity and overlap questions with vector tools.",
+    "tip": "Use Fix Geometries first if a tool reports invalid geometry.",
+    "body": [
+     "[ON SCREEN: Vector > Geoprocessing Tools menu]",
+     "The classic overlay tools are in Vector, Geoprocessing Tools, and in the Processing Toolbox.",
+     "[ON SCREEN: Buffer 500 m, dissolve result]",
+     "Buffer creates zones around features. Use a projected CRS so the distance is in metres, and tick Dissolve result to merge overlaps.",
+     "[ON SCREEN: Clip]",
+     "Clip keeps the parts of the input inside the overlay layer — roads within a city.",
+     "[ON SCREEN: Intersection and Union]",
+     "Intersection keeps only overlapping areas, combining attributes from both layers. Union keeps everything, split where they overlap. Difference removes the overlay area from the input.",
+     "[ON SCREEN: Dissolve by field]",
+     "Dissolve merges features that share a value, like districts into provinces."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "Q8",
+  "title": "Georeferencing and Spatial Databases",
+  "level": "q-intermediate",
+  "quiz": [
+   {
+    "q": "Where is the Georeferencer in QGIS 4?",
+    "a": "Layer menu",
+    "w": [
+     "Plugins menu only",
+     "Web menu",
+     "Help menu"
+    ],
+    "x": "The Georeferencer is under the Layer menu."
+   },
+   {
+    "q": "Which database extension adds spatial types to PostgreSQL?",
+    "a": "PostGIS",
+    "w": [
+     "SpatiaLite",
+     "GDAL",
+     "GRASS"
+    ],
+    "x": "PostGIS adds geometry and spatial functions to PostgreSQL."
+   },
+   {
+    "q": "In the Georeferencer, GCP stands for…",
+    "a": "Ground control point",
+    "w": [
+     "Graphic color profile",
+     "General coordinate projection",
+     "Grid cell pixel"
+    ],
+    "x": "GCPs link image positions to map coordinates."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "Q8.1",
+    "title": "Georeferencing Scanned Maps",
+    "dur": "7 min",
+    "obj": "Place a scanned map in its real-world location with the Georeferencer.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Layer > Georeferencer]",
+     "Open Layer, Georeferencer, and add your scanned map with Open Raster.",
+     "[ON SCREEN: Add Point, From Map Canvas]",
+     "Click Add Point, click a recognisable spot on the scan, then choose From Map Canvas and click the same spot on a basemap in the main window. Add at least four well-spread ground control points.",
+     "[ON SCREEN: Transformation Settings]",
+     "In Transformation Settings, choose the transformation type — Polynomial 1 for most scans, Thin Plate Spline for distorted ones — the target CRS, the resampling method and the output file.",
+     "[ON SCREEN: GCP table residuals]",
+     "Check the residuals in the GCP table and remove points with large errors.",
+     "[ON SCREEN: Start Georeferencing]",
+     "Click Start Georeferencing. The new GeoTIFF is added to your map."
+    ]
+   },
+   {
+    "id": "Q8.2",
+    "title": "GeoPackage, PostGIS and DB Manager",
+    "dur": "6 min",
+    "obj": "Store data in databases and query it with SQL.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: GeoPackage with many layers]",
+     "GeoPackage is perfect for single users and sharing: one file, many layers, styles saved inside.",
+     "[ON SCREEN: Browser > PostgreSQL > New Connection]",
+     "For teams and large data, use PostgreSQL with PostGIS. Create a connection in the Browser with host, port, database and credentials. Drag layers in to import them.",
+     "[ON SCREEN: Database > DB Manager > SQL Window]",
+     "Database, DB Manager lets you browse databases and run SQL. SELECT name, ST_Area(geom) FROM parcels returns areas, and Load as new layer puts the result on the map.",
+     "[ON SCREEN: Execute SQL in Processing]",
+     "Execute SQL in the Processing Toolbox runs SQL against any layer, even shapefiles."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "Q9",
+  "title": "Raster Analysis",
+  "level": "q-advanced",
+  "quiz": [
+   {
+    "q": "Which tool sums raster values inside each polygon?",
+    "a": "Zonal statistics",
+    "w": [
+     "Hillshade",
+     "Buffer",
+     "Georeferencer"
+    ],
+    "x": "Zonal statistics summarises a raster within polygons."
+   },
+   {
+    "q": "The Semi-Automatic Classification Plugin is used for…",
+    "a": "Land cover classification of satellite imagery",
+    "w": [
+     "Printing atlases",
+     "Editing attributes",
+     "Joining tables"
+    ],
+    "x": "SCP downloads and classifies remote-sensing imagery."
+   },
+   {
+    "q": "Raster Calculator expressions refer to bands as…",
+    "a": "\"layer@band\"",
+    "w": [
+     "!field!",
+     "$feature",
+     "[%field%]"
+    ],
+    "x": "For example \"dem@1\" is band 1 of the dem layer."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "Q9.1",
+    "title": "Terrain Analysis: Hillshade, Slope and Contours",
+    "dur": "7 min",
+    "obj": "Derive terrain products from a DEM.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: DEM with Singleband pseudocolor]",
+     "Load a DEM and style it with Singleband pseudocolor for elevation colours.",
+     "[ON SCREEN: Raster > Analysis > Hillshade]",
+     "Raster, Analysis, Hillshade creates shaded relief. Set the Z factor if the elevation units differ from the horizontal units. Put the hillshade under a semi-transparent DEM.",
+     "[ON SCREEN: Slope and Aspect]",
+     "Slope and Aspect are in the same menu.",
+     "[ON SCREEN: Raster > Extraction > Contour]",
+     "Raster, Extraction, Contour creates contour lines at an interval you choose, with an elevation field for labels.",
+     "[ON SCREEN: hillshade renderer in Symbology]",
+     "For a quick look without new files, choose the Hillshade renderer in the layer's symbology."
+    ]
+   },
+   {
+    "id": "Q9.2",
+    "title": "Raster Calculator, Reclassify and Zonal Statistics",
+    "dur": "7 min",
+    "obj": "Combine and summarise rasters.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Raster > Raster Calculator]",
+     "The Raster Calculator does cell-by-cell maths. Reference bands as \"dem@1\". (\"dem@1\" > 1000) * 1 marks cells above 1,000 metres.",
+     "[ON SCREEN: NDVI expression]",
+     "For NDVI: (\"nir@1\" - \"red@1\") / (\"nir@1\" + \"red@1\").",
+     "[ON SCREEN: Reclassify by table]",
+     "Reclassify by Table turns value ranges into classes for suitability scoring.",
+     "[ON SCREEN: Clip raster by mask layer]",
+     "Clip Raster by Mask Layer cuts a raster to a polygon boundary.",
+     "[ON SCREEN: Zonal statistics]",
+     "Zonal Statistics adds mean, sum, min or max of a raster to each polygon — average elevation per district, for example."
+    ]
+   },
+   {
+    "id": "Q9.3",
+    "title": "Land Cover Classification with the SCP Plugin",
+    "dur": "8 min",
+    "obj": "Classify satellite imagery with the Semi-Automatic Classification Plugin.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: install Semi-Automatic Classification Plugin]",
+     "Install the Semi-Automatic Classification Plugin from the plugin manager. Check that the version supports your QGIS release.",
+     "[ON SCREEN: SCP Download products]",
+     "SCP can search and download Sentinel-2 and Landsat imagery, and pre-process it with atmospheric correction.",
+     "[ON SCREEN: Band set]",
+     "Create a band set of the bands you want to use.",
+     "[ON SCREEN: training input: draw ROIs]",
+     "Create a training input and draw regions of interest for each class: water, vegetation, built-up, bare soil.",
+     "[ON SCREEN: classification algorithm and output]",
+     "Choose an algorithm such as Random Forest or Maximum Likelihood, preview, then run the classification. Use the accuracy tool with reference points to check results."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "Q10",
+  "title": "Automation: Graphical Modeler and PyQGIS",
+  "level": "q-advanced",
+  "quiz": [
+   {
+    "q": "What file extension do Graphical Modeler models use?",
+    "a": ".model3",
+    "w": [
+     ".qgz",
+     ".pyt",
+     ".atbx"
+    ],
+    "x": "Models are saved as .model3 files."
+   },
+   {
+    "q": "Which object gives you access to the QGIS interface in the Python Console?",
+    "a": "iface",
+    "w": [
+     "arcpy",
+     "$feature",
+     "gis"
+    ],
+    "x": "iface is the QgisInterface instance."
+   },
+   {
+    "q": "How do you run a Processing algorithm from Python?",
+    "a": "processing.run()",
+    "w": [
+     "arcpy.Run()",
+     "iface.run()",
+     "QgsTool()"
+    ],
+    "x": "processing.run takes the algorithm ID and a parameter dictionary."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "Q10.1",
+    "title": "The Graphical Modeler",
+    "dur": "7 min",
+    "obj": "Build reusable workflows without code.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Processing > Graphical Modeler]",
+     "Open Processing, Graphical Modeler. It's QGIS's equivalent of ModelBuilder.",
+     "[ON SCREEN: Inputs tab: Vector Layer, Number]",
+     "From the Inputs tab, drag in inputs like a vector layer and a number for buffer distance.",
+     "[ON SCREEN: Algorithms tab: Buffer then Clip]",
+     "From the Algorithms tab, add Buffer and connect it to the inputs, then Clip using the buffer output. Name the final output.",
+     "[ON SCREEN: Run model, Save]",
+     "Run the model to test it, then save it. It appears in the Processing Toolbox under Models, where you can run it like any tool — even in batch mode.",
+     "[ON SCREEN: Export as Python script]",
+     "You can export the model as a Python script."
+    ]
+   },
+   {
+    "id": "Q10.2",
+    "title": "PyQGIS: The Python Console and Scripts",
+    "dur": "8 min",
+    "obj": "Automate QGIS with Python.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Plugins > Python Console]",
+     "Open the Python Console with Ctrl+Alt+P.",
+     "[ON SCREEN: layer = iface.activeLayer()]",
+     "iface gives you the interface. layer = iface.activeLayer() grabs the selected layer, and layer.featureCount() counts its features.",
+     "[ON SCREEN: for f in layer.getFeatures(): print(f[\"NAME\"])]",
+     "Loop through features with layer.getFeatures() and read attributes by field name.",
+     "[ON SCREEN: processing.run(\"native:buffer\", {...})]",
+     "Run any tool with processing.run, passing the algorithm ID and a dictionary of parameters. Find the exact call in Processing History or the tool dialog's Advanced, Copy as Python Command.",
+     "[ON SCREEN: Show Editor, save script]",
+     "Click Show Editor to write longer scripts and save them as .py files."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "Q11",
+  "title": "Plugins, 3D, Field and Web",
+  "level": "q-advanced",
+  "quiz": [
+   {
+    "q": "Which mobile app works with QGIS projects for field data collection?",
+    "a": "QField",
+    "w": [
+     "Survey123",
+     "QuickCapture",
+     "ArcGIS Earth"
+    ],
+    "x": "QField opens QGIS projects on Android and iOS."
+   },
+   {
+    "q": "Which plugin exports a QGIS map to a Leaflet or OpenLayers web page?",
+    "a": "qgis2web",
+    "w": [
+     "QuickOSM",
+     "DataPlotly",
+     "SCP"
+    ],
+    "x": "qgis2web generates a static web map."
+   },
+   {
+    "q": "Where do you open a 3D view of the project?",
+    "a": "View > 3D Map Views",
+    "w": [
+     "Raster > Analysis",
+     "Layer > Georeferencer",
+     "Database > DB Manager"
+    ],
+    "x": "3D map views show terrain and extruded features."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "Q11.1",
+    "title": "Essential Plugins",
+    "dur": "6 min",
+    "obj": "Extend QGIS with the most useful plugins.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Plugins > Manage and Install Plugins > All]",
+     "Open the plugin manager and search. Check each plugin's page for ratings, last update and QGIS 4 compatibility.",
+     "[ON SCREEN: QuickOSM query]",
+     "QuickOSM downloads OpenStreetMap data — for example all hospitals in a city — as a layer.",
+     "[ON SCREEN: QuickMapServices]",
+     "QuickMapServices adds dozens of basemaps.",
+     "[ON SCREEN: DataPlotly charts]",
+     "DataPlotly creates interactive charts from layer attributes, linked to selections.",
+     "[ON SCREEN: MMQGIS and others]",
+     "Other favourites include MMQGIS for geocoding and data tools, and qgis2web for web maps."
+    ]
+   },
+   {
+    "id": "Q11.2",
+    "title": "3D Maps and Elevation Profiles",
+    "dur": "7 min",
+    "obj": "Visualise terrain and buildings in 3D.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: View > 3D Map Views > New 3D Map View]",
+     "Open View, 3D Map Views, New 3D Map View. A 3D window docks beside the map.",
+     "[ON SCREEN: Project Properties > Terrain / Elevation]",
+     "Set the terrain: choose a DEM as the elevation source so the map drapes over real topography. Adjust vertical exaggeration.",
+     "[ON SCREEN: Layer Properties > 3D View: extrude buildings]",
+     "For buildings, open Layer Properties, 3D View, choose Single symbol and set extrusion to a height field.",
+     "[ON SCREEN: point cloud LAZ]",
+     "QGIS also displays lidar point clouds in LAS, LAZ and COPC formats, in 2D and 3D.",
+     "[ON SCREEN: View > Elevation Profile]",
+     "The Elevation Profile tool draws a cross-section along a line you draw, from DEMs, point clouds and 3D layers.",
+     "[ON SCREEN: animation keyframes]",
+     "Create camera animations in the 3D view and export frames for video."
+    ]
+   },
+   {
+    "id": "Q11.3",
+    "title": "Field Data Collection with QField",
+    "dur": "6 min",
+    "obj": "Take a QGIS project into the field with QField.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: QField app on a phone]",
+     "QField is a free mobile app for Android and iOS that opens QGIS projects, with your styles and forms.",
+     "[ON SCREEN: install QFieldSync plugin]",
+     "Install the QFieldSync plugin. Configure each layer: offline editing, copy, or keep as is.",
+     "[ON SCREEN: QFieldCloud sync]",
+     "Package the project for QField, copy it to the device, or use QFieldCloud to sync over the internet.",
+     "[ON SCREEN: collecting a point with photo]",
+     "In the field, collect points, lines and polygons with GPS, fill your attribute forms, and take photos.",
+     "[ON SCREEN: synchronise back]",
+     "Back in the office, synchronise to bring the edits into your QGIS project."
+    ]
+   },
+   {
+    "id": "Q11.4",
+    "title": "Publishing Web Maps",
+    "dur": "6 min",
+    "obj": "Share QGIS maps on the web.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Web > qgis2web > Create web map]",
+     "The qgis2web plugin exports your project as a Leaflet or OpenLayers web page, with styles, pop-ups and a layer list. Preview, then export a folder you can host anywhere — even GitHub Pages.",
+     "[ON SCREEN: QGIS Server diagram]",
+     "QGIS Server publishes projects as standard OGC services — WMS, WFS and OGC API Features — so other apps can use them. It runs on a web server and uses your .qgz project directly.",
+     "[ON SCREEN: Project Properties > QGIS Server tab]",
+     "Configure published layers and service metadata in Project Properties, QGIS Server.",
+     "[ON SCREEN: QGIS course recap]",
+     "That wraps up the QGIS track: from installation to databases, automation, 3D, field work and web publishing."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G1",
+  "title": "Getting Started with gIQ",
+  "level": "giq",
+  "quiz": [
+   {
+    "q": "What is gIQ?",
+    "a": "A cloud geospatial intelligence platform with AI, imagery acquisition and collaboration",
+    "w": [
+     "A desktop GIS like QGIS",
+     "A mobile survey app",
+     "A file format"
+    ],
+    "x": "gIQ is a SaaS ecosystem for geospatial intelligence by Space42."
+   },
+   {
+    "q": "Why might two users see different modules in gIQ?",
+    "a": "Modules depend on version, role and permissions",
+    "w": [
+     "Their screen sizes differ",
+     "One uses dark mode",
+     "Modules are random"
+    ],
+    "x": "Roles and permissions decide which modules appear."
+   },
+   {
+    "q": "Through which entry point does analytical job output enter the platform?",
+    "a": "Analytical Jobs Results Upload",
+    "w": [
+     "Marketplace",
+     "Geostream",
+     "Basemaps"
+    ],
+    "x": "The platform flow names three entry points: File Manager upload, Acquire and job results."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "G1.1",
+    "title": "What Is gIQ? The Platform at a Glance",
+    "dur": "6 min",
+    "obj": "Explain what gIQ does and how data flows through the platform.",
+    "tip": "Keep the official documentation at docs.giq.ae open while you learn; module names in this course follow it.",
+    "body": [
+     "[ON SCREEN: giq.ae home page]",
+     "gIQ is a cloud-based geospatial intelligence platform from Space42. It brings together satellite imagery acquisition, AI models, a 3D globe, collaborative workspaces, reports and a marketplace in one browser-based system.",
+     "[ON SCREEN: who it's for: planners, environmental scientists, GIS professionals, decision-makers]",
+     "It's designed for urban planners, environmental scientists, GIS professionals and decision-makers.",
+     "[ON SCREEN: platform flow diagram]",
+     "Data comes in three ways: uploads through File Manager, imagery from the Acquire module, and results from analytical jobs. Everything passes through Ingestion, where it's processed, validated and stored.",
+     "[ON SCREEN: Explore, File Manager, Workspace branches]",
+     "From there you can examine it in Explore, organise it in File Manager, or analyse it in a Workspace. AI models produce detections, inference turns them into insights, and you share findings as reports and stories."
+    ]
+   },
+   {
+    "id": "G1.2",
+    "title": "Logging In, Roles and Navigation",
+    "dur": "6 min",
+    "obj": "Sign in to gIQ and understand how roles shape what you see.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: gIQ login page]",
+     "Open the platform URL in an up-to-date Chrome or Edge browser. Sign in with your username and password, or with UAE Pass using your Emirates ID, email or phone number. On your first login, you'll be asked to change the password your admin sent you.",
+     "[ON SCREEN: Signup as Guest]",
+     "If you don't have an account, Signup as Guest gives limited access after you verify your email.",
+     "[ON SCREEN: navigation panel with modules]",
+     "The navigation panel lists modules: Globes, Collaborate, Data, Acquire, AI, Market and more. Which ones you see depends on the platform version, your role, and the permissions assigned to it.",
+     "[ON SCREEN: Profile menu]",
+     "The profile menu shows your profile and permissions; admins also reach users, roles and settings from here.",
+     "[ON SCREEN: Help, Notifications, AI Assistant icons]",
+     "Notifications, Help and the AI Assistant are always close at hand."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G2",
+  "title": "Globes and the Explore Module",
+  "level": "giq",
+  "quiz": [
+   {
+    "q": "Which Contextual Details tab lets you run models and view detections?",
+    "a": "Detection",
+    "w": [
+     "Render",
+     "Relations",
+     "Properties"
+    ],
+    "x": "The Detection tab handles model runs and their results."
+   },
+   {
+    "q": "How does the Explore module differ from a workspace's Exploration tab?",
+    "a": "Explore covers all platform data; Exploration covers only that workspace's layers",
+    "w": [
+     "They are identical",
+     "Exploration can't show maps",
+     "Explore is only for admins"
+    ],
+    "x": "Exploration is scoped to a workspace and supports editing."
+   },
+   {
+    "q": "Which tab shows render configuration and a histogram?",
+    "a": "Render",
+    "w": [
+     "Properties",
+     "Relations",
+     "Comments"
+    ],
+    "x": "The Render tab controls how a raster is displayed."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "G2.1",
+    "title": "The Explore Module and the 3D Globe",
+    "dur": "7 min",
+    "obj": "Find and view layers on the gIQ globe.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Globes > Explore]",
+     "Explore is your data command centre and opens by default when you log in. You'll also find it under Globes, Explore.",
+     "[ON SCREEN: Layers panel: search, sort, filter, footprints]",
+     "On the left is the Layers panel. Search for a layer, sort and filter the list, and toggle footprints to see where each dataset covers. The context header switches between layers, AOIs and targets.",
+     "[ON SCREEN: layer More Options: zoom, perspective view]",
+     "Select a layer to view it. Its More Options menu zooms to it or switches to a perspective view.",
+     "[ON SCREEN: Action Menu: search coordinates, full screen, 2D/3D, translucency]",
+     "The map's Action Menu lets you search for a place or paste coordinates, go full screen, switch between 2D and 3D, and adjust globe and basemap translucency. Change the basemap between satellite imagery and streets.",
+     "[ON SCREEN: zooming from globe to street level]",
+     "Zoom from the whole globe down to street level; the platform loads more detail as you go."
+    ]
+   },
+   {
+    "id": "G2.2",
+    "title": "Layer Details: Properties, Render, Detection and Relations",
+    "dur": "6 min",
+    "obj": "Inspect a dataset's metadata, display and AI results.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Contextual Details panel]",
+     "Selecting a layer opens the Contextual Details panel. The tabs depend on the layer type.",
+     "[ON SCREEN: Properties tab with STAC properties]",
+     "Properties shows metadata, including STAC properties for imagery, and lists the workspaces that use the layer.",
+     "[ON SCREEN: Render tab histogram]",
+     "Render controls how imagery displays, with a histogram to adjust contrast.",
+     "[ON SCREEN: Detection tab]",
+     "Detection is where you run AI models on the image, view model run history, and search, filter and download detections by category.",
+     "[ON SCREEN: Relations tab]",
+     "Relations lists the analytical jobs run on the layer: when, how long they took, and who ran them."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G3",
+  "title": "Data: Uploads, Ingestion and Jobs",
+  "level": "giq",
+  "quiz": [
+   {
+    "q": "Every dataset is processed and validated in which step before analysis?",
+    "a": "Ingestion",
+    "w": [
+     "Marketplace",
+     "Geostream",
+     "Reports"
+    ],
+    "x": "All data passes through Ingestion."
+   },
+   {
+    "q": "Where do you monitor queued, in-progress and completed data processing?",
+    "a": "Data > Jobs > Ingestion",
+    "w": [
+     "Market > Seller Central",
+     "Globes > Explore",
+     "Acquire > Buy"
+    ],
+    "x": "The Ingestion jobs dashboard tracks processing status."
+   },
+   {
+    "q": "Inference jobs can be started…",
+    "a": "Manually by a user or automatically by the system",
+    "w": [
+     "Only by email",
+     "Only from QGIS",
+     "Only by guests"
+    ],
+    "x": "Both manual and automatic inference are supported."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "G3.1",
+    "title": "Uploading Data and Ingestion Jobs",
+    "dur": "6 min",
+    "obj": "Bring your own data into gIQ and track its processing.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Upload / File Manager]",
+     "Upload your own data through File Manager. gIQ supports vector and raster data, archives such as ZIP and TAR from many satellite vendors, documents and video.",
+     "[ON SCREEN: Data > Jobs > Ingestion]",
+     "Every upload becomes an ingestion job. Open Data, Jobs, Ingestion to watch it.",
+     "[ON SCREEN: Queued and In-Progress/Completed tabs]",
+     "The dashboard shows jobs by status on Queued and In-Progress/Completed tabs. Use quick filters, sort columns, search, and filter by type, status or user.",
+     "[ON SCREEN: job details with processing log]",
+     "Open a job's details to read its processing log — the first place to look if something fails.",
+     "[ON SCREEN: ingested layer in Explore]",
+     "When ingestion completes, the data appears in Explore and is ready for workspaces and AI models."
+    ]
+   },
+   {
+    "id": "G3.2",
+    "title": "Data Manager, AOIs, Targets and Alerts",
+    "dur": "5 min",
+    "obj": "Organise data assets and set up monitoring.",
+    "tip": "Define AOIs early; they're reused for searching imagery, ordering, and monitoring.",
+    "body": [
+     "[ON SCREEN: Data module: Data Manager, Alerts, Jobs]",
+     "The Data module has three parts: Data Manager, Alerts and Jobs.",
+     "[ON SCREEN: File Manager, AOI Manager, Target Manager]",
+     "Data Manager is where you organise, catalogue and maintain data assets: files, areas of interest (AOIs) and targets — the specific sites you monitor.",
+     "[ON SCREEN: Alerts configuration]",
+     "Alerts and Alerts Configuration set up notifications for the areas and targets you care about.",
+     "[ON SCREEN: Exports]",
+     "Exports keeps track of data you've exported from the platform."
+    ]
+   },
+   {
+    "id": "G3.3",
+    "title": "Monitoring Inference Jobs",
+    "dur": "5 min",
+    "obj": "Track AI model runs on your imagery.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Data > Inference]",
+     "Inference jobs run AI models over imagery. They can be started manually by you or automatically by the system. Open Data, then Inference, to see them.",
+     "[ON SCREEN: inference jobs list, newest first]",
+     "The list shows the newest jobs first. Status buttons filter by state, and the action menu shows the model and image each job used.",
+     "[ON SCREEN: bulk rerun and stop]",
+     "Select several jobs to rerun or stop them in bulk.",
+     "[ON SCREEN: detections in Explore]",
+     "Finished results appear as detections on the image's Detection tab in Explore and in workspaces."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G4",
+  "title": "Acquire: Buying Satellite Imagery",
+  "level": "giq",
+  "quiz": [
+   {
+    "q": "What is the difference between archive and tasking?",
+    "a": "Archive is existing imagery; tasking commissions a new capture",
+    "w": [
+     "Archive is free; tasking is SAR only",
+     "They are the same",
+     "Tasking only works for Landsat"
+    ],
+    "x": "Archive buys what exists; tasking orders future collection."
+   },
+   {
+    "q": "Which imagery type sees through clouds and works at night?",
+    "a": "SAR",
+    "w": [
+     "Multispectral",
+     "Panchromatic",
+     "Thermal"
+    ],
+    "x": "Synthetic aperture radar is an active sensor."
+   },
+   {
+    "q": "Continuous Collection is available for…",
+    "a": "Landsat, Sentinel-1 and Sentinel-2",
+    "w": [
+     "All commercial providers",
+     "Only Space42",
+     "Only thermal sensors"
+    ],
+    "x": "The docs list these open missions for recurring collection."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "G4.1",
+    "title": "Searching the Imagery Archive",
+    "dur": "7 min",
+    "obj": "Find and buy existing satellite images for an area.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Acquire > Buy > Search Archive]",
+     "The Acquire module buys imagery from many vendors in one place. Open Acquire, Buy, Search Archive.",
+     "[ON SCREEN: draw AOI, set dates]",
+     "Define your area of interest and date range.",
+     "[ON SCREEN: provider filters: cloud cover, resolution, off-nadir]",
+     "Each provider has its own filters: cloud coverage for optical imagery, resolution and off-nadir angle for Airbus and Maxar, product type for Planet and BlackSky, and collect mode and polarisation for Capella SAR.",
+     "[ON SCREEN: imagery types table]",
+     "Know your imagery types. Multispectral, from providers like Airbus, Maxar, Planet and Sentinel-2, shows colour and vegetation. Panchromatic is sharp black-and-white. SAR, from Capella, Sentinel-1 and Space42, sees through clouds and at night. Thermal comes from SatVu.",
+     "[ON SCREEN: clipping option]",
+     "Some providers, including Airbus, Maxar and Planet, can clip the image to your area. All times are shown in UTC."
+    ]
+   },
+   {
+    "id": "G4.2",
+    "title": "Tasking a Satellite",
+    "dur": "6 min",
+    "obj": "Commission new imagery that doesn't exist yet.",
+    "tip": "The AI Assistant can help you order future tasking with a conversational request.",
+    "body": [
+     "[ON SCREEN: Acquire > Buy > Tasking]",
+     "When the archive doesn't have what you need, task a satellite to capture it. Tasking is offered by Airbus, BlackSky, Capella, Planet, Space42 and Satellogic.",
+     "[ON SCREEN: drawing tools: point, rectangle, polygon]",
+     "Depending on the provider, mark your target with a point, rectangle or polygon.",
+     "[ON SCREEN: tasking options]",
+     "Set the options: product, cloud cover, incidence angle, imaging mode — such as Planet's single, stereo or tri-stereo — and, for Space42 SAR, product, pass direction and look side.",
+     "[ON SCREEN: Space42 SAR products: Spot, Dwell, Strip, Scan]",
+     "Space42's SAR products include Spot, Dwell, Strip and Scan modes, trading area against detail."
+    ]
+   },
+   {
+    "id": "G4.3",
+    "title": "Orders and Continuous Collection",
+    "dur": "5 min",
+    "obj": "Track orders and automate recurring imagery collection.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Acquire > Orders]",
+     "Acquire, Orders lists everything you've requested, with its status and details. Depending on your role, orders may go through an approval workflow.",
+     "[ON SCREEN: Acquire > Continuous Collection]",
+     "Continuous Collection sets up recurring collection for an area. When new Landsat, Sentinel-1 or Sentinel-2 imagery matches your settings, it's acquired automatically.",
+     "[ON SCREEN: monitoring use case]",
+     "Use it to monitor construction, coastlines or crops week after week without placing new orders."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G5",
+  "title": "Collaborate: Workspaces, Annotation and Reports",
+  "level": "giq",
+  "quiz": [
+   {
+    "q": "Which workspace tab is the default landing page?",
+    "a": "Exploration",
+    "w": [
+     "Dashboard",
+     "Comments",
+     "Reports"
+    ],
+    "x": "Workspaces open on the Exploration tab."
+   },
+   {
+    "q": "In an annotation project, who approves or rejects jobs?",
+    "a": "Users with the Review Job permission",
+    "w": [
+     "Guests",
+     "Any marketplace buyer",
+     "The basemap admin"
+    ],
+    "x": "QA reviewers approve or reject submitted jobs."
+   },
+   {
+    "q": "A report in Draft status can be…",
+    "a": "Edited and approved",
+    "w": [
+     "Only deleted",
+     "Only sold",
+     "Only imported"
+    ],
+    "x": "Draft-only actions are Edit and Approve."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "G5.1",
+    "title": "Workspaces",
+    "dur": "7 min",
+    "obj": "Create a workspace and organise layers, features and insights.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Collaborate > Workspaces dashboard]",
+     "A workspace is a meta-project for a theme or client. It holds layers, files — imagery, GeoJSON, PDFs, CSVs — analyst tools, insights, a dashboard, stories, reports and comments. Open Collaborate, Workspaces.",
+     "[ON SCREEN: quick filters: Active, Archived, Created by me, Shared with me, Favorites]",
+     "The Workspaces dashboard shows active workspaces. Quick filters show archived ones, those you created, those shared with you, and favourites. Sort by date or name, or search.",
+     "[ON SCREEN: create workspace]",
+     "Create a new workspace and set its purpose, theme and privacy.",
+     "[ON SCREEN: workspace tabs]",
+     "Inside, tabs run along the top: Exploration, Insights, Dashboard, Story, Reports and Comments."
+    ]
+   },
+   {
+    "id": "G5.2",
+    "title": "The Exploration Tab and Analyst Tools",
+    "dur": "6 min",
+    "obj": "Add, draw and analyse layers inside a workspace.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Exploration tab, plus button in Layers panel]",
+     "The Exploration tab looks like Explore but shows only this workspace's layers. Use the plus button to add drawing or vector layers, organise them into collections, and bring in layers from other modules.",
+     "[ON SCREEN: create point, line, polygon features]",
+     "Here you can create, edit, delete and export point, line and polygon features.",
+     "[ON SCREEN: Analyst Tools]",
+     "Analyst Tools are available in Exploration and Annotation, not in Explore.",
+     "[ON SCREEN: Run Auto AI Model decision]",
+     "From a workspace you can let the platform pick and run suitable AI models automatically, or choose a model and parameters yourself."
+    ]
+   },
+   {
+    "id": "G5.3",
+    "title": "Annotation Projects",
+    "dur": "7 min",
+    "obj": "Label imagery as a team with a review workflow.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Collaborate > Annotation Project]",
+     "Annotation projects label features in imagery — buildings, roads, vehicles — for analysis and for training AI. Open Collaborate, Annotation Project.",
+     "[ON SCREEN: supported inputs]",
+     "Projects accept TIF imagery and vendor archives such as ICEYE, Maxar, Sentinel-1, Pleiades, Landsat and STAC.",
+     "[ON SCREEN: Project Categories panel]",
+     "Set up label categories in the Project Categories panel.",
+     "[ON SCREEN: workflow: setup, assign, annotate, review, rework]",
+     "The workflow has five steps. A manager creates the project and images. Jobs are assigned to annotators. Annotators draw bounding boxes, label them and submit. Reviewers approve or reject each job. Rejected jobs go back for rework.",
+     "[ON SCREEN: Job Analytics and Export annotations]",
+     "Track progress in the Job Analytics panel and export annotations when the project is done."
+    ]
+   },
+   {
+    "id": "G5.4",
+    "title": "Reports and Stories",
+    "dur": "6 min",
+    "obj": "Turn analysis into reports and narrative stories.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: workspace Reports and Story tabs]",
+     "Inside a workspace, Reports create standardised analytical reports, and Stories present findings as a narrative for decision-makers. Stories can be published to the marketplace.",
+     "[ON SCREEN: Reports module list]",
+     "The Reports module collects reports from all workspaces in your organisation, with name, creator, classification, status and dates.",
+     "[ON SCREEN: statuses: Draft, Approved, Downloadable, Failed]",
+     "Draft reports can be edited and approved. Any report can be previewed, duplicated, exported as PDF, as report data or as a system report, or deleted.",
+     "[ON SCREEN: Templates, Reports Map]",
+     "Templates keep reports consistent, and the Reports Map shows reports by location."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G6",
+  "title": "AI in gIQ",
+  "level": "giq",
+  "quiz": [
+   {
+    "q": "Which permission do you need to upload and configure a model?",
+    "a": "Upload Model",
+    "w": [
+     "Review Job",
+     "Marketplace Buyer",
+     "Guest"
+    ],
+    "x": "Upload Model (or Admin Models) controls model uploads."
+   },
+   {
+    "q": "AMD stands for…",
+    "a": "Auto Model Development",
+    "w": [
+     "Advanced Map Design",
+     "Area Monitoring Dashboard",
+     "Annotated Map Data"
+    ],
+    "x": "AMD is gIQ's automated model training."
+   },
+   {
+    "q": "Which of these can the AI Assistant help with?",
+    "a": "Ordering satellite tasking and summarising locations",
+    "w": [
+     "Editing your Windows settings",
+     "Replacing QGIS",
+     "Printing atlases"
+    ],
+    "x": "The docs list documentation search, acquisition, tasking and location summaries."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "G6.1",
+    "title": "AI Models: Upload, Configure and Run",
+    "dur": "7 min",
+    "obj": "Manage AI models and run them on imagery.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: AI > Models]",
+     "The AI module manages models through their whole life: upload, configuration, publishing, troubleshooting and monitoring. Open AI, Models. You need the Upload Model or Admin Models permission to see it.",
+     "[ON SCREEN: model upload with YAML and categories]",
+     "Uploading a model involves its files, a YAML configuration and category mapping, so detections get meaningful class names.",
+     "[ON SCREEN: Explore Detection tab: Select AI Model]",
+     "To run a model, select an image in Explore and open the Detection tab, or work from a workspace. Choose a model yourself or let the platform run suitable models automatically.",
+     "[ON SCREEN: detections overlay]",
+     "Detections appear as a layer you can filter by category and download.",
+     "[ON SCREEN: publishing to marketplace]",
+     "Publishing a model to the marketplace needs both Admin Models and Marketplace Creator permissions."
+    ]
+   },
+   {
+    "id": "G6.2",
+    "title": "AMD, AI Sandbox and the AI Assistant",
+    "dur": "6 min",
+    "obj": "Train custom models and get help from the AI Assistant.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: AI > AMD]",
+     "AMD, Auto Model Development, is where you train and manage custom models. Labelled imagery from annotation projects is the raw material for training. It needs the AMD Creator or AMD Admin permission.",
+     "[ON SCREEN: AI > AI Sandbox]",
+     "The AI Sandbox sits alongside Models and AMD. Check its overview in the docs to see what's enabled for your organisation.",
+     "[ON SCREEN: AI Assistant chat]",
+     "The AI Assistant is a conversational helper. Ask it to search the documentation, find imagery from multiple vendors, order future tasking, or generate a summary report for a location.",
+     "[ON SCREEN: limitations page]",
+     "Read the Limitations page in the docs, and always check the assistant's results before acting on them."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G7",
+  "title": "Market, Geostream and Administration",
+  "level": "giq",
+  "quiz": [
+   {
+    "q": "Where do sellers publish and manage their digital assets?",
+    "a": "Seller Central",
+    "w": [
+     "Explore",
+     "Ingestion",
+     "Render tab"
+    ],
+    "x": "Seller Central is the vendor side of the Market module."
+   },
+   {
+    "q": "Geostream is used to…",
+    "a": "Showcase your brand and geospatial data as video",
+    "w": [
+     "Order SAR imagery",
+     "Train models",
+     "Change passwords"
+    ],
+    "x": "Geostream presents video content on the platform."
+   },
+   {
+    "q": "Which principle should guide permission assignment?",
+    "a": "Least privilege",
+    "w": [
+     "Give everyone Super User",
+     "Random assignment",
+     "No roles at all"
+    ],
+    "x": "Grant only what each role needs."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "G7.1",
+    "title": "The Marketplace, Seller Central and Geostream",
+    "dur": "5 min",
+    "obj": "Buy and sell digital assets and showcase work.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Market > Marketplace]",
+     "The Market module has two sides. The Marketplace is where you find digital assets published by organisations on gIQ — AI models, applications, reports and stories.",
+     "[ON SCREEN: Market > Seller Central]",
+     "Seller Central is the vendor side: publish your assets, manage them, and see analytics on how they perform.",
+     "[ON SCREEN: Geostream]",
+     "Geostream showcases your brand and geospatial data as video. Add videos to the platform, then add or remove them from the stream."
+    ]
+   },
+   {
+    "id": "G7.2",
+    "title": "Administration: Users, Roles and Credits",
+    "dur": "6 min",
+    "obj": "Set up users and roles safely.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Profile avatar > Admin Panel]",
+     "Administrators open the Admin Panel from the profile avatar.",
+     "[ON SCREEN: Super User and System Administrator roles]",
+     "The Super User is the only role defined at setup. It creates roles, assigns permissions, manages organisations, posts announcements, manages basemaps and configures LLM Chat. Other roles, like a System Administrator, see only the modules they're granted.",
+     "[ON SCREEN: roles mapped to org chart]",
+     "Good practice: map roles to your organisation, grant the least privilege each role needs, create role templates for common jobs, keep very few Super User accounts, and audit them regularly.",
+     "[ON SCREEN: Credits > Credit Usage, Credit Pricing]",
+     "The Credits section shows credit usage and pricing, so teams can track spending.",
+     "[ON SCREEN: gIQ course recap]",
+     "That completes the gIQ track — from logging in to acquiring imagery, running AI, collaborating and managing the platform."
     ]
    }
   ]

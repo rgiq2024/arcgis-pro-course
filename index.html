@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Introduction to ArcGIS Pro</title>
-<meta name="description" content="A free ArcGIS video course: ArcGIS Pro basics to advanced, plus ArcGIS Online, StoryMaps, Dashboards, Experience Builder, Field Maps, QuickCapture and Survey123.">
+<title>GIS Skills Course</title>
+<meta name="description" content="Free GIS video courses for ArcGIS (Pro, Online, StoryMaps, Dashboards, Field Maps, Survey123), QGIS and gIQ by Space42, with scripts, quizzes and progress tracking.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -18,7 +18,7 @@
 :root{
   --bg:#F2F5F4; --surface:#FFFFFF; --surface-2:#F7F9F8; --ink:#0F1E1B; --muted:#5C6C67; --line:#DCE3E0; --contour:#C9D6D1;
   --accent:#0E7C86; --accent-ink:#FFFFFF; --accent-soft:#DDF0F1;
-  --basics:#2E8A57; --basics-soft:#E0F1E7; --inter:#2760A6; --inter-soft:#E1EAF6; --adv:#B9561B; --adv-soft:#F7E6DA; --apps:#8B3A8F; --apps-soft:#F3E3F2;
+  --basics:#2E8A57; --basics-soft:#E0F1E7; --inter:#2760A6; --inter-soft:#E1EAF6; --adv:#B9561B; --adv-soft:#F7E6DA; --apps:#8B3A8F; --apps-soft:#F3E3F2; --giq:#3949AB; --giq-soft:#E4E7F7;
   --good:#2E8A57; --bad:#C2412D; --bad-soft:#F8E3DF;
   --shadow:0 1px 2px rgba(15,30,27,.06),0 8px 24px -12px rgba(15,30,27,.18);
   --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
@@ -30,14 +30,14 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0B1211; --surface:#121B19; --surface-2:#172220; --ink:#E3ECE9; --muted:#93A5A0; --line:#24322F; --contour:#1D2A27;
   --accent:#4FC0C9; --accent-ink:#06201F; --accent-soft:#15333A;
-  --basics:#6BC891; --basics-soft:#173024; --inter:#7EAEEB; --inter-soft:#18273B; --adv:#F0A06A; --adv-soft:#352418; --apps:#D99BDB; --apps-soft:#33203A;
+  --basics:#6BC891; --basics-soft:#173024; --inter:#7EAEEB; --inter-soft:#18273B; --adv:#F0A06A; --adv-soft:#352418; --apps:#D99BDB; --apps-soft:#33203A; --giq:#9AA6F2; --giq-soft:#1E2340;
   --good:#6BC891; --bad:#F0806B; --bad-soft:#3A1F1A;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6);
   color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0B1211; --surface:#121B19; --surface-2:#172220; --ink:#E3ECE9; --muted:#93A5A0; --line:#24322F; --contour:#1D2A27;
   --accent:#4FC0C9; --accent-ink:#06201F; --accent-soft:#15333A;
-  --basics:#6BC891; --basics-soft:#173024; --inter:#7EAEEB; --inter-soft:#18273B; --adv:#F0A06A; --adv-soft:#352418; --apps:#D99BDB; --apps-soft:#33203A;
+  --basics:#6BC891; --basics-soft:#173024; --inter:#7EAEEB; --inter-soft:#18273B; --adv:#F0A06A; --adv-soft:#352418; --apps:#D99BDB; --apps-soft:#33203A; --giq:#9AA6F2; --giq-soft:#1E2340;
   --good:#6BC891; --bad:#F0806B; --bad-soft:#3A1F1A;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6);
   color-scheme:dark}
@@ -110,8 +110,13 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-b
 .lv-intermediate{--lv:var(--inter);--lv-soft:var(--inter-soft)}
 .lv-advanced{--lv:var(--adv);--lv-soft:var(--adv-soft)}
 .lv-apps{--lv:var(--apps);--lv-soft:var(--apps-soft)}
+.lv-giq{--lv:var(--giq);--lv-soft:var(--giq-soft)}
+.platseg{margin-left:6px}
+.platseg button{font-size:13.5px;padding:6px 13px}
+.platseg button[aria-pressed="true"]{color:var(--accent)}
 .badge.lv{background:var(--lv-soft);color:var(--lv)}
 .modlist{display:grid;gap:8px;list-style:none;margin:0;padding:0}
+.level:only-child .modlist{grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))}
 .modcard{width:100%;text-align:left;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:12px 14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center;transition:border-color .15s,transform .15s}
 .modcard:hover{border-color:var(--lv);transform:translateY(-1px)}
 .modcard .mt{font-weight:700;font-size:14.5px;line-height:1.3}
@@ -123,7 +128,7 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-b
 /* Lesson layout */
 .app{display:grid;grid-template-columns:330px minmax(0,1fr);gap:24px;margin-top:20px;align-items:start}
 .rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px);max-height:calc(100vh - 92px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px;overscroll-behavior:contain}
-.rail .tabs3{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:3px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;margin-bottom:12px}
+.rail .tabs3{display:grid;grid-template-columns:repeat(var(--n,4),1fr);gap:4px;padding:3px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;margin-bottom:12px}
 .rail .tabs3 button{border:0;background:none;border-radius:7px;padding:6px 2px;font-size:12px;font-weight:700;color:var(--muted)}
 .rail .tabs3 button[aria-pressed="true"]{background:var(--surface);color:var(--lv);box-shadow:var(--shadow)}
 details.mod{border-radius:12px}
@@ -246,6 +251,9 @@ footer{max-width:1320px;margin:40px auto 0;color:var(--muted);font-size:13px;dis
   .searchbtn{flex:none;width:38px;height:38px;padding:0;justify-content:center}
   .logo b{font-size:15px}
   #pfSeg,#helpBtn{display:none}
+  .logo b{display:none}
+  .platseg{margin-left:0}
+  .platseg button{padding:6px 9px;font-size:13px}
   .lessonlist button{font-size:14px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -257,8 +265,9 @@ footer{max-width:1320px;margin:40px auto 0;color:var(--muted);font-size:13px;dis
   <button class="iconbtn menubtn" id="menuBtn" aria-label="Open lesson list" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   <a class="logo" href="#home" aria-label="Course home">
     <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="var(--accent)"/><path d="M6 21c4-1 5-7 10-7s5 4 10 3" fill="none" stroke="var(--accent-ink)" stroke-width="2" stroke-linecap="round"/><path d="M6 25c4-1 6-4 10-4s6 2 10 1" fill="none" stroke="var(--accent-ink)" stroke-width="2" stroke-linecap="round" opacity=".55"/><circle cx="21" cy="10" r="2.6" fill="var(--accent-ink)"/></svg>
-    <b>Introduction to ArcGIS Pro</b>
+    <b>GIS Skills Course</b>
   </a>
+  <div class="seg platseg" id="platSeg" role="group" aria-label="Platform"><button data-plat="arcgis">ArcGIS</button><button data-plat="qgis">QGIS</button><button data-plat="giq">gIQ</button></div>
   <span class="spacer"></span>
   <button class="searchbtn" id="searchBtn" aria-label="Search lessons"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span id="searchLbl">Search lessons…</span><kbd>Ctrl K</kbd></button>
   <div class="seg" id="pfSeg" role="group" aria-label="Script version"><button id="pfYT" aria-pressed="true">YouTube</button><button id="pfLI" aria-pressed="false">LinkedIn</button></div>
@@ -268,11 +277,11 @@ footer{max-width:1320px;margin:40px auto 0;color:var(--muted);font-size:13px;dis
 
 <div class="shell" id="view"></div>
 
-<footer><span>Free course · scripts, quizzes and progress tracking. Your progress and notes are saved in this browser.</span><span>ArcGIS and ArcGIS Pro are trademarks of Esri. This course is independent.</span></footer>
+<footer><span>Free courses · scripts, quizzes and progress tracking. Your progress and notes are saved in this browser.</span><span>ArcGIS is a trademark of Esri. QGIS is a project of the QGIS.org association. gIQ is a Space42 product. This course is independent of all three.</span></footer>
 
 <div class="scrim" id="scrim" hidden></div>
 <div class="overlay" id="palette" hidden><div class="palette" role="dialog" aria-label="Search lessons">
-  <input id="q" type="search" placeholder="Search lessons, tools and topics…" autocomplete="off" aria-label="Search">
+  <input id="q" type="search" placeholder="Search ArcGIS, QGIS and gIQ lessons…" autocomplete="off" aria-label="Search">
   <div class="results" id="results" role="listbox"></div>
 </div></div>
 <div class="overlay" id="help" hidden><div class="help" role="dialog" aria-label="Keyboard shortcuts">
@@ -300,12 +309,27 @@ footer{max-width:1320px;margin:40px auto 0;color:var(--muted);font-size:13px;dis
 "use strict";
 const COURSE = window.COURSE || [];
 const VIDEOS = window.VIDEOS || {};
+const PLATFORMS = {
+  arcgis:{name:"ArcGIS", title:"Introduction to ArcGIS", eyebrow:"Esri · ArcGIS Pro · ArcGIS Online · Field apps", series:"Introduction to ArcGIS series", yt:"ArcGIS Pro Tutorial", ytWeb:"ArcGIS Tutorial", tags:["ArcGIS Pro","ArcGIS Pro tutorial","GIS","Esri"],
+    lead:"From your first ArcGIS Pro project to Python automation, web apps and field data collection."},
+  qgis:{name:"QGIS", title:"QGIS from Zero to Pro", eyebrow:"Free and open-source GIS · QGIS 4 LTR", series:"QGIS course", yt:"QGIS Tutorial", tags:["QGIS","QGIS tutorial","open source GIS","GIS"],
+    lead:"Install QGIS, style and label maps, edit and analyse data, then automate with PyQGIS and take projects to the field and the web."},
+  giq:{name:"gIQ", title:"gIQ by Space42", eyebrow:"AI-powered geospatial intelligence platform", series:"gIQ course", yt:"gIQ Tutorial", tags:["gIQ","Space42","geospatial intelligence","satellite imagery","GeoAI"],
+    lead:"Explore the globe, acquire satellite imagery, run AI models, collaborate in workspaces and publish reports on Space42's gIQ platform."}
+};
 const LEVELS = [
-  {id:"basics", name:"Basics", blurb:"Install ArcGIS Pro, learn the interface, create shapefiles, add data and design maps with symbology."},
-  {id:"intermediate", name:"Intermediate", blurb:"Geodatabases, editing, queries, joins, coordinate systems, labeling, layouts and geoprocessing."},
-  {id:"advanced", name:"Advanced", blurb:"Raster and imagery analysis, spatial statistics, networks, 3D and lidar, automation with Python, and sharing."},
-  {id:"apps", name:"Online & Apps", short:"Apps", blurb:"ArcGIS Online, Living Atlas, StoryMaps, Dashboards, Experience Builder, Field Maps, QuickCapture, Survey123, Hub and more."}
+  {id:"basics", platform:"arcgis", tone:"basics", name:"Basics", blurb:"Install ArcGIS Pro, learn the interface, create shapefiles, add data and design maps with symbology."},
+  {id:"intermediate", platform:"arcgis", tone:"intermediate", name:"Intermediate", blurb:"Geodatabases, editing, queries, joins, coordinate systems, labeling, layouts and geoprocessing."},
+  {id:"advanced", platform:"arcgis", tone:"advanced", name:"Advanced", blurb:"Raster and imagery analysis, spatial statistics, networks, 3D and lidar, automation with Python, and sharing."},
+  {id:"apps", platform:"arcgis", tone:"apps", name:"Online & Apps", short:"Apps", blurb:"ArcGIS Online, Living Atlas, StoryMaps, Dashboards, Experience Builder, Field Maps, QuickCapture, Survey123, Hub and more."},
+  {id:"q-basics", platform:"qgis", tone:"basics", name:"Basics", blurb:"Install QGIS, tour the interface, add data and basemaps, handle CRSs, style and label maps, and make print layouts."},
+  {id:"q-intermediate", platform:"qgis", tone:"intermediate", name:"Intermediate", blurb:"Attribute tables and expressions, joins, editing and forms, the Processing Toolbox, georeferencing and spatial databases."},
+  {id:"q-advanced", platform:"qgis", tone:"advanced", name:"Advanced", blurb:"Raster and terrain analysis, image classification, Graphical Modeler, PyQGIS, plugins, 3D, QField and web publishing."},
+  {id:"giq", platform:"giq", tone:"giq", name:"gIQ Platform", short:"gIQ", blurb:"Explore, data ingestion, imagery acquisition and tasking, workspaces, annotation, reports, AI models, the marketplace and administration."}
 ];
+const lvOf = id => LEVELS.find(l => l.id === id);
+const platOf = l => lvOf(l.mod.level).platform;
+const tone = lv => lvOf(lv).tone;
 COURSE.forEach(m => m.lessons.forEach(l => l.mod = m));
 const LESSONS = COURSE.flatMap(m => m.lessons);
 const byId = Object.fromEntries(LESSONS.map(l => [l.id, l]));
@@ -323,6 +347,11 @@ let quiz = store.get("quiz", {});
 let platform = store.get("pf", "yt");
 let lastLesson = store.get("last", null);
 let railLevel = null, tab = "script";
+let plat = store.get("plat", "arcgis"); if(!PLATFORMS[plat]) plat = "arcgis";
+const platLessons = pl => LESSONS.filter(l => platOf(l) === pl);
+const platLevels = pl => LEVELS.filter(x => x.platform === pl);
+function setPlat(pl){ if(!PLATFORMS[pl]) return; plat = pl; store.set("plat", pl); document.querySelectorAll("#platSeg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.plat === pl)); }
+const sibling = (l, d) => { const ls = platLessons(platOf(l)); return ls[ls.indexOf(l) + d]; };
 
 /* ---------- helpers ---------- */
 const $ = id => document.getElementById(id);
@@ -344,28 +373,28 @@ const vState = id => { const v = vid(id); return (v.youtube || v.file) ? "video"
 
 /* ---------- script text ---------- */
 function intro(l){
-  if(platform === "yt") return `Hi, and welcome back to the Introduction to ArcGIS Pro series. This is lesson ${l.id}: ${l.title}. By the end of this video, you'll be able to ${lcFirst(l.obj.replace(/\.$/, ""))}.`;
+  if(platform === "yt") return `Hi, and welcome back to the ${PLATFORMS[platOf(l)].series}. This is lesson ${l.id}: ${l.title}. By the end of this video, you'll be able to ${lcFirst(l.obj.replace(/\.$/, ""))}.`;
   return `In this video, we'll look at ${lcFirst(l.title)}. ${l.obj}`;
 }
 function outro(l){
-  const i = LESSONS.indexOf(l), next = LESSONS[i+1];
+  const next = sibling(l, 1);
   if(platform === "yt") return `That's it for ${l.title}. If this helped, give the video a like and subscribe so you don't miss the next lesson${next ? `, where we cover ${lcFirst(next.title)}` : ""}. Questions? Leave them in the comments. See you in the next one.`;
   return next ? `Up next: ${next.title}.` : `Thanks for taking this course. Keep practising with your own data, and you'll be confident in ArcGIS Pro in no time.`;
 }
 function scriptText(l){
-  const out = [`LESSON ${l.id}: ${l.title} (${l.dur})`, `Level: ${lvName(l.mod.level)} · ${l.mod.id} ${l.mod.title}`, `Objective: ${l.obj}`, "", `[INTRO] ${intro(l)}`, ""];
+  const out = [`LESSON ${l.id}: ${l.title} (${l.dur})`, `${PLATFORMS[platOf(l)].name} · ${lvName(l.mod.level)} · ${l.mod.id} ${l.mod.title}`, `Objective: ${l.obj}`, "", `[INTRO] ${intro(l)}`, ""];
   l.body.forEach(b => out.push(b));
   if(l.tip) out.push("", `TIP: ${l.tip}`);
   out.push("", `[OUTRO] ${outro(l)}`);
   return out.join("\n");
 }
 function meta(l){
-  const web = l.mod.level === "apps";
-  const title = web ? `ArcGIS Tutorial ${l.id}: ${l.title}` : `ArcGIS Pro Tutorial ${l.id}: ${l.title} (${lvName(l.mod.level)})`;
-  const tags = (web ? ["ArcGIS Online", "ArcGIS tutorial", "GIS", "Esri", l.mod.title, l.title] : ["ArcGIS Pro", "ArcGIS Pro tutorial", "GIS", "Esri", `ArcGIS Pro ${lvName(l.mod.level).toLowerCase()}`, l.mod.title, l.title]).join(", ");
-  const desc = `${l.obj}\n\nPart of the free "Introduction to ArcGIS Pro" course — ${lvName(l.mod.level)} level, ${l.mod.title}.\n\nIn this lesson:\n` +
+  const P = PLATFORMS[platOf(l)], web = l.mod.level === "apps", multi = platLevels(platOf(l)).length > 1;
+  const title = web ? `${P.ytWeb} ${l.id}: ${l.title}` : `${P.yt} ${l.id}: ${l.title}${multi ? ` (${lvName(l.mod.level)})` : ""}`;
+  const tags = (web ? ["ArcGIS Online", "ArcGIS tutorial", "GIS", "Esri"] : P.tags).concat([l.mod.title, l.title]).join(", ");
+  const desc = `${l.obj}\n\nPart of the free "${PLATFORMS[platOf(l)].title}" course — ${lvName(l.mod.level)}, ${l.mod.title}.\n\nIn this lesson:\n` +
     l.body.filter(b => /^\[ON SCREEN/.test(b)).map(b => "• " + b.replace(/^\[ON SCREEN:\s*|\]$/g, "")).join("\n") + `\n\n#ArcGISPro #GIS #Esri`;
-  const li = `${l.title}\n\n${l.obj} This video is part of the Introduction to ArcGIS Pro course (${lvName(l.mod.level)}), chapter "${l.mod.title}".`;
+  const li = `${l.title}\n\n${l.obj} This video is part of the ${PLATFORMS[platOf(l)].title} course (${lvName(l.mod.level)}), chapter "${l.mod.title}".`;
   return {title, tags, desc, li};
 }
 
@@ -374,8 +403,10 @@ function route(){
   const h = decodeURIComponent(location.hash.slice(1));
   closeDrawer();
   let m;
-  if((m = h.match(/^lesson-(\d+-\d+)$/)) && byId[m[1].replace("-", ".")]) return showLesson(m[1].replace("-", "."));
-  if((m = h.match(/^quiz-(M\d+)$/)) && modById[m[1]]) return showQuiz(m[1]);
+  if((m = h.match(/^lesson-([A-Z]*\d+-\d+)$/)) && byId[m[1].replace("-", ".")]) return showLesson(m[1].replace("-", "."));
+  if((m = h.match(/^quiz-([A-Z]+\d+)$/)) && modById[m[1]]) return showQuiz(m[1]);
+  if(PLATFORMS[h]) setPlat(h);
+  if(h.startsWith("level-") && lvOf(h.slice(6))) setPlat(lvOf(h.slice(6)).platform);
   showHome(h.startsWith("level-") ? h.slice(6) : null);
 }
 const go = h => { if(location.hash === "#" + h) route(); else location.hash = h; };
@@ -384,38 +415,39 @@ addEventListener("hashchange", () => { route(); scrollTo({top:0}); });
 /* ---------- home ---------- */
 function showHome(focusLevel){
   $("menuBtn").hidden = true;
-  const total = pct(LESSONS);
-  const cont = lastLesson && byId[lastLesson] ? byId[lastLesson] : LESSONS.find(l => !done.has(l.id)) || LESSONS[0];
-  const lvColor = {basics:"var(--basics)", intermediate:"var(--inter)", advanced:"var(--adv)", apps:"var(--apps)"};
+  const P = PLATFORMS[plat], PL = platLessons(plat), LV = platLevels(plat), PM = COURSE.filter(m => lvOf(m.level).platform === plat);
+  const total = pct(PL), ndone = PL.filter(l => done.has(l.id)).length;
+  const cont = (lastLesson && byId[lastLesson] && platOf(byId[lastLesson]) === plat) ? byId[lastLesson] : PL.find(l => !done.has(l.id)) || PL[0];
+  const lvColor = {basics:"var(--basics)", intermediate:"var(--inter)", advanced:"var(--adv)", apps:"var(--apps)", giq:"var(--giq)"};
   $("view").innerHTML = `
   <section class="hero">
     <canvas id="topo" aria-hidden="true"></canvas>
     <div class="in">
       <div>
-        <div class="eyebrow">Free video course · ArcGIS Pro · ArcGIS Online · Field apps</div>
-        <h1>Introduction to ArcGIS&nbsp;Pro</h1>
-        <p class="lead">From your first ArcGIS Pro project to Python automation, web apps and field data collection. ${LESSONS.length} short lessons in four tracks, each with a full script, on-screen cues and a quiz at the end of every module.</p>
+        <div class="eyebrow">${esc(P.eyebrow)}</div>
+        <h1>${esc(P.title)}</h1>
+        <p class="lead">${esc(P.lead)} ${PL.length} short lessons${LV.length>1?` in ${LV.length} tracks`:""}, each with a full script, on-screen cues and a quiz at the end of every module.</p>
         <div class="ctas">
-          <a class="btn primary" href="#lesson-${slug(cont.id)}">${done.size ? "Continue" : "Start"}: ${cont.id} ${esc(cont.title)}</a>
+          <a class="btn primary" href="#lesson-${slug(cont.id)}">${ndone ? "Continue" : "Start"}: ${cont.id} ${esc(cont.title)}</a>
           <button class="btn" data-act="search">Find a topic</button>
         </div>
         <div class="stats">
-          <div class="stat"><b>${LESSONS.length}</b><span>lessons</span></div>
-          <div class="stat"><b>${COURSE.length}</b><span>modules</span></div>
-          <div class="stat"><b>${Math.round(mins(LESSONS)/60)} h</b><span>of video</span></div>
-          <div class="stat"><b>${COURSE.reduce((a,m)=>a+m.quiz.length,0)}</b><span>quiz questions</span></div>
+          <div class="stat"><b>${PL.length}</b><span>lessons</span></div>
+          <div class="stat"><b>${PM.length}</b><span>modules</span></div>
+          <div class="stat"><b>${(mins(PL)/60).toFixed(mins(PL) < 600 ? 1 : 0)} h</b><span>of video</span></div>
+          <div class="stat"><b>${PM.reduce((a,m)=>a+m.quiz.length,0)}</b><span>quiz questions</span></div>
         </div>
       </div>
       <div class="progresscard">
         <div class="ringrow"><div class="ring">${ring(total, 96, 9, "var(--accent)")}<b>${total}%</b></div>
-          <div><div style="font-weight:700">Your progress</div><div style="color:var(--muted);font-size:14px">${done.size} of ${LESSONS.length} lessons complete</div></div></div>
-        <div class="lvlbars">${LEVELS.map(lv => { const ls = lessonsOf(lv.id), p = pct(ls); return `<div class="lvlbar"><span>${lv.name}</span><span class="t"><i style="width:${p}%;background:${lvColor[lv.id]}"></i></span><span class="n">${p}%</span></div>`; }).join("")}</div>
+          <div><div style="font-weight:700">Your progress</div><div style="color:var(--muted);font-size:14px">${ndone} of ${PL.length} ${P.name} lessons complete</div></div></div>
+        <div class="lvlbars">${LV.map(lv => { const ls = lessonsOf(lv.id), p = pct(ls); return `<div class="lvlbar"><span>${lv.name}</span><span class="t"><i style="width:${p}%;background:${lvColor[lv.id]}"></i></span><span class="n">${p}%</span></div>`; }).join("")}</div>
       </div>
     </div>
   </section>
   <div class="levels">
-    ${LEVELS.map(lv => { const mods = COURSE.filter(m => m.level === lv.id), ls = lessonsOf(lv.id); return `
-    <section class="level lv-${lv.id}" id="lv-${lv.id}">
+    ${LV.map(lv => { const mods = COURSE.filter(m => m.level === lv.id), ls = lessonsOf(lv.id); return `
+    <section class="level lv-${lv.tone}" id="lv-${lv.id}">
       <header><div><span class="badge lv">${lv.name}</span><h2>${lv.name}</h2></div><div class="mini" style="width:46px;height:46px">${ring(pct(ls), 46, 5, "var(--lv)")}</div></header>
       <p class="sub">${lv.blurb}</p>
       <p class="sub" style="font-family:var(--mono);font-size:12.5px">${mods.length} modules · ${ls.length} lessons · ${hrs(mins(ls))}</p>
@@ -426,7 +458,7 @@ function showHome(focusLevel){
     </section>`; }).join("")}
   </div>`;
   drawTopo();
-  document.title = "Introduction to ArcGIS Pro";
+  document.title = `${P.title} · GIS Skills Course`;
   if(focusLevel) $("lv-" + focusLevel)?.scrollIntoView({behavior:"smooth"});
 }
 
@@ -472,8 +504,10 @@ function drawTopo(){
 /* ---------- rail ---------- */
 function renderRail(curLesson, curQuiz){
   const lv = railLevel;
-  return `<aside class="rail lv-${lv}" id="rail" aria-label="Course contents">
-    <div class="tabs3" role="group" aria-label="Level">${LEVELS.map(x => `<button data-level="${x.id}" aria-pressed="${x.id===lv}" title="${x.name}">${x.short || x.name}</button>`).join("")}</div>
+  const LV = platLevels(lvOf(lv).platform);
+  return `<aside class="rail lv-${tone(lv)}" id="rail" aria-label="Course contents">
+    <div class="eyebrow" style="padding:2px 4px 10px">${esc(PLATFORMS[lvOf(lv).platform].name)} course</div>
+    <div class="tabs3" role="group" aria-label="Level" style="--n:${LV.length}" ${LV.length < 2 ? "hidden" : ""}>${LV.map(x => `<button data-level="${x.id}" aria-pressed="${x.id===lv}" title="${x.name}">${x.short || x.name}</button>`).join("")}</div>
     ${COURSE.filter(m => m.level === lv).map(m => {
       const open = (curLesson && curLesson.mod === m) || curQuiz === m.id;
       const n = m.lessons.filter(l => done.has(l.id)).length;
@@ -499,16 +533,16 @@ function playerHTML(l){
 }
 
 function showLesson(id){
-  const l = byId[id], i = LESSONS.indexOf(l), prev = LESSONS[i-1], next = LESSONS[i+1], m = meta(l), v = vid(l.id);
-  railLevel = l.mod.level; lastLesson = id; store.set("last", id);
+  const l = byId[id], prev = sibling(l, -1), next = sibling(l, 1), m = meta(l), v = vid(l.id);
+  railLevel = l.mod.level; setPlat(platOf(l)); lastLesson = id; store.set("last", id);
   $("menuBtn").hidden = false;
   const isDone = done.has(id);
   const body = l.body.map(b => /^\[ON SCREEN/.test(b)
     ? `<div class="cue"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:2px;flex:none"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8"/></svg><span>${esc(b.replace(/^\[ON SCREEN:\s*|\]$/g, ""))}</span></div>`
     : `<p>${esc(b)}</p>`).join("");
   $("view").innerHTML = `<div class="app">${renderRail(l, null)}
-  <main class="sheet lv-${l.mod.level}">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>›</span><a href="#level-${l.mod.level}">${lvName(l.mod.level)}</a><span>›</span><span>${l.mod.id} ${esc(l.mod.title)}</span></nav>
+  <main class="sheet lv-${tone(l.mod.level)}">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#${platOf(l)}">${PLATFORMS[platOf(l)].name}</a><span>›</span><a href="#level-${l.mod.level}">${lvName(l.mod.level)}</a><span>›</span><span>${l.mod.id} ${esc(l.mod.title)}</span></nav>
     <h1>${esc(l.title)}</h1>
     <p class="obj">${esc(l.obj)}</p>
     <div class="chips"><span class="badge lv">${lvName(l.mod.level)}</span><span class="chip">Lesson ${l.id}</span><span class="chip">≈ ${esc(l.dur)}</span>${v.status && v.status!=="todo" ? `<span class="chip">${esc(v.status)}</span>` : ""}</div>
@@ -538,7 +572,7 @@ function showLesson(id){
       <div class="field"><div class="k">YouTube description <button class="btn" data-copy="desc">Copy</button></div><pre>${esc(m.desc)}</pre></div>
       <div class="field"><div class="k">YouTube tags <button class="btn" data-copy="tags">Copy</button></div><pre>${esc(m.tags)}</pre></div>
       <div class="field"><div class="k">LinkedIn description <button class="btn" data-copy="li">Copy</button></div><pre>${esc(m.li)}</pre></div>
-      <button class="btn" data-act="download">Download all ${platform==="yt"?"YouTube":"LinkedIn"} scripts (.md)</button>
+      <button class="btn" data-act="download">Download all ${PLATFORMS[platOf(l)].name} ${platform==="yt"?"YouTube":"LinkedIn"} scripts (.md)</button>
     </div>
     <div class="panel" ${tab==="notes"?"":"hidden"}>
       <label for="noteBox" class="panelbar" style="display:block">Notes for this lesson. They're saved automatically in this browser.</label>
@@ -551,7 +585,7 @@ function showLesson(id){
         : next ? `<a class="btn primary" href="#lesson-${slug(next.id)}"><span>${next.id} ${esc(next.title)}</span> →</a>` : ""}
     </div>
   </main></div>`;
-  document.title = `${l.id} ${l.title} · Introduction to ArcGIS Pro`;
+  document.title = `${l.id} ${l.title} · ${PLATFORMS[platOf(l)].name} · GIS Skills Course`;
 }
 
 function toggleDone(id){
@@ -569,11 +603,11 @@ function toggleDone(id){
 function shuffled(arr, seedStr){ let s = [...seedStr].reduce((a,c)=>a*31+c.charCodeAt(0)|0, 7); const r = () => ((s = (s*1103515245+12345)&0x7fffffff) / 0x7fffffff); return arr.map(v=>[r(),v]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]); }
 let qState = {};
 function showQuiz(mid){
-  const m = modById[mid]; railLevel = m.level; $("menuBtn").hidden = false; qState = {};
-  const nextMod = COURSE[COURSE.indexOf(m)+1];
+  const m = modById[mid]; railLevel = m.level; setPlat(lvOf(m.level).platform); $("menuBtn").hidden = false; qState = {};
+  const nm = COURSE[COURSE.indexOf(m)+1], nextMod = nm && lvOf(nm.level).platform === lvOf(m.level).platform ? nm : null;
   $("view").innerHTML = `<div class="app">${renderRail(null, mid)}
-  <main class="sheet lv-${m.level}">
-    <nav class="crumbs"><a href="#home">Home</a><span>›</span><a href="#level-${m.level}">${lvName(m.level)}</a><span>›</span><span>${m.id} ${esc(m.title)}</span></nav>
+  <main class="sheet lv-${tone(m.level)}">
+    <nav class="crumbs"><a href="#${lvOf(m.level).platform}">${PLATFORMS[lvOf(m.level).platform].name}</a><span>›</span><a href="#level-${m.level}">${lvName(m.level)}</a><span>›</span><span>${m.id} ${esc(m.title)}</span></nav>
     <h1>${esc(m.title)}: quick check</h1>
     <p class="obj">${m.quiz.length} questions. Pick an answer to see if you're right and why.${quiz[mid]!=null ? ` Best score so far: ${quiz[mid]}/${m.quiz.length}.` : ""}</p>
     <div class="qlist">${m.quiz.map((q, qi) => `<div class="qcard" data-q="${qi}"><h3><span>Question ${qi+1}</span>${esc(q.q)}</h3>
@@ -582,10 +616,10 @@ function showQuiz(mid){
     <div class="score" id="score" hidden></div>
     <div class="navrow">
       <a class="btn" href="#lesson-${slug(m.lessons[0].id)}">← Review ${esc(m.title)}</a>
-      ${nextMod ? `<a class="btn primary" href="#lesson-${slug(nextMod.lessons[0].id)}"><span>Next module: ${esc(nextMod.title)}</span> →</a>` : `<a class="btn primary" href="#home">Back to course home</a>`}
+      ${nextMod ? `<a class="btn primary" href="#lesson-${slug(nextMod.lessons[0].id)}"><span>Next module: ${esc(nextMod.title)}</span> →</a>` : `<a class="btn primary" href="#${lvOf(m.level).platform}">Back to the ${PLATFORMS[lvOf(m.level).platform].name} course</a>`}
     </div>
   </main></div>`;
-  document.title = `${m.title} quiz · Introduction to ArcGIS Pro`;
+  document.title = `${m.title} quiz · GIS Skills Course`;
 }
 function answer(btn){
   const card = btn.closest(".qcard"), qi = +card.dataset.q, mid = location.hash.slice(6), m = modById[mid], q = m.quiz[qi];
@@ -610,9 +644,9 @@ function openPalette(){ $("palette").hidden = false; $("q").value = ""; renderRe
 function closePalette(){ $("palette").hidden = true; }
 function renderResults(q){
   const terms = q.toLowerCase().trim().split(/\s+/).filter(Boolean);
-  resList = terms.length ? INDEX.filter(x => terms.every(t => x.hay.includes(t))).sort((a,b) => terms.filter(t=>b.head.includes(t)).length - terms.filter(t=>a.head.includes(t)).length).slice(0,40).map(x=>x.l) : LESSONS.slice(0,8);
+  resList = terms.length ? INDEX.filter(x => terms.every(t => x.hay.includes(t))).sort((a,b) => ((platOf(b.l)===plat) - (platOf(a.l)===plat)) || (terms.filter(t=>b.head.includes(t)).length - terms.filter(t=>a.head.includes(t)).length)).slice(0,40).map(x=>x.l) : platLessons(plat).slice(0,8);
   resSel = 0;
-  $("results").innerHTML = resList.length ? resList.map((l,i) => `<button class="res" role="option" data-go="lesson-${slug(l.id)}" aria-selected="${i===0}"><span class="num">${l.id}</span><span class="t">${esc(l.title)}</span><span class="s">${lvName(l.mod.level)} · ${esc(l.mod.title)}</span></button>`).join("")
+  $("results").innerHTML = resList.length ? resList.map((l,i) => `<button class="res" role="option" data-go="lesson-${slug(l.id)}" aria-selected="${i===0}"><span class="num">${l.id}</span><span class="t">${esc(l.title)}</span><span class="s">${PLATFORMS[platOf(l)].name} · ${lvName(l.mod.level)} · ${esc(l.mod.title)}</span></button>`).join("")
     : `<div class="noresults">No lessons match “${esc(q)}”. Try a tool name like “buffer” or “symbology”.</div>`;
 }
 $("q").addEventListener("input", e => renderResults(e.target.value));
@@ -680,15 +714,16 @@ async function copyText(t, btn){
   catch(e){ const pre = btn.closest(".field")?.querySelector("pre") || document.querySelector(".script"); const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast("Selected. Press Ctrl+C to copy."); }
 }
 function downloadAll(){
-  const md = `# Introduction to ArcGIS Pro — ${platform==="yt"?"YouTube":"LinkedIn Learning"} scripts\n\n` + LEVELS.map(lv => `# ${lv.name}\n\n` + COURSE.filter(m=>m.level===lv.id).map(m => `## ${m.id} — ${m.title}\n\n` + m.lessons.map(l => scriptText(l).replace(/^LESSON/, "### LESSON")).join("\n\n---\n\n")).join("\n\n")).join("\n\n");
+  const md = `# ${PLATFORMS[plat].title} — ${platform==="yt"?"YouTube":"LinkedIn Learning"} scripts\n\n` + platLevels(plat).map(lv => `# ${lv.name}\n\n` + COURSE.filter(m=>m.level===lv.id).map(m => `## ${m.id} — ${m.title}\n\n` + m.lessons.map(l => scriptText(l).replace(/^LESSON/, "### LESSON")).join("\n\n---\n\n")).join("\n\n")).join("\n\n");
   const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([md], {type:"text/markdown"}));
-  a.download = `arcgis-pro-scripts-${platform==="yt"?"youtube":"linkedin"}.md`; document.body.appendChild(a); a.click(); a.remove();
+  a.download = `${plat}-scripts-${platform==="yt"?"youtube":"linkedin"}.md`; document.body.appendChild(a); a.click(); a.remove();
 }
 
 /* ---------- events ---------- */
 document.addEventListener("click", e => {
   const t = e.target.closest("button,a"); if(!t) { if(e.target.classList?.contains("overlay")){ closePalette(); $("help").hidden = true; } return; }
   if(t.dataset.go){ e.preventDefault(); closePalette(); go(t.dataset.go); return; }
+  if(t.dataset.plat){ setPlat(t.dataset.plat); go(t.dataset.plat); return; }
   if(t.dataset.level){ railLevel = t.dataset.level; const rail = document.querySelector(".rail"), wasOpen = rail.classList.contains("open"); rail.outerHTML = renderRail(byId[lastLesson]?.mod.level===railLevel ? byId[lastLesson] : null, null); if(wasOpen) document.querySelector(".rail").classList.add("open"); return; }
   if(t.dataset.tab){ tab = t.dataset.tab; route(); return; }
   if(t.classList.contains("opt")){ answer(t); return; }
@@ -715,15 +750,16 @@ document.addEventListener("keydown", e => {
   const onLesson = /^#lesson-/.test(location.hash), l = byId[lastLesson], i = LESSONS.indexOf(l);
   if(e.key === "/"){ e.preventDefault(); openPalette(); }
   else if(e.key === "?"){ $("help").hidden = false; }
-  else if(e.key.toLowerCase() === "h"){ go("home"); }
-  else if(onLesson && e.key === "ArrowRight" && LESSONS[i+1]) go("lesson-" + slug(LESSONS[i+1].id));
-  else if(onLesson && e.key === "ArrowLeft" && LESSONS[i-1]) go("lesson-" + slug(LESSONS[i-1].id));
+  else if(e.key.toLowerCase() === "h"){ go(plat); }
+  else if(onLesson && e.key === "ArrowRight" && sibling(l, 1)) go("lesson-" + slug(sibling(l, 1).id));
+  else if(onLesson && e.key === "ArrowLeft" && sibling(l, -1)) go("lesson-" + slug(sibling(l, -1).id));
   else if(onLesson && e.key.toLowerCase() === "c") toggleDone(l.id);
   else if(onLesson && e.key.toLowerCase() === "t") openPrompter(l);
 });
 let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(drawTopo, 150); });
 
 $("searchLbl").textContent = `Search ${LESSONS.length} lessons…`;
+setPlat(plat);
 applyPlatform(); applyTheme(); route();
 </script>
 </body>

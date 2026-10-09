@@ -1,21 +1,40 @@
-# Introduction to ArcGIS Pro — Video Course
+# GIS Skills Course — ArcGIS · QGIS · gIQ
 
-A free ArcGIS video course from first install to Python automation, web apps and field data collection: **115 lessons in 33 modules across four tracks**, about 12 hours of video. Every lesson has a full narration script with on-screen recording cues, and every module ends with a quiz.
+Free GIS video courses for three platforms, with a full narration script for every lesson, on-screen recording cues, module quizzes and progress tracking: **162 lessons in 51 modules**, about 17 hours of video.
 
-**Live site:** https://rgiq2024.github.io/arcgis-pro-course/
+**Live site:** https://rgiq2024.github.io/arcgis-pro-course/ — switch platforms with the **ArcGIS · QGIS · gIQ** tabs at the top.
 
-| Level | Modules | Topics |
+### ArcGIS (115 lessons)
+
+| Track | Modules | Topics |
 |---|---|---|
-| **Basics** (39 lessons) | M1–M7 | Install and sign in, projects, the interface, navigating maps and scenes, shapefiles, adding data, the Contents pane, symbology |
-| **Intermediate** (26 lessons) | M8–M15 | Geodatabases, domains and subtypes, editing, Select By Attributes/Location, charts, Calculate Field, joins, coordinate systems, georeferencing, labeling and annotation, layouts and map series, geoprocessing and overlay tools |
-| **Advanced** (24 lessons) | M16–M23 | Spatial Analyst terrain and suitability, imagery and classification, hot spots and spatial statistics, geocoding and network analysis, 3D, lidar and animation, ModelBuilder, ArcPy and notebooks, Arcade, topology, publishing and a capstone project |
-| **ArcGIS Online & Apps** (26 lessons) | M24–M33 | ArcGIS Online organizations and content, Map Viewer, Scene Viewer, Living Atlas, StoryMaps, Dashboards, Experience Builder, Instant Apps, Field Maps (including Tasks), QuickCapture, Survey123, Hub, web analysis, Notebooks, Data Pipelines, ArcGIS Enterprise, Earth, Urban, Business Analyst, Velocity, Maps SDKs, and a field-to-dashboard capstone |
+| **Basics** (39) | M1–M7 | Install and sign in, projects, the interface, navigating maps and scenes, shapefiles, adding data, the Contents pane, symbology |
+| **Intermediate** (26) | M8–M15 | Geodatabases, domains and subtypes, editing, Select By Attributes/Location, charts, Calculate Field, joins, coordinate systems, georeferencing, labeling and annotation, layouts and map series, geoprocessing and overlay tools |
+| **Advanced** (24) | M16–M23 | Spatial Analyst terrain and suitability, imagery and classification, hot spots and spatial statistics, geocoding and network analysis, 3D, lidar and animation, ModelBuilder, ArcPy and notebooks, Arcade, topology, publishing and a capstone project |
+| **Online & Apps** (26) | M24–M33 | ArcGIS Online, Map Viewer, Scene Viewer, Living Atlas, StoryMaps, Dashboards, Experience Builder, Instant Apps, Field Maps (including Tasks), QuickCapture, Survey123, Hub, web analysis, Notebooks, Data Pipelines, Enterprise, Earth, Urban, Business Analyst, Velocity, Maps SDKs, field-to-dashboard capstone |
+
+### QGIS (29 lessons, written for QGIS 4 LTR)
+
+| Track | Modules | Topics |
+|---|---|---|
+| **Basics** (11) | Q1–Q4 | Installing (LTR vs latest), the interface, projects, adding data, XYZ basemaps, CSV and web services, CRSs, symbology, labels, print layouts and atlases |
+| **Intermediate** (9) | Q5–Q8 | Attribute table, expressions and the Field Calculator, joins, digitizing and snapping, attribute forms, the Processing Toolbox, overlay tools, the Georeferencer, GeoPackage, PostGIS and DB Manager |
+| **Advanced** (9) | Q9–Q11 | Terrain analysis, Raster Calculator and zonal statistics, SCP land-cover classification, Graphical Modeler, PyQGIS, essential plugins, 3D and elevation profiles, QField, qgis2web and QGIS Server |
+
+### gIQ by Space42 (18 lessons)
+
+| Modules | Topics |
+|---|---|
+| G1–G7 | Platform overview and data flow, logging in (including UAE Pass) and roles, the Explore globe and layer details, uploads and ingestion jobs, Data Manager and alerts, inference jobs, archive search and satellite tasking (optical, SAR, thermal), orders and continuous collection, workspaces and the Exploration tab, annotation projects, reports and stories, AI models, AMD and the AI Assistant, the Marketplace, Seller Central and Geostream, administration and credits |
+
+gIQ lessons follow the official documentation at [docs.giq.ae](https://docs.giq.ae/). Module names, permissions and providers can change between gIQ releases, so check the docs and release notes before recording.
 
 ## Features
 
 - **Learning path home** with overall and per-level progress
 - **Progress tracking**: mark lessons complete (button or `C`); progress, quiz scores and notes are saved in the learner's browser
-- **Module quizzes**: 99 questions with instant feedback and explanations
+- **Platform tabs**: ArcGIS, QGIS and gIQ, each with its own home, tracks and progress
+- **Module quizzes**: 153 questions with instant feedback and explanations
 - **Search** across every lesson and script (`Ctrl K` or `/`)
 - **Teleprompter** for recording: auto-scroll, speed and size controls, mirror mode, cue toggle (`T`, `Space` to play/pause)
 - **YouTube / LinkedIn script versions**: switches each lesson's intro and outro
@@ -72,4 +91,4 @@ Double-click `index.html`. Everything works offline except Google Fonts and YouT
 
 ---
 
-ArcGIS and ArcGIS Pro are trademarks of Esri. This course is independent and not affiliated with Esri.
+ArcGIS is a trademark of Esri. QGIS is a project of the QGIS.org association. gIQ is a product of Space42. This course is independent of all three.

@@ -4,7 +4,7 @@
 //   linkedin: a link to the lesson on LinkedIn Learning
 // status: "todo" | "recording" | "editing" | "published"
 window.VIDEOS = {
-  // ---------- BASICS ----------
+  // ---------- ARCGIS · BASICS ----------
   "1.1": { youtube: "", file: "", linkedin: "", status: "todo" },
   "1.2": { youtube: "", file: "", linkedin: "", status: "todo" },
   "1.3": { youtube: "", file: "", linkedin: "", status: "todo" },
@@ -44,7 +44,7 @@ window.VIDEOS = {
   "7.7": { youtube: "", file: "", linkedin: "", status: "todo" },
   "7.8": { youtube: "", file: "", linkedin: "", status: "todo" },
   "7.9": { youtube: "", file: "", linkedin: "", status: "todo" },
-  // ---------- INTERMEDIATE ----------
+  // ---------- ARCGIS · INTERMEDIATE ----------
   "8.1": { youtube: "", file: "", linkedin: "", status: "todo" },
   "8.2": { youtube: "", file: "", linkedin: "", status: "todo" },
   "8.3": { youtube: "", file: "", linkedin: "", status: "todo" },
@@ -71,7 +71,7 @@ window.VIDEOS = {
   "15.1": { youtube: "", file: "", linkedin: "", status: "todo" },
   "15.2": { youtube: "", file: "", linkedin: "", status: "todo" },
   "15.3": { youtube: "", file: "", linkedin: "", status: "todo" },
-  // ---------- ADVANCED ----------
+  // ---------- ARCGIS · ADVANCED ----------
   "16.1": { youtube: "", file: "", linkedin: "", status: "todo" },
   "16.2": { youtube: "", file: "", linkedin: "", status: "todo" },
   "16.3": { youtube: "", file: "", linkedin: "", status: "todo" },
@@ -96,7 +96,7 @@ window.VIDEOS = {
   "23.1": { youtube: "", file: "", linkedin: "", status: "todo" },
   "23.2": { youtube: "", file: "", linkedin: "", status: "todo" },
   "23.3": { youtube: "", file: "", linkedin: "", status: "todo" },
-  // ---------- ARCGIS ONLINE & APPS ----------
+  // ---------- ARCGIS · ONLINE & APPS ----------
   "24.1": { youtube: "", file: "", linkedin: "", status: "todo" },
   "24.2": { youtube: "", file: "", linkedin: "", status: "todo" },
   "24.3": { youtube: "", file: "", linkedin: "", status: "todo" },
@@ -123,4 +123,55 @@ window.VIDEOS = {
   "32.2": { youtube: "", file: "", linkedin: "", status: "todo" },
   "32.3": { youtube: "", file: "", linkedin: "", status: "todo" },
   "33.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  // ---------- QGIS · BASICS ----------
+  "Q1.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q1.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q1.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q2.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q2.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q2.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q3.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q3.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q3.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q4.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q4.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  // ---------- QGIS · INTERMEDIATE ----------
+  "Q5.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q5.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q5.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q6.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q6.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q7.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q7.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q8.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q8.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  // ---------- QGIS · ADVANCED ----------
+  "Q9.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q9.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q9.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q10.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q10.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q11.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q11.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q11.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "Q11.4": { youtube: "", file: "", linkedin: "", status: "todo" },
+  // ---------- GIQ (SPACE42) ----------
+  "G1.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G1.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G2.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G2.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G3.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G3.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G3.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G4.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G4.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G4.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G5.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G5.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G5.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G5.4": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G6.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G6.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G7.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "G7.2": { youtube: "", file: "", linkedin: "", status: "todo" },
 };
