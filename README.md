@@ -1,66 +1,73 @@
-# Introduction to ArcGIS Pro — Video Course Site
+# Introduction to ArcGIS Pro — Video Course
 
-A free, step-by-step video course for ArcGIS Pro beginners: 39 lessons in 7 modules, each with a full narration script, on-screen recording cues, YouTube upload details and a video player.
+A free ArcGIS Pro video course from first install to Python automation: **89 lessons in 23 modules across three levels**, about 9 hours of video. Every lesson has a full narration script with on-screen recording cues, and every module ends with a quiz.
 
-**Modules:** Getting Started · The Interface · Navigating Maps and Scenes · Shapefiles · Adding Data · The Contents Pane · Symbology
+**Live site:** https://rgiq2024.github.io/arcgis-pro-course/
 
-## What's in this repo
+| Level | Modules | Topics |
+|---|---|---|
+| **Basics** (39 lessons) | M1–M7 | Install and sign in, projects, the interface, navigating maps and scenes, shapefiles, adding data, the Contents pane, symbology |
+| **Intermediate** (26 lessons) | M8–M15 | Geodatabases, domains and subtypes, editing, Select By Attributes/Location, charts, Calculate Field, joins, coordinate systems, georeferencing, labeling and annotation, layouts and map series, geoprocessing and overlay tools |
+| **Advanced** (24 lessons) | M16–M23 | Spatial Analyst terrain and suitability, imagery and classification, hot spots and spatial statistics, geocoding and network analysis, 3D, lidar and animation, ModelBuilder, ArcPy and notebooks, Arcade, topology, publishing and a capstone project |
+
+## Features
+
+- **Learning path home** with overall and per-level progress
+- **Progress tracking**: mark lessons complete (button or `C`); progress, quiz scores and notes are saved in the learner's browser
+- **Module quizzes**: 69 questions with instant feedback and explanations
+- **Search** across every lesson and script (`Ctrl K` or `/`)
+- **Teleprompter** for recording: auto-scroll, speed and size controls, mirror mode, cue toggle (`T`, `Space` to play/pause)
+- **YouTube / LinkedIn script versions**: switches each lesson's intro and outro
+- **Upload details**: ready YouTube title, description, tags and LinkedIn description per lesson
+- **Personal notes** on every lesson
+- **Light, dark and system themes**; works on phones
+- **Keyboard shortcuts**: `←` `→` lessons, `C` complete, `T` teleprompter, `H` home, `?` help
+
+## Files
 
 | File | What it does |
 |---|---|
 | `index.html` | The website. No build step, no frameworks. |
-| `course.js` | All 39 lesson scripts (titles, objectives, narration, tips). Edit text here. |
-| `videos.js` | Where you add each lesson's video (YouTube link, LinkedIn link or a local file). |
+| `course.js` | All lesson scripts and quiz questions. Edit text here. |
+| `videos.js` | Each lesson's video: YouTube link, LinkedIn link or local file. |
 | `videos/` | Optional folder for video files you host directly. |
-| `scripts.md` | All scripts in one readable document. |
-| `.nojekyll` | Tells GitHub Pages to serve the files as they are. |
-
-## Publish on GitHub Pages
-
-1. Create a new repository on GitHub, for example `arcgis-pro-course`.
-2. Upload these files (drag them into the repo page, or use the commands below).
-3. In the repo, go to **Settings → Pages**.
-4. Under **Build and deployment**, set **Source** to *Deploy from a branch*, choose `main` and `/ (root)`, and click **Save**.
-5. After a minute your site is live at `https://<your-username>.github.io/arcgis-pro-course/`.
-
-```bash
-cd arcgis-pro-course
-git init
-git add .
-git commit -m "Introduction to ArcGIS Pro course site"
-git branch -M main
-git remote add origin https://github.com/<your-username>/arcgis-pro-course.git
-git push -u origin main
-```
+| `scripts.md` | Every script and quiz in one readable document. |
 
 ## Add your videos
 
-Open `videos.js` and fill in the lesson you've recorded:
+Open `videos.js` (on GitHub, click the pencil icon) and fill in a lesson:
 
 ```js
 "1.1": { youtube: "https://youtu.be/XXXXXXXXXXX", file: "", linkedin: "", status: "published" },
 ```
 
-- **YouTube (recommended):** paste any YouTube link — watch, youtu.be, shorts or live. The site embeds the player.
-- **Your own file:** put the video in `videos/` (for example `videos/1-1.mp4`) and set `file: "videos/1-1.mp4"`. GitHub rejects files over 100 MB and warns above 50 MB, so export at 1080p H.264 and keep lessons short, or use [Git LFS](https://git-lfs.com) for larger files.
-- **LinkedIn Learning:** paste the lesson link; the site shows a "Watch on LinkedIn Learning" button.
-- **status:** `todo`, `recording`, `editing` or `published` — shown on the lesson page.
+- **YouTube (recommended):** any watch, youtu.be, shorts or live link. The site embeds the player.
+- **Your own file:** put it in `videos/` and set `file: "videos/1-1.mp4"`. GitHub rejects files over 100 MB, so use YouTube for full-length lessons.
+- **LinkedIn Learning:** paste the lesson link to show a "Watch on LinkedIn Learning" button.
+- **status:** `todo`, `recording`, `editing` or `published`.
 
-Commit and push; the site updates within a minute or two.
+Commit the change; GitHub Pages updates in a minute or two. Lessons with a video get a dot in the lesson list.
 
-The progress bar and the green dots in the lesson list fill in automatically as you add videos.
+## Edit lessons or quizzes
 
-## Using the scripts
+Each module in `course.js` looks like this:
 
-- The **YouTube / LinkedIn** switch changes each lesson's intro and outro. YouTube gets a hook and a subscribe call-to-action; LinkedIn Learning gets a neutral intro and an "Up next" close.
-- **Copy script** copies the full lesson script for your teleprompter.
-- **Upload details** gives a ready YouTube title, description, tags and a LinkedIn description.
-- **Download all scripts** saves every script as one Markdown file.
-- Link to a lesson directly with `#lesson-4-1` at the end of the URL.
+```js
+{ "id": "M8", "title": "Geodatabases and Data Management", "level": "intermediate",
+  "quiz": [ { "q": "Question?", "a": "Right answer", "w": ["Wrong 1","Wrong 2","Wrong 3"], "x": "Why it's right" } ],
+  "lessons": [ { "id": "8.1", "title": "…", "dur": "6 min", "obj": "…", "tip": "…",
+                 "body": ["[ON SCREEN: what to show]", "Narration paragraph…"] } ] }
+```
+
+To add a lesson, add an entry to `lessons` and a matching line in `videos.js`.
+
+## Publish on GitHub Pages
+
+Settings → Pages → Source: *Deploy from a branch* → `main` / `(root)` → Save.
 
 ## Preview locally
 
-Double-click `index.html`. Everything works offline except the Google Fonts and YouTube embeds.
+Double-click `index.html`. Everything works offline except Google Fonts and YouTube embeds.
 
 ---
 

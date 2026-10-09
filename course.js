@@ -1,8 +1,42 @@
-// Lesson scripts. Edit text here; the site rebuilds itself from this file.
+// Lesson scripts and quizzes for all three levels. Edit text here; the site rebuilds itself from this file.
+// level: basics | intermediate | advanced. quiz: q = question, a = right answer, w = wrong answers, x = explanation.
 window.COURSE = [
  {
   "id": "M1",
   "title": "Getting Started with ArcGIS Pro",
+  "level": "basics",
+  "quiz": [
+   {
+    "q": "Which file is the ArcGIS Pro project file?",
+    "a": ".aprx",
+    "w": [
+     ".mxd",
+     ".shp",
+     ".gdb"
+    ],
+    "x": "The .aprx stores maps, layouts and settings; ArcMap used .mxd."
+   },
+   {
+    "q": "Which template opens a flat 3D view for a city-sized area?",
+    "a": "Local Scene",
+    "w": [
+     "Global Scene",
+     "Catalog",
+     "Map"
+    ],
+    "x": "Local scenes use a projected coordinate system for smaller areas."
+   },
+   {
+    "q": "Does the .aprx contain your data?",
+    "a": "No, it points to the data",
+    "w": [
+     "Yes, all data is inside it",
+     "Only rasters",
+     "Only shapefiles"
+    ],
+    "x": "Share a project package to include the data."
+   }
+  ],
   "lessons": [
    {
     "id": "1.1",
@@ -113,6 +147,39 @@ window.COURSE = [
  {
   "id": "M2",
   "title": "The ArcGIS Pro Interface",
+  "level": "basics",
+  "quiz": [
+   {
+    "q": "Where do you create, open and save projects and change Options?",
+    "a": "The Project tab",
+    "w": [
+     "The Map tab",
+     "The Contents pane",
+     "The status bar"
+    ],
+    "x": "The Project tab opens the backstage view."
+   },
+   {
+    "q": "A tab that appears only when you select a layer is called…",
+    "a": "A contextual tab",
+    "w": [
+     "A backstage tab",
+     "A dock",
+     "A view"
+    ],
+    "x": "Contextual tabs like Feature Layer show tools for the current selection."
+   },
+   {
+    "q": "How do you restore the default pane layout?",
+    "a": "View tab > Reset Panes",
+    "w": [
+     "Close ArcGIS Pro",
+     "Project tab > New",
+     "Edit tab > Discard"
+    ],
+    "x": "Reset Panes puts panes back in a standard arrangement."
+   }
+  ],
   "lessons": [
    {
     "id": "2.1",
@@ -201,6 +268,39 @@ window.COURSE = [
  {
   "id": "M3",
   "title": "Navigating Maps and Scenes",
+  "level": "basics",
+  "quiz": [
+   {
+    "q": "Which tool replaces ArcMap's Identify tool?",
+    "a": "Explore (click a feature for a pop-up)",
+    "w": [
+     "Navigator",
+     "Snapping",
+     "Full Extent"
+    ],
+    "x": "Clicking with Explore opens a pop-up with attributes."
+   },
+   {
+    "q": "How do you tilt a 3D scene with the mouse?",
+    "a": "Hold the middle button or V and drag",
+    "w": [
+     "Double-click",
+     "Press F2",
+     "Right-click a layer"
+    ],
+    "x": "Middle-drag or V+drag tilts and rotates."
+   },
+   {
+    "q": "What does the Pause button do?",
+    "a": "Stops the map from redrawing",
+    "w": [
+     "Saves the project",
+     "Clears the selection",
+     "Ends an edit session"
+    ],
+    "x": "Pause stops drawing while you change layers or symbology."
+   }
+  ],
   "lessons": [
    {
     "id": "3.1",
@@ -291,6 +391,39 @@ window.COURSE = [
  {
   "id": "M4",
   "title": "Shapefiles",
+  "level": "basics",
+  "quiz": [
+   {
+    "q": "Which three shapefile files are mandatory?",
+    "a": ".shp, .shx, .dbf",
+    "w": [
+     ".shp, .prj, .xml",
+     ".dbf, .cpg, .sbn",
+     ".shp, .sbx, .prj"
+    ],
+    "x": "Geometry, index and attributes are required."
+   },
+   {
+    "q": "What happens if the .prj file is missing?",
+    "a": "The coordinate system is unknown",
+    "w": [
+     "The attributes disappear",
+     "The file can't open",
+     "Labels are lost"
+    ],
+    "x": "Use Define Projection to write a new .prj."
+   },
+   {
+    "q": "To create a shapefile instead of a geodatabase feature class, the output location must be…",
+    "a": "A folder",
+    "w": [
+     "A geodatabase",
+     "A layout",
+     "A map"
+    ],
+    "x": "Create Feature Class writes a shapefile when the location is a folder."
+   }
+  ],
   "lessons": [
    {
     "id": "4.1",
@@ -365,6 +498,39 @@ window.COURSE = [
  {
   "id": "M5",
   "title": "Adding Data",
+  "level": "basics",
+  "quiz": [
+   {
+    "q": "A layer name is greyed out in Contents. The likely cause is…",
+    "a": "It's outside its visible scale range",
+    "w": [
+     "It's selected",
+     "It has labels",
+     "It's in 3D"
+    ],
+    "x": "Grey layers are out of their scale range."
+   },
+   {
+    "q": "Which tool converts KML into geodatabase features?",
+    "a": "KML To Layer",
+    "w": [
+     "Layer To KML",
+     "Define Projection",
+     "Export Features"
+    ],
+    "x": "KML To Layer creates feature classes you can edit and analyse."
+   },
+   {
+    "q": "What makes an image georeferenced?",
+    "a": "Built-in or world-file location information",
+    "w": [
+     "Being a JPEG",
+     "Its file size",
+     "Having pyramids"
+    ],
+    "x": "GeoTIFF tags or a world file place the image on Earth."
+   }
+  ],
   "lessons": [
    {
     "id": "5.1",
@@ -436,6 +602,39 @@ window.COURSE = [
  {
   "id": "M6",
   "title": "Mastering the Contents Pane",
+  "level": "basics",
+  "quiz": [
+   {
+    "q": "Which Contents view shows broken data links?",
+    "a": "List By Data Source",
+    "w": [
+     "List By Labeling",
+     "List By Snapping",
+     "List By Selection"
+    ],
+    "x": "Data Source groups layers by location and flags broken links."
+   },
+   {
+    "q": "What does Switch Selection do?",
+    "a": "Selects the unselected features and unselects the selected",
+    "w": [
+     "Clears all selections",
+     "Zooms to the selection",
+     "Exports the selection"
+    ],
+    "x": "It flips the selection."
+   },
+   {
+    "q": "Removing a layer from Contents…",
+    "a": "Takes it off the map but doesn't delete the data",
+    "w": [
+     "Deletes the data",
+     "Deletes the project",
+     "Clears the attribute table"
+    ],
+    "x": "The data on disk stays intact."
+   }
+  ],
   "lessons": [
    {
     "id": "6.1",
@@ -537,6 +736,39 @@ window.COURSE = [
  {
   "id": "M7",
   "title": "Symbology",
+  "level": "basics",
+  "quiz": [
+   {
+    "q": "Which method suits land-use categories?",
+    "a": "Unique Values",
+    "w": [
+     "Graduated Symbols",
+     "Proportional Symbols",
+     "Dot Density"
+    ],
+    "x": "Categories get one symbol per value."
+   },
+   {
+    "q": "Which symbology works only for polygons?",
+    "a": "Dot Density",
+    "w": [
+     "Single Symbol",
+     "Unique Values",
+     "Graduated Colors"
+    ],
+    "x": "Dot density places dots inside polygons."
+   },
+   {
+    "q": "How do proportional symbols differ from graduated symbols?",
+    "a": "They size each symbol by its exact value, without classes",
+    "w": [
+     "They use colour instead of size",
+     "They only work on lines",
+     "They need a raster"
+    ],
+    "x": "Graduated symbols group values into classes."
+   }
+  ],
   "lessons": [
    {
     "id": "7.1",
@@ -686,7 +918,7 @@ window.COURSE = [
    },
    {
     "id": "7.9",
-    "title": "Choosing the Right Symbology and Course Wrap-up",
+    "title": "Choosing the Right Symbology and Basics Wrap-up",
     "dur": "5 min",
     "obj": "Match the symbology method to the data and the message.",
     "tip": "",
@@ -699,9 +931,1483 @@ window.COURSE = [
      "Counts spread across areas where distribution matters: Dot Density.",
      "Everything the same, just a reference layer: Single Symbol.",
      "[ON SCREEN: recap montage]",
-     "In this course you installed ArcGIS Pro, created projects, learned the interface, navigated maps and scenes, created shapefiles, added data, mastered Contents, and designed maps with every core symbology method.",
+     "In the Basics level you installed ArcGIS Pro, created projects, learned the interface, navigated maps and scenes, created shapefiles, added data, mastered Contents, and designed maps with every core symbology method.",
      "[ON SCREEN: next steps]",
-     "Next, practise by mapping a dataset from your own city using three different symbology methods, and compare what each one tells you."
+     "Practise by mapping a dataset from your own city with three different symbology methods. Then continue to the Intermediate level, where we start with geodatabases."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M8",
+  "title": "Geodatabases and Data Management",
+  "level": "intermediate",
+  "quiz": [
+   {
+    "q": "Which item can group feature classes that share one coordinate system inside a geodatabase?",
+    "a": "A feature dataset",
+    "w": [
+     "A folder connection",
+     "A layer file",
+     "A map package"
+    ],
+    "x": "Feature datasets hold feature classes with the same coordinate system, which topology and networks need."
+   },
+   {
+    "q": "What does a coded value domain do?",
+    "a": "Limits a field to a list of valid values",
+    "w": [
+     "Speeds up drawing",
+     "Stores the coordinate system",
+     "Creates a spatial index"
+    ],
+    "x": "Domains enforce valid attribute values, such as a fixed list of road types."
+   },
+   {
+    "q": "Which tool copies several shapefiles into a geodatabase in one run?",
+    "a": "Feature Class To Geodatabase",
+    "w": [
+     "Define Projection",
+     "Dissolve",
+     "Add Join"
+    ],
+    "x": "Feature Class To Geodatabase converts many inputs at once and keeps their names."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "8.1",
+    "title": "File Geodatabases vs Shapefiles",
+    "dur": "6 min",
+    "obj": "Create a file geodatabase and explain why it beats shapefiles for most work.",
+    "tip": "Keep one geodatabase per project for working data, and a separate one for final, clean deliverables.",
+    "body": [
+     "[ON SCREEN: Catalog pane > Databases]",
+     "Every project already has a file geodatabase — the .gdb folder we saw in Module 1. You can create more: right-click Databases, or a folder, and choose New File Geodatabase.",
+     "[ON SCREEN: comparison table on screen]",
+     "Why use a geodatabase instead of shapefiles? Field names can be long and readable. There's no 2 GB limit per dataset. Dates store time as well as date. And you get tools shapefiles can't offer: domains, subtypes, attachments, topology, and editor tracking.",
+     "[ON SCREEN: right-click gdb > New > Feature Class]",
+     "Inside a geodatabase you create feature classes, tables, and feature datasets. A feature dataset is a container for feature classes that share one coordinate system — needed for topology and network datasets.",
+     "Right-click the geodatabase, New, Feature Class. A wizard walks you through name, alias, geometry type, fields and coordinate system in one place."
+    ]
+   },
+   {
+    "id": "8.2",
+    "title": "Fields, Data Types, Domains and Subtypes",
+    "dur": "7 min",
+    "obj": "Design a table with the right field types and enforce valid values with domains.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: right-click layer > Data Design > Fields]",
+     "Open the Fields view: right-click a layer, Data Design, Fields. Each row is a field with a name, alias, data type and length.",
+     "[ON SCREEN: data type drop-down]",
+     "Choose types carefully. Text for names and codes. Short or Long Integer for whole numbers. Float or Double for decimals. Date for dates and times. Picking the right type now saves conversion work later.",
+     "[ON SCREEN: Data Design > Domains]",
+     "A domain limits what can go in a field. A coded value domain is a pick list — for example road type: 1 Highway, 2 Arterial, 3 Local. A range domain sets a minimum and maximum, like a speed limit between 10 and 140. Create domains under Data Design, Domains, then assign one to a field in the Fields view.",
+     "[ON SCREEN: Data Design > Subtypes]",
+     "Subtypes split one feature class into categories that can each have their own default values and domains. Editors then pick \"Highway\" or \"Local road\" as a template, and the right rules come with it.",
+     "Save your changes with the Save button on the Fields tab."
+    ]
+   },
+   {
+    "id": "8.3",
+    "title": "Importing and Exporting Data",
+    "dur": "5 min",
+    "obj": "Move data between shapefiles, geodatabases and tables.",
+    "tip": "Clean Excel files before importing: one header row, no merged cells, no blank columns.",
+    "body": [
+     "[ON SCREEN: Feature Class To Geodatabase tool]",
+     "To bring many shapefiles into a geodatabase at once, use Feature Class To Geodatabase. Add the inputs, pick the output geodatabase, and run.",
+     "[ON SCREEN: Export Features]",
+     "For one layer, right-click it and choose Data, Export Features. You can rename fields, drop fields, and apply a query in the same step.",
+     "[ON SCREEN: Excel To Table and XY Table To Point]",
+     "Spreadsheets come in with Excel To Table. If the table has coordinates, XY Table To Point turns rows into points — just pick the X and Y fields and the coordinate system the numbers are in.",
+     "[ON SCREEN: Table To Excel]",
+     "To go the other way, Table To Excel exports an attribute table for colleagues who don't use GIS."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M9",
+  "title": "Editing Features",
+  "level": "intermediate",
+  "quiz": [
+   {
+    "q": "Where do you pick the template to draw a new feature?",
+    "a": "The Create Features pane",
+    "w": [
+     "The Symbology pane",
+     "The Catalog view",
+     "The Layout tab"
+    ],
+    "x": "Create Features lists a template for each editable layer."
+   },
+   {
+    "q": "Which tool divides one polygon into two along a line you draw?",
+    "a": "Split",
+    "w": [
+     "Merge",
+     "Buffer",
+     "Dissolve"
+    ],
+    "x": "Split cuts features along a sketch line."
+   },
+   {
+    "q": "Edits are written to the data when you…",
+    "a": "Click Save on the Edit tab",
+    "w": [
+     "Save the project",
+     "Close the attribute table",
+     "Refresh the map"
+    ],
+    "x": "Data edits are saved separately from the project."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "9.1",
+    "title": "Creating Features",
+    "dur": "7 min",
+    "obj": "Draw points, lines and polygons with feature templates and snapping.",
+    "tip": "Press Ctrl+Z to undo the last vertex while you're still drawing.",
+    "body": [
+     "[ON SCREEN: Edit tab > Create]",
+     "Editing starts on the Edit tab. Click Create to open the Create Features pane. Each editable layer has a template; click one and the construction tools appear underneath.",
+     "[ON SCREEN: drawing a polygon]",
+     "For polygons, choose Polygon, then click on the map to add vertices. Double-click or press F2 to finish. For lines it's the same; for points, a single click.",
+     "[ON SCREEN: snapping to an existing edge]",
+     "Turn on snapping so new features meet existing ones exactly. Press Spacebar while drawing to suspend snapping for one click.",
+     "[ON SCREEN: right-click context menu while drawing]",
+     "Right-click during a sketch for precision options — enter a direction and distance, or an absolute X and Y. Use the Trace tool to follow existing edges, for example to draw a parcel that shares a boundary with its neighbour."
+    ]
+   },
+   {
+    "id": "9.2",
+    "title": "Modifying Features: Move, Reshape, Split and Merge",
+    "dur": "7 min",
+    "obj": "Change the shape of existing features with the Modify Features tools.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Edit tab > Modify]",
+     "Click Modify on the Edit tab to open the Modify Features pane. It groups tools by job: Alignment, Reshape, Divide, Construct and more. Use the search box if you know the tool name.",
+     "[ON SCREEN: Edit Vertices]",
+     "Select a feature and choose Edit Vertices. Drag a vertex to move it. Click a segment to add one. Select a vertex and press Delete to remove it. Press F2 to finish.",
+     "[ON SCREEN: Reshape]",
+     "Reshape lets you draw a line across a feature's edge to push it out or pull it in.",
+     "[ON SCREEN: Split, then Merge]",
+     "Split cuts a line or polygon where you draw. Merge does the opposite: select two or more features in the same layer, run Merge, and choose which feature's attributes to keep.",
+     "[ON SCREEN: Move tool]",
+     "To move or rotate whole features, select them and use Move or Rotate on the Edit tab."
+    ]
+   },
+   {
+    "id": "9.3",
+    "title": "Editing Attributes and Saving Edits",
+    "dur": "5 min",
+    "obj": "Update attributes for one or many features and manage your edit session.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Edit tab > Attributes]",
+     "The Attributes pane shows the fields of the selected feature. Click a value, type a new one, and press Enter. Select many features to change a field for all of them at once.",
+     "[ON SCREEN: editing in the attribute table]",
+     "You can also type straight into the attribute table, or copy values down a column.",
+     "[ON SCREEN: Save and Discard buttons]",
+     "Edits aren't written to the data until you click Save on the Edit tab. Discard throws away everything since the last save. Saving the project does not save edits — they're separate.",
+     "[ON SCREEN: Settings > Options > Editing]",
+     "In Options, Editing, you can turn on \"Save edits automatically\" every few minutes, and choose whether ArcGIS Pro asks before saving. Turning off editing for layers in List By Editing protects them from accidental changes."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M10",
+  "title": "Querying and Exploring Data",
+  "level": "intermediate",
+  "quiz": [
+   {
+    "q": "Which tool selects parcels that fall inside a flood zone polygon?",
+    "a": "Select By Location",
+    "w": [
+     "Select By Attributes",
+     "Calculate Field",
+     "Dissolve"
+    ],
+    "x": "Select By Location uses spatial relationships between layers."
+   },
+   {
+    "q": "A definition query…",
+    "a": "Hides features that don't match, without deleting them",
+    "w": [
+     "Permanently deletes rows",
+     "Changes the coordinate system",
+     "Creates a new shapefile"
+    ],
+    "x": "Definition queries filter what a layer displays and uses."
+   },
+   {
+    "q": "Charts in ArcGIS Pro are linked to…",
+    "a": "The layer's selection",
+    "w": [
+     "The project's coordinate system",
+     "The basemap",
+     "The layout"
+    ],
+    "x": "Selecting bars selects features on the map, and the other way round."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "10.1",
+    "title": "Select By Attributes",
+    "dur": "6 min",
+    "obj": "Build attribute queries with the clause builder.",
+    "tip": "Save a query you use often with the save button, and load it next time.",
+    "body": [
+     "[ON SCREEN: Map tab > Select By Attributes]",
+     "On the Map tab, click Select By Attributes. Choose the input layer and the selection type — new selection, add, remove, or select from the current selection.",
+     "[ON SCREEN: clause builder: Population is greater than 100000]",
+     "Build a clause with three drop-downs: field, operator, value. For example, Population — is greater than — 100000. Click Add Clause to combine more with And or Or.",
+     "[ON SCREEN: switching to SQL mode]",
+     "Switch the toggle to SQL to see and edit the raw expression. This is handy for patterns, like NAME LIKE 'San%'.",
+     "[ON SCREEN: Apply and table showing selection count]",
+     "Click Apply to check the result without closing the tool, then OK. The status bar and the table show how many features are selected."
+    ]
+   },
+   {
+    "id": "10.2",
+    "title": "Select By Location",
+    "dur": "6 min",
+    "obj": "Select features by their spatial relationship to another layer.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Map tab > Select By Location]",
+     "Select By Location answers questions like \"which schools are within 1 kilometre of a highway?\" Open it from the Map tab.",
+     "[ON SCREEN: tool parameters]",
+     "Set the Input Features — the layer you want to select from. Choose the Relationship, such as Intersect, Within a distance, Completely contain, or Have their center in. Set the Selecting Features — the layer you're comparing against. For distance relationships, enter a search distance.",
+     "[ON SCREEN: combining with an attribute selection]",
+     "Use the selection type to refine: first select schools near highways, then use Select By Attributes with \"select subset\" to keep only primary schools.",
+     "[ON SCREEN: Invert spatial relationship checkbox]",
+     "Tick Invert spatial relationship to get the opposite — schools more than 1 kilometre away."
+    ]
+   },
+   {
+    "id": "10.3",
+    "title": "Definition Queries and Summary Statistics",
+    "dur": "5 min",
+    "obj": "Filter a layer permanently and summarise its attributes.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Layer Properties > Definition Query]",
+     "A definition query hides features that don't match a clause — the data stays intact. Open Layer Properties, Definition Query, click New definition query, and build the clause the same way as Select By Attributes.",
+     "Use it to show only one region, one year, or one category, and to make every tool and chart work on just that subset.",
+     "[ON SCREEN: right-click field header > Statistics]",
+     "For quick numbers, right-click a field heading in the attribute table and choose Statistics. You get count, minimum, maximum, sum, mean and standard deviation, with a chart.",
+     "[ON SCREEN: Summary Statistics tool]",
+     "To summarise by category — total population per province, for example — run Summary Statistics with a case field. The output is a new table you can join or chart."
+    ]
+   },
+   {
+    "id": "10.4",
+    "title": "Creating Charts",
+    "dur": "6 min",
+    "obj": "Build interactive charts linked to the map.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: right-click layer > Create Chart]",
+     "Right-click a layer, Create Chart, and pick a type: bar, line, histogram, scatter plot, pie and more.",
+     "[ON SCREEN: Chart Properties pane]",
+     "In the Chart Properties pane, set the category and the numeric field. For a bar chart of population by province, set Category to Province and Aggregation to Sum of Population.",
+     "[ON SCREEN: clicking a bar selects features]",
+     "Charts are linked to the map. Click a bar and those features are selected on the map and in the table. Select features on the map and the chart highlights them.",
+     "[ON SCREEN: Format tab, export]",
+     "Change colours, titles and axes on the Format tab. Charts are saved with the layer, and you can export them as images or add them to a layout."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M11",
+  "title": "Working with Tables",
+  "level": "intermediate",
+  "quiz": [
+   {
+    "q": "Which language can Calculate Field use?",
+    "a": "Python or Arcade",
+    "w": [
+     "Only Visual Basic",
+     "Only SQL",
+     "JavaScript"
+    ],
+    "x": "Calculate Field supports Python and Arcade expressions."
+   },
+   {
+    "q": "What does a join do?",
+    "a": "Appends fields from a table based on a common field",
+    "w": [
+     "Copies features into a new shapefile",
+     "Merges polygons with the same value",
+     "Projects data"
+    ],
+    "x": "Joins attach fields from another table using a key field."
+   },
+   {
+    "q": "Which tool attaches attributes based on location rather than a key field?",
+    "a": "Spatial Join",
+    "w": [
+     "Add Join",
+     "Add Relate",
+     "Append"
+    ],
+    "x": "Spatial Join matches features by their spatial relationship."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "11.1",
+    "title": "Adding Fields and Calculating Values",
+    "dur": "7 min",
+    "obj": "Add a field and fill it with Calculate Field.",
+    "tip": "Use the Verify button to check your expression before running.",
+    "body": [
+     "[ON SCREEN: attribute table > Add Field]",
+     "In the attribute table, click Add Field to open the Fields view, or run the Add Field tool. Give it a name, a type and, for text, a length. Save.",
+     "[ON SCREEN: right-click field > Calculate Field]",
+     "Right-click the new field heading and choose Calculate Field. Pick the expression type: Python or Arcade.",
+     "[ON SCREEN: expression Population / Area]",
+     "Double-click fields to build an expression. For density, the Python expression is !POP! / !AREA_KM2!. In Arcade, it's $feature.POP / $feature.AREA_KM2.",
+     "[ON SCREEN: code block with if/else]",
+     "For conditions, use the code block — for example a function that returns \"High\" when density is over 1000 and \"Low\" otherwise.",
+     "Calculate Field only updates selected rows if there's a selection, so clear the selection first if you want every row."
+    ]
+   },
+   {
+    "id": "11.2",
+    "title": "Calculating Geometry: Area, Length and Coordinates",
+    "dur": "5 min",
+    "obj": "Store area, length and X/Y values in attribute fields.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: right-click field > Calculate Geometry]",
+     "Right-click a numeric field and choose Calculate Geometry, or run Calculate Geometry Attributes.",
+     "[ON SCREEN: property and units]",
+     "Pick the property: Area or Area (geodesic) for polygons, Length for lines, Point X and Point Y for points. Choose the units — square kilometres, metres, decimal degrees.",
+     "[ON SCREEN: coordinate system parameter]",
+     "Set the coordinate system to calculate in. Geodesic area and length give true values on the ellipsoid, so they're the safe choice when your data is in latitude and longitude.",
+     "These values are a snapshot: if you reshape a feature later, recalculate."
+    ]
+   },
+   {
+    "id": "11.3",
+    "title": "Joins, Relates and Spatial Joins",
+    "dur": "7 min",
+    "obj": "Combine data from different tables and layers.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: right-click layer > Joins and Relates > Add Join]",
+     "A join appends fields from a table to a layer using a common field, like a district code. Right-click the layer, Joins and Relates, Add Join. Choose the layer field, the join table and the join table field. Click Validate Join to check matches first.",
+     "[ON SCREEN: joined fields in the table]",
+     "Joins are temporary. To make them permanent, export the layer or use the Join Field tool.",
+     "[ON SCREEN: Add Relate]",
+     "Use a relate for one-to-many data — one parcel with many inspection records. Relates don't add fields; instead you select a feature and open its related records.",
+     "[ON SCREEN: Spatial Join tool]",
+     "When there's no common field, Spatial Join matches by location. For example, count the number of crimes inside each district: target features are districts, join features are crimes, and the output gets a Join_Count field."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M12",
+  "title": "Coordinate Systems and Georeferencing",
+  "level": "intermediate",
+  "quiz": [
+   {
+    "q": "Which kind of coordinate system uses latitude and longitude?",
+    "a": "Geographic",
+    "w": [
+     "Projected",
+     "Local",
+     "Vertical"
+    ],
+    "x": "Geographic coordinate systems use angular units on the spheroid."
+   },
+   {
+    "q": "You know a shapefile's coordinates are UTM zone 40N, but it has no .prj. Which tool do you use?",
+    "a": "Define Projection",
+    "w": [
+     "Project",
+     "Clip",
+     "Georeference"
+    ],
+    "x": "Define Projection records the existing coordinate system without changing coordinates."
+   },
+   {
+    "q": "What does a low RMS error in georeferencing indicate?",
+    "a": "Control points fit the transformation closely",
+    "w": [
+     "The image is in colour",
+     "The raster is compressed",
+     "The basemap is missing"
+    ],
+    "x": "RMS measures how far control points are from where the transformation puts them."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "12.1",
+    "title": "Geographic vs Projected Coordinate Systems",
+    "dur": "6 min",
+    "obj": "Explain the two kinds of coordinate system and when to use each.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: globe with latitude/longitude lines]",
+     "A geographic coordinate system describes locations on a model of the Earth using latitude and longitude, in degrees. WGS 1984 is the most common.",
+     "[ON SCREEN: flat projection with grid in metres]",
+     "A projected coordinate system flattens the Earth onto a plane and uses linear units like metres. Every projection distorts something — area, shape, distance or direction — so each one is designed for a region or a purpose. UTM zones and national grids are common examples.",
+     "[ON SCREEN: measurement comparison]",
+     "Use a projected system when you measure distance or area, or when you need an accurate map of a local area. Use a geographic system for storing and exchanging global data.",
+     "[ON SCREEN: Layer Properties > Source > Spatial Reference]",
+     "To see a layer's coordinate system, open Layer Properties, Source, and expand Spatial Reference."
+    ]
+   },
+   {
+    "id": "12.2",
+    "title": "Map Coordinate Systems and Transformations",
+    "dur": "6 min",
+    "obj": "Set the map's coordinate system and handle datum transformations.",
+    "tip": "If two layers are offset by tens or hundreds of metres, a missing transformation is the usual cause.",
+    "body": [
+     "[ON SCREEN: Map Properties > Coordinate Systems]",
+     "The map has its own coordinate system, set by the first layer you add. ArcGIS Pro projects every other layer to it on the fly, so they line up.",
+     "Change it in Map Properties, Coordinate Systems. Search by name or by EPSG code, or pick from Layers to match one of your datasets.",
+     "[ON SCREEN: Transformation tab]",
+     "When layers use different datums — for example WGS 1984 and a local datum — a geographic transformation is needed for them to line up exactly. Set it on the Transformation tab of Map Properties. ArcGIS Pro suggests suitable ones for your area."
+    ]
+   },
+   {
+    "id": "12.3",
+    "title": "Define Projection vs Project",
+    "dur": "5 min",
+    "obj": "Fix missing coordinate systems and convert data to a new one.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Define Projection tool]",
+     "Define Projection writes the coordinate system information for data that's missing it. It doesn't move anything — it just tells ArcGIS Pro what the numbers already mean. Use it only when you know the correct system.",
+     "[ON SCREEN: Project tool]",
+     "Project actually converts coordinates to a new system and writes a new dataset. Use it when you need your data stored in a projected system for analysis, or to match a client's standard.",
+     "[ON SCREEN: Project Raster]",
+     "For rasters, use Project Raster, and choose a resampling method — Nearest for categories like land cover, Bilinear for continuous data like elevation.",
+     "The rule of thumb: Define Projection when it's missing, Project when it's wrong for the job."
+    ]
+   },
+   {
+    "id": "12.4",
+    "title": "Georeferencing a Scanned Map",
+    "dur": "7 min",
+    "obj": "Place a scanned map or image in its real-world location.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: add scanned JPG]",
+     "Add the scanned map to a map that has a reference layer, such as a basemap or roads. Select the image in Contents, then on the Imagery tab click Georeference.",
+     "[ON SCREEN: Fit to Display]",
+     "Click Fit To Display to bring the image into view.",
+     "[ON SCREEN: Add Control Points]",
+     "Click Add Control Points. Click a recognisable spot on the scan — a road junction — then the same spot on the reference layer. Add at least four, spread across the whole image.",
+     "[ON SCREEN: Control Point Table with RMS]",
+     "Open the Control Point Table to see residuals and the total RMS error. Remove points with large residuals. Choose a transformation: 1st Order Polynomial for most scans, Spline for very distorted ones.",
+     "[ON SCREEN: Save / Save as New]",
+     "Click Save to store the georeferencing with the image, or Save as New to create a new, rectified raster."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M13",
+  "title": "Labeling and Annotation",
+  "level": "intermediate",
+  "quiz": [
+   {
+    "q": "How do you label only cities with more than one million people?",
+    "a": "Create a label class with an SQL query",
+    "w": [
+     "Use Switch Selection",
+     "Change the coordinate system",
+     "Use Dot Density"
+    ],
+    "x": "Label classes can each have their own SQL query and style."
+   },
+   {
+    "q": "Annotation differs from labels because annotation…",
+    "a": "Is stored as editable text features",
+    "w": [
+     "Updates automatically with attributes",
+     "Can't be moved",
+     "Only works in scenes"
+    ],
+    "x": "Annotation is stored text you can position individually."
+   },
+   {
+    "q": "Which label engine does ArcGIS Pro use by default?",
+    "a": "Maplex",
+    "w": [
+     "Standard only",
+     "Arcade",
+     "Dynamic Text"
+    ],
+    "x": "ArcGIS Pro uses the Maplex Label Engine by default."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "13.1",
+    "title": "Label Classes and Expressions",
+    "dur": "6 min",
+    "obj": "Label features with fields, expressions and label classes.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Feature Layer > Labeling tab]",
+     "Select a layer and open the Labeling tab. Click Label to turn labels on, then pick the Field.",
+     "[ON SCREEN: Expression button, Arcade]",
+     "For more control, click Expression. In Arcade you can combine fields — $feature.NAME + TextFormatting.NewLine + $feature.POP — to show the name with population underneath.",
+     "[ON SCREEN: Class drop-down > Create label class]",
+     "Label classes let one layer use different label styles. Create a class called Large cities with an SQL query of POP greater than 1000000, give it a bigger, bold font, and keep the default class smaller.",
+     "[ON SCREEN: Visibility Range]",
+     "Set a visibility range so small towns only label when you zoom in."
+    ]
+   },
+   {
+    "id": "13.2",
+    "title": "Label Placement and Conflicts",
+    "dur": "6 min",
+    "obj": "Control where labels go and which ones win when space is tight.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Label Class pane > Position]",
+     "Open the Label Class pane with the small arrow in the Label Placement group. ArcGIS Pro uses the Maplex Label Engine, which gives fine control.",
+     "[ON SCREEN: placement styles]",
+     "Choose placement: for points, a preferred position around the symbol; for lines, along the line with curved or straight text; for rivers and roads, Maplex has dedicated styles. For polygons, horizontal in the centre or straight across the shape.",
+     "[ON SCREEN: Conflict resolution > priority, weight]",
+     "When labels compete, priority decides who wins — set it in List By Labeling. Feature weight stops labels covering important features. \"Never remove\" forces a label to show, even if it overlaps.",
+     "[ON SCREEN: View Unplaced labels]",
+     "Turn on View Unplaced on the Labeling tab to see which labels didn't fit."
+    ]
+   },
+   {
+    "id": "13.3",
+    "title": "Converting Labels to Annotation",
+    "dur": "5 min",
+    "obj": "Turn labels into annotation you can place by hand.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: right-click layer > Convert Labels > To Annotation]",
+     "Labels are placed automatically and move as you pan and zoom. For a finished print map, you may want each piece of text exactly where you put it. That's annotation.",
+     "Right-click the layer, Convert Labels, Convert Labels To Annotation. Set the reference scale — the scale the map will be printed at — and the output geodatabase.",
+     "[ON SCREEN: editing annotation]",
+     "Annotation is stored as features. Use the Edit tab tools to move, rotate, resize or delete individual text, and to edit wording.",
+     "Use annotation for final cartography, and keep labels for maps that change often."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M14",
+  "title": "Layouts and Map Production",
+  "level": "intermediate",
+  "quiz": [
+   {
+    "q": "Which element shows the map's content in a layout?",
+    "a": "Map frame",
+    "w": [
+     "Legend",
+     "Text box",
+     "Table frame"
+    ],
+    "x": "A map frame displays a map or scene on the layout page."
+   },
+   {
+    "q": "What does a map series create?",
+    "a": "One page per feature in an index layer",
+    "w": [
+     "A web map",
+     "A chart",
+     "A geodatabase"
+    ],
+    "x": "Map series produce a page for each index feature."
+   },
+   {
+    "q": "Where do you export a layout to PDF?",
+    "a": "Share tab > Export Layout",
+    "w": [
+     "Map tab > Add Data",
+     "Edit tab > Save",
+     "View tab > Catalog"
+    ],
+    "x": "Export Layout writes PDF, PNG, JPEG and more."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "14.1",
+    "title": "Creating a Layout and Map Frame",
+    "dur": "6 min",
+    "obj": "Set up a page and place a map on it.",
+    "tip": "Import a ready-made layout from Insert, Import Layout, to save time.",
+    "body": [
+     "[ON SCREEN: Insert tab > New Layout]",
+     "On the Insert tab, click New Layout and pick a page size and orientation, such as A4 landscape.",
+     "[ON SCREEN: Insert > Map Frame]",
+     "Click Map Frame and choose which map to show. Drag on the page to draw it.",
+     "[ON SCREEN: Layout tab > Activate]",
+     "To change what part of the map is shown, select the frame and click Activate. Now you can pan and zoom inside it. Click Close Activation when done. For a fixed scale, set it in the scale box while activated, or in the frame's properties.",
+     "[ON SCREEN: guides and rulers]",
+     "Right-click the rulers to add guides, and snap elements to them for a tidy layout."
+    ]
+   },
+   {
+    "id": "14.2",
+    "title": "Legends, North Arrows, Scale Bars and Text",
+    "dur": "7 min",
+    "obj": "Add and format map surround elements.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Insert tab > Map Surrounds]",
+     "On the Insert tab, Map Surrounds group, add a Legend, North Arrow and Scale Bar. Each is linked to a map frame, so it updates when the map changes.",
+     "[ON SCREEN: legend properties]",
+     "In the Format Legend pane, choose which layers appear, rename layer headings in Contents, and set columns and fonts. Untick \"Show in legend\" for reference layers.",
+     "[ON SCREEN: scale bar units]",
+     "Set scale bar units to kilometres or miles and the number of divisions.",
+     "[ON SCREEN: Dynamic Text]",
+     "Add a title with Text. Use Dynamic Text for things that should update themselves — the date, the coordinate system, the map's scale, or the author.",
+     "Check alignment with the Align tools on the Arrange group."
+    ]
+   },
+   {
+    "id": "14.3",
+    "title": "Exporting Layouts and Map Series",
+    "dur": "6 min",
+    "obj": "Export print-ready maps and produce many pages automatically.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Share tab > Export Layout]",
+     "On the Share tab, click Export Layout. Choose PDF for print, or PNG or JPEG for slides and social posts. Set the resolution — 300 dpi for print, 150 for screens.",
+     "[ON SCREEN: PDF options: layers and attributes]",
+     "PDF options let you include layers and feature attributes, so readers can switch layers in Acrobat.",
+     "[ON SCREEN: Layout tab > Map Series > Spatial]",
+     "A map series makes a page for each feature in an index layer — one map per district, for example. On the Layout tab, click Map Series, Spatial. Choose the index layer, the name field and the sort field.",
+     "[ON SCREEN: Map Series pages in Contents]",
+     "Page through them in Contents, add dynamic text for the page name, then export all pages to one PDF."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M15",
+  "title": "Geoprocessing Essentials",
+  "level": "intermediate",
+  "quiz": [
+   {
+    "q": "Which tool keeps only the part of roads inside a city boundary?",
+    "a": "Clip",
+    "w": [
+     "Buffer",
+     "Merge",
+     "Dissolve"
+    ],
+    "x": "Clip cuts input features to the clip feature's outline."
+   },
+   {
+    "q": "Which tool combines adjacent polygons that share a value?",
+    "a": "Dissolve",
+    "w": [
+     "Intersect",
+     "Union",
+     "Append"
+    ],
+    "x": "Dissolve aggregates features by a field."
+   },
+   {
+    "q": "Where do you set the output coordinate system for every tool?",
+    "a": "Geoprocessing environments",
+    "w": [
+     "The legend",
+     "Layer symbology",
+     "The Navigator"
+    ],
+    "x": "Environment settings apply to every tool that honours them."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "15.1",
+    "title": "The Geoprocessing Pane, History and Environments",
+    "dur": "6 min",
+    "obj": "Find, run and track geoprocessing tools.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Analysis tab > Tools]",
+     "On the Analysis tab, click Tools to open the Geoprocessing pane. Search for any tool by name, or browse the Toolboxes tab. Favorite the tools you use often.",
+     "[ON SCREEN: tool with red/yellow validation icons]",
+     "Fill in parameters from top to bottom. Red icons mean a problem you must fix; yellow ones are warnings. Click Run.",
+     "[ON SCREEN: Environments tab]",
+     "The Environments tab sets rules for the run: output coordinate system, processing extent, cell size for rasters. Set them for the whole project from the Analysis tab, Environments.",
+     "[ON SCREEN: Catalog > History]",
+     "Every run is recorded in History, in the Catalog pane. Double-click an entry to reopen the tool with the same settings — great for repeating work."
+    ]
+   },
+   {
+    "id": "15.2",
+    "title": "Overlay Tools: Buffer, Clip, Intersect and Union",
+    "dur": "8 min",
+    "obj": "Answer \"what's near\" and \"what overlaps\" questions with overlay tools.",
+    "tip": "The Pairwise versions are faster on large data and are the right choice for most jobs.",
+    "body": [
+     "[ON SCREEN: Pairwise Buffer on rivers]",
+     "Buffer draws zones a set distance around features. Run Pairwise Buffer on rivers with 500 metres, and set Dissolve Type to dissolve all for one merged zone.",
+     "[ON SCREEN: Pairwise Clip roads to city]",
+     "Clip works like a cookie cutter: it keeps the parts of the input inside the clip features. Clip roads to the city boundary.",
+     "[ON SCREEN: Pairwise Intersect]",
+     "Intersect keeps only where all inputs overlap, and combines their attributes — for example land parcels inside the flood buffer, with the parcel and flood fields together.",
+     "[ON SCREEN: Union]",
+     "Union keeps everything from both inputs, split where they overlap, so you can see what's inside, outside, or both."
+    ]
+   },
+   {
+    "id": "15.3",
+    "title": "Dissolve, Merge and Append",
+    "dur": "5 min",
+    "obj": "Combine and aggregate datasets.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Dissolve districts by province]",
+     "Dissolve merges features that share a value. Dissolve districts by Province to get province boundaries. Add statistics fields to sum population while you dissolve.",
+     "[ON SCREEN: Merge tool]",
+     "Merge combines several datasets of the same geometry into a new one — say, roads from three neighbouring regions. Use field mapping to line up fields with different names.",
+     "[ON SCREEN: Append tool]",
+     "Append adds features into an existing dataset instead of creating a new one. Use it when you get monthly updates to load into a master layer."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M16",
+  "title": "Raster Analysis with Spatial Analyst",
+  "level": "advanced",
+  "quiz": [
+   {
+    "q": "Which tool shows terrain as if lit by the sun?",
+    "a": "Hillshade",
+    "w": [
+     "Slope",
+     "Reclassify",
+     "Clip"
+    ],
+    "x": "Hillshade simulates illumination for a shaded-relief look."
+   },
+   {
+    "q": "Why reclassify rasters before a suitability overlay?",
+    "a": "To put different criteria on one common scale",
+    "w": [
+     "To change the coordinate system",
+     "To reduce file size",
+     "To make labels"
+    ],
+    "x": "Reclassify turns metres, degrees and categories into comparable scores."
+   },
+   {
+    "q": "In Weighted Overlay, the percentage influences must add up to…",
+    "a": "100",
+    "w": [
+     "10",
+     "1",
+     "Any number"
+    ],
+    "x": "The influences share 100 percent among the criteria."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "16.1",
+    "title": "Terrain Analysis: Hillshade, Slope and Aspect",
+    "dur": "7 min",
+    "obj": "Derive terrain surfaces from a digital elevation model.",
+    "tip": "Raster functions on the Imagery tab preview results instantly without writing files. Run the geoprocessing tool when you need a permanent output.",
+    "body": [
+     "[ON SCREEN: DEM added to map]",
+     "Start with a digital elevation model — a raster where each cell holds a height. Surface tools need the Spatial Analyst or 3D Analyst extension; check Licensing if they're greyed out.",
+     "[ON SCREEN: Surface Parameters / Hillshade raster function]",
+     "Hillshade simulates sunlight on the terrain. Set the sun's azimuth and altitude; the default 315 and 45 works well. Lay a semi-transparent elevation colour ramp over it for a classic relief map.",
+     "[ON SCREEN: Slope in degrees]",
+     "Slope calculates steepness in each cell, in degrees or percent. It's key for landslide risk, construction and hiking routes.",
+     "[ON SCREEN: Aspect with directional colours]",
+     "Aspect gives the compass direction each slope faces — useful for solar panels, vineyards and snow studies."
+    ]
+   },
+   {
+    "id": "16.2",
+    "title": "Reclassify and the Raster Calculator",
+    "dur": "7 min",
+    "obj": "Convert raster values into classes and combine rasters with map algebra.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Reclassify tool]",
+     "Reclassify replaces ranges of values with new ones. For slope: 0 to 5 degrees becomes 1, 5 to 15 becomes 2, over 15 becomes 3. Click Classify to choose a method and number of classes, or type the ranges directly.",
+     "[ON SCREEN: Raster Calculator]",
+     "The Raster Calculator does maths cell by cell. Double-click rasters and operators to build an expression, such as \"Elevation\" > 1000, which returns 1 where true and 0 where false.",
+     "[ON SCREEN: Con expression]",
+     "Use Con for if-then logic: Con(\"Slope\" < 10, 1, 0) marks gentle slopes. Combine conditions with & for and, | for or.",
+     "[ON SCREEN: environments: cell size, extent, mask]",
+     "Set Environments — cell size, processing extent and mask — so outputs line up exactly."
+    ]
+   },
+   {
+    "id": "16.3",
+    "title": "Suitability Modeling with Weighted Overlay",
+    "dur": "8 min",
+    "obj": "Find the best locations by combining weighted criteria.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: problem statement: best site for a solar farm]",
+     "Let's find the best place for a solar farm: gentle slopes, south-facing, near roads, away from protected areas.",
+     "[ON SCREEN: input rasters]",
+     "Prepare one raster per criterion: slope, aspect, distance to roads — from the Distance Accumulation tool — and protected areas.",
+     "[ON SCREEN: Weighted Overlay tool]",
+     "Open Weighted Overlay. Add each raster, set the evaluation scale — 1 to 9 — and give each class a score, with Restricted for places that must be excluded. Then set each raster's percent influence so they add up to 100.",
+     "[ON SCREEN: output map]",
+     "The result scores every cell. Highest values are the best sites.",
+     "[ON SCREEN: Suitability Modeler]",
+     "For a guided, interactive version, try the Suitability Modeler on the Analysis tab, which shows the result update as you change weights."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M17",
+  "title": "Imagery and Remote Sensing",
+  "level": "advanced",
+  "quiz": [
+   {
+    "q": "Which bands does NDVI use?",
+    "a": "Near-infrared and red",
+    "w": [
+     "Blue and green",
+     "Thermal and blue",
+     "Panchromatic only"
+    ],
+    "x": "NDVI compares near-infrared and red reflectance."
+   },
+   {
+    "q": "In supervised classification, training samples are…",
+    "a": "Areas you draw that represent each class",
+    "w": [
+     "Random points created by the tool",
+     "The final map",
+     "Basemap tiles"
+    ],
+    "x": "You teach the classifier with samples of known classes."
+   },
+   {
+    "q": "What does an accuracy assessment produce?",
+    "a": "A confusion matrix",
+    "w": [
+     "A hillshade",
+     "A layout",
+     "A route"
+    ],
+    "x": "The confusion matrix compares classified and reference points."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "17.1",
+    "title": "Band Combinations and Raster Functions",
+    "dur": "6 min",
+    "obj": "Display multispectral imagery and compute indices like NDVI.",
+    "tip": "Band numbers differ between sensors — check them before computing indices.",
+    "body": [
+     "[ON SCREEN: Landsat or Sentinel-2 image]",
+     "Satellite images have several bands — blue, green, red, near-infrared and more. Select the image and use the Raster Layer tab, Band Combination, to choose which bands show as red, green and blue.",
+     "[ON SCREEN: natural colour vs colour infrared]",
+     "Natural colour uses red, green, blue. Colour infrared puts near-infrared in the red channel, so healthy vegetation glows red — great for spotting crops and forests.",
+     "[ON SCREEN: Imagery tab > Raster Functions > NDVI]",
+     "On the Imagery tab, open Raster Functions and search NDVI. Pick the near-infrared and red band numbers for your sensor and run. Values near 1 mean dense vegetation; near zero or below means bare ground, water or buildings."
+    ]
+   },
+   {
+    "id": "17.2",
+    "title": "Image Classification",
+    "dur": "8 min",
+    "obj": "Classify land cover with the Image Classification Wizard.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Imagery tab > Classification Wizard]",
+     "Select the image and open the Classification Wizard on the Imagery tab. Choose Supervised, pixel-based, and a schema — the default land-cover classes or your own.",
+     "[ON SCREEN: Training Samples Manager]",
+     "Draw training samples for each class: water, forest, urban, cropland, bare soil. Draw several small samples per class, spread across the image.",
+     "[ON SCREEN: classifier choice]",
+     "Choose a classifier. Random Trees and Support Vector Machine are strong defaults.",
+     "[ON SCREEN: classified preview, merge classes, reclassifier]",
+     "Preview the result, then use the wizard's reclassifier to fix obvious errors.",
+     "[ON SCREEN: accuracy assessment page]",
+     "The wizard can run an accuracy assessment that creates random points and a confusion matrix, giving overall accuracy and a kappa value."
+    ]
+   },
+   {
+    "id": "17.3",
+    "title": "Change Detection",
+    "dur": "6 min",
+    "obj": "Compare two dates of imagery to map what changed.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: two NDVI rasters, 2018 and 2025]",
+     "To find change, compare the same area at two dates. With continuous data such as NDVI, subtract the earlier date from the later one in the Raster Calculator. Strongly negative values show vegetation loss; positive values show growth.",
+     "[ON SCREEN: Imagery tab > Change Detection Wizard]",
+     "The Change Detection Wizard on the Imagery tab guides you through it, and also handles categorical change — comparing two land-cover classifications to show, for example, cropland that became urban.",
+     "[ON SCREEN: change matrix]",
+     "For categorical change, the output tells you each from-to transition, which you can summarise into an area table for reports."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M18",
+  "title": "Spatial Statistics and Patterns",
+  "level": "advanced",
+  "quiz": [
+   {
+    "q": "Hot Spot Analysis uses which statistic?",
+    "a": "Getis-Ord Gi*",
+    "w": [
+     "Moran's I only",
+     "NDVI",
+     "RMS"
+    ],
+    "x": "Hot Spot Analysis computes Getis-Ord Gi* for each feature."
+   },
+   {
+    "q": "A positive, significant Moran's I means values are…",
+    "a": "Clustered",
+    "w": [
+     "Random",
+     "Dispersed",
+     "Missing"
+    ],
+    "x": "Positive spatial autocorrelation means similar values cluster."
+   },
+   {
+    "q": "Kernel Density outputs…",
+    "a": "A smooth raster surface of density",
+    "w": [
+     "A table of joins",
+     "A route",
+     "Annotation"
+    ],
+    "x": "Kernel Density spreads point values into a continuous surface."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "18.1",
+    "title": "Density and Hot Spot Analysis",
+    "dur": "8 min",
+    "obj": "Map where events concentrate and test whether clusters are significant.",
+    "tip": "Read the tool's messages — they explain the choices it made.",
+    "body": [
+     "[ON SCREEN: crime points]",
+     "A dot map of incidents can be misleading — dots overlap and the eye picks false patterns. Let's measure instead.",
+     "[ON SCREEN: Kernel Density result]",
+     "Kernel Density spreads each point into a smooth surface. Choose a cell size and search radius; a larger radius gives a smoother map. It's a great visual, but it doesn't test significance.",
+     "[ON SCREEN: Optimized Hot Spot Analysis]",
+     "Optimized Hot Spot Analysis does. Give it the incident points and a polygon grid or district layer. It aggregates the points, picks a scale of analysis, and calculates Getis-Ord Gi* for each area.",
+     "[ON SCREEN: hot and cold spots with confidence levels]",
+     "Red areas are hot spots, blue are cold spots, at 90, 95 or 99 percent confidence. Grey means not significant."
+    ]
+   },
+   {
+    "id": "18.2",
+    "title": "Spatial Autocorrelation and Clustering",
+    "dur": "7 min",
+    "obj": "Measure clustering across a whole dataset and group similar features.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Spatial Autocorrelation (Global Moran's I)]",
+     "Spatial Autocorrelation, Global Moran's I, asks: are similar values near each other across the whole study area? Run it on income by district and open the HTML report.",
+     "[ON SCREEN: report: z-score and p-value]",
+     "A positive, significant z-score means values are clustered; negative means dispersed; near zero is random.",
+     "[ON SCREEN: Cluster and Outlier Analysis]",
+     "To find where, run Cluster and Outlier Analysis (Anselin Local Moran's I). It marks high-high and low-low clusters, and outliers like a wealthy district surrounded by poorer ones.",
+     "[ON SCREEN: Density-based Clustering]",
+     "For points, Density-based Clustering finds groups of points close together, with noise points left out."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M19",
+  "title": "Geocoding and Network Analysis",
+  "level": "advanced",
+  "quiz": [
+   {
+    "q": "Using the ArcGIS World Geocoding Service to batch geocode…",
+    "a": "Consumes ArcGIS Online credits",
+    "w": [
+     "Is free and unlimited",
+     "Needs no internet",
+     "Only works for points in the US"
+    ],
+    "x": "Batch geocoding with Esri's online service uses credits."
+   },
+   {
+    "q": "Which analysis finds all streets reachable within 10 minutes of a station?",
+    "a": "Service Area",
+    "w": [
+     "Route",
+     "Closest Facility",
+     "Kernel Density"
+    ],
+    "x": "Service Area creates drive-time or walk-time zones."
+   },
+   {
+    "q": "Which analysis finds the nearest hospital for each incident?",
+    "a": "Closest Facility",
+    "w": [
+     "Service Area",
+     "Dissolve",
+     "Spatial Join"
+    ],
+    "x": "Closest Facility routes each incident to its nearest facilities."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "19.1",
+    "title": "Geocoding Addresses",
+    "dur": "6 min",
+    "obj": "Turn a table of addresses into points on the map.",
+    "tip": "Build your own locator with Create Locator if you have local address data and need to geocode often.",
+    "body": [
+     "[ON SCREEN: Map tab > Locate]",
+     "For one address, use the Locate pane on the Map tab: type it and press Enter.",
+     "[ON SCREEN: Geocode Table / Geocode Addresses]",
+     "For a whole table, right-click it in Contents and choose Geocode Table, or run Geocode Addresses. Pick the locator — the ArcGIS World Geocoding Service, or a locator your organisation built — and map the address fields.",
+     "[ON SCREEN: credits warning]",
+     "Batch geocoding with the World Geocoding Service uses ArcGIS Online credits, so check your allowance first.",
+     "[ON SCREEN: Rematch Addresses pane]",
+     "Review the results. Status M is matched, T is tied, U is unmatched. Use Rematch Addresses to fix unmatched and low-score records by hand."
+    ]
+   },
+   {
+    "id": "19.2",
+    "title": "Routes and Service Areas",
+    "dur": "7 min",
+    "obj": "Solve routing and drive-time problems with Network Analyst.",
+    "tip": "Solving with ArcGIS Online network services uses credits; a local network dataset doesn't.",
+    "body": [
+     "[ON SCREEN: Analysis tab > Network Analysis > Route]",
+     "Network Analyst works on a network dataset or on ArcGIS Online services. On the Analysis tab, open Network Analysis and choose Route. A route layer appears in Contents.",
+     "[ON SCREEN: adding stops, Route tab]",
+     "On the Route tab, click Import Stops or Create Features to add stops. Pick a travel mode — driving time, walking time, trucking — and click Run. Tick Reorder Stops to find the best sequence.",
+     "[ON SCREEN: Directions pane]",
+     "Open Directions for turn-by-turn instructions you can print or share.",
+     "[ON SCREEN: Service Area]",
+     "Service Area creates polygons of everywhere reachable within set times — 5, 10 and 15 minutes from each fire station. These are perfect for coverage and accessibility studies."
+    ]
+   },
+   {
+    "id": "19.3",
+    "title": "Closest Facility and Origin-Destination Analysis",
+    "dur": "6 min",
+    "obj": "Match demand to facilities with network-based distance.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Closest Facility layer]",
+     "Closest Facility finds the nearest one or more facilities for each incident, by travel time or distance along the network. Load hospitals as facilities and accident locations as incidents, set the number to find, and run.",
+     "[ON SCREEN: routes drawn to nearest hospital]",
+     "You get a route for each pair, with travel time — much more realistic than straight-line distance.",
+     "[ON SCREEN: OD Cost Matrix]",
+     "For big tables of travel times — every school to every neighbourhood, for example — use the Origin-Destination Cost Matrix. It outputs straight lines with network travel cost, fast to compute at scale.",
+     "[ON SCREEN: Location-Allocation]",
+     "To decide where to put new facilities, Location-Allocation picks the best sites from a list of candidates."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M20",
+  "title": "3D, Lidar and Animation",
+  "level": "advanced",
+  "quiz": [
+   {
+    "q": "Which file type stores lidar point clouds?",
+    "a": "LAS / LAZ",
+    "w": [
+     ".shx",
+     ".cpg",
+     ".aprx"
+    ],
+    "x": "Lidar data is commonly stored as LAS or compressed LAZ."
+   },
+   {
+    "q": "What does a viewshed show?",
+    "a": "Areas visible from an observer",
+    "w": [
+     "The fastest route",
+     "Slope steepness",
+     "Population density"
+    ],
+    "x": "Viewsheds map what can be seen from observer points."
+   },
+   {
+    "q": "In the Animation timeline, each saved view is a…",
+    "a": "Keyframe",
+    "w": [
+     "Domain",
+     "Label class",
+     "Transformation"
+    ],
+    "x": "Animations move smoothly between keyframes."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "20.1",
+    "title": "Extruding Features and 3D Symbology",
+    "dur": "6 min",
+    "obj": "Turn 2D footprints into 3D buildings.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: building footprints in a local scene]",
+     "Add building footprints to a local scene and drag them into 3D Layers.",
+     "[ON SCREEN: Appearance tab > Type > Max Height]",
+     "On the Feature Layer Appearance tab, set the extrusion type — Max Height is a good default — and choose the height field, such as HEIGHT_M, with the right units.",
+     "[ON SCREEN: realistic 3D symbology]",
+     "In Symbology, apply 3D symbols: realistic textures for trees and street furniture, or procedural building symbols with windows and roofs.",
+     "[ON SCREEN: Layer 3D To Feature Class]",
+     "To make the 3D shapes permanent as multipatch features, run Layer 3D To Feature Class."
+    ]
+   },
+   {
+    "id": "20.2",
+    "title": "Working with Lidar Point Clouds",
+    "dur": "7 min",
+    "obj": "Load LAS data, filter classes and build elevation surfaces.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Create LAS Dataset]",
+     "Lidar arrives as LAS or LAZ files. Create LAS Dataset references many tiles as one layer and builds statistics. Add it to a scene.",
+     "[ON SCREEN: LAS Dataset Layer tab > Filters]",
+     "On the LAS Dataset Layer tab, filter by classification: ground, vegetation, buildings. Colour points by elevation, class, intensity or RGB.",
+     "[ON SCREEN: LAS Dataset To Raster with ground filter]",
+     "To build a terrain model, filter to ground points and run LAS Dataset To Raster for a DEM. Use all first returns for a surface model that includes trees and roofs.",
+     "[ON SCREEN: Raster Calculator DSM minus DEM]",
+     "Subtract the DEM from the surface model to get object heights — a canopy height model for forests."
+    ]
+   },
+   {
+    "id": "20.3",
+    "title": "Visibility Analysis: Line of Sight and Viewshed",
+    "dur": "6 min",
+    "obj": "Find what can be seen from a location.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Analysis tab > Exploratory 3D Analysis]",
+     "In a scene, the Exploratory 3D Analysis tools give instant answers. Line of Sight shows green where a target is visible and red where it's blocked. Viewshed and View Dome show what can be seen from a point.",
+     "[ON SCREEN: Viewshed geoprocessing tool]",
+     "For a permanent result, run the Viewshed or Geodesic Viewshed tool on a DEM with observer points, setting observer height — say 1.7 metres for a person or 30 metres for a mast.",
+     "[ON SCREEN: viewshed result over terrain]",
+     "Use it to plan telecom towers, watchtowers, or to check how visible a new wind farm will be."
+    ]
+   },
+   {
+    "id": "20.4",
+    "title": "Creating Animations and Exporting Video",
+    "dur": "7 min",
+    "obj": "Build a flythrough and export it as a video.",
+    "tip": "These flythroughs make great intros and B-roll for your own course videos.",
+    "body": [
+     "[ON SCREEN: View tab > Animation > Add]",
+     "On the View tab, click Animation, then Add. The Animation tab and the timeline appear.",
+     "[ON SCREEN: Create first keyframe]",
+     "Navigate to your first view and click Create first keyframe. Move to the next view and click the plus button to add another. ArcGIS Pro flies smoothly between them.",
+     "[ON SCREEN: keyframe properties: transition, duration]",
+     "Adjust each keyframe's duration and transition, add text and image overlays, and preview with Play.",
+     "[ON SCREEN: Export > Movie > YouTube preset]",
+     "Click Movie in the Export group. Pick a preset — there's one for YouTube — set resolution and frame rate, and export to MP4."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M21",
+  "title": "Automation with ModelBuilder and Python",
+  "level": "advanced",
+  "quiz": [
+   {
+    "q": "In ModelBuilder, a variable marked P becomes…",
+    "a": "A tool parameter users can set",
+    "w": [
+     "A permanent output",
+     "A comment",
+     "A domain"
+    ],
+    "x": "Parameters appear on the model tool's dialog."
+   },
+   {
+    "q": "Which ArcPy object reads rows from a table one at a time?",
+    "a": "arcpy.da.SearchCursor",
+    "w": [
+     "arcpy.env",
+     "arcpy.mp",
+     "arcpy.Describe"
+    ],
+    "x": "SearchCursor iterates over rows and fields."
+   },
+   {
+    "q": "Which feature runs Jupyter notebooks inside ArcGIS Pro?",
+    "a": "ArcGIS Notebooks",
+    "w": [
+     "ModelBuilder",
+     "Tasks",
+     "Map series"
+    ],
+    "x": "Insert > New Notebook opens a Jupyter notebook in the project."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "21.1",
+    "title": "ModelBuilder Basics",
+    "dur": "7 min",
+    "obj": "Chain tools into a reusable workflow.",
+    "tip": "Use Auto Layout and group related tools to keep big models readable.",
+    "body": [
+     "[ON SCREEN: Analysis tab > ModelBuilder]",
+     "ModelBuilder lets you build a workflow visually. On the Analysis tab, click ModelBuilder.",
+     "[ON SCREEN: dragging Buffer and Clip into the model]",
+     "Drag tools from the Geoprocessing pane onto the canvas. Drag a layer onto a tool to connect it as input. Double-click a tool to set its parameters; the output becomes the input for the next tool.",
+     "[ON SCREEN: Validate and Run]",
+     "Click Validate, then Run. Each tool turns from white to coloured as it completes.",
+     "[ON SCREEN: Save to toolbox]",
+     "Save the model in your project toolbox. Rename it with a clear name and description — it now behaves like any other tool."
+    ]
+   },
+   {
+    "id": "21.2",
+    "title": "Model Parameters and Iterators",
+    "dur": "7 min",
+    "obj": "Turn a model into a flexible tool that runs over many inputs.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: right-click variable > Parameter]",
+     "Right-click an input or setting, such as buffer distance, and choose Parameter. A P appears. When someone opens the model from the toolbox, they can set it like any tool.",
+     "[ON SCREEN: Insert > Iterators > Iterate Feature Classes]",
+     "Iterators repeat the model over many items. Iterate Feature Classes loops through every feature class in a geodatabase. Iterate Field Values loops once per unique value.",
+     "[ON SCREEN: inline variable %Name% in output]",
+     "Use inline variable substitution so each output gets a unique name: name the output Buffer_%Name%, and the iterator fills in each input's name.",
+     "[ON SCREEN: Export > Export to Python file]",
+     "You can export a model to a Python script — a good bridge into the next lesson."
+    ]
+   },
+   {
+    "id": "21.3",
+    "title": "The Python Window and ArcPy Basics",
+    "dur": "8 min",
+    "obj": "Run ArcPy commands and loop over data with Python.",
+    "tip": "Drag a tool from History into the Python window to see its Python code.",
+    "body": [
+     "[ON SCREEN: Analysis tab > Python > Python Window]",
+     "Open the Python window from the Analysis tab. Type import arcpy — it's already loaded — and press Enter.",
+     "[ON SCREEN: arcpy.env.workspace and ListFeatureClasses]",
+     "Set the workspace: arcpy.env.workspace = the path to your geodatabase. Then arcpy.ListFeatureClasses() returns every feature class name.",
+     "[ON SCREEN: running a tool]",
+     "Every geoprocessing tool is a function: arcpy.analysis.Buffer(\"roads\", \"roads_buf\", \"100 Meters\").",
+     "[ON SCREEN: for loop]",
+     "Loop over the list to run the same tool on all of them, building output names from each input.",
+     "[ON SCREEN: arcpy.da.SearchCursor]",
+     "Read attribute values with a cursor: with arcpy.da.SearchCursor(\"cities\", [\"NAME\", \"POP\"]) as cursor, then loop over rows. Use UpdateCursor to change values."
+    ]
+   },
+   {
+    "id": "21.4",
+    "title": "ArcGIS Notebooks and Script Tools",
+    "dur": "7 min",
+    "obj": "Document analysis in notebooks and share scripts as tools.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Insert tab > New Notebook]",
+     "On the Insert tab, click New Notebook. ArcGIS Notebooks are Jupyter notebooks inside your project, with ArcPy ready to use.",
+     "[ON SCREEN: markdown cell and code cell]",
+     "Mix explanation cells and code cells, and run them one at a time. Outputs added to the active map appear right away. Notebooks are a great way to keep a repeatable, documented analysis.",
+     "[ON SCREEN: New > Script tool]",
+     "To share a Python script with non-programmers, make it a script tool. Right-click your toolbox, New, Script. Define parameters on the Parameters tab, and paste your code on the Execution tab, reading inputs with arcpy.GetParameterAsText.",
+     "[ON SCREEN: script tool dialog]",
+     "Now your script looks and runs like any other geoprocessing tool."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M22",
+  "title": "Arcade and Data Quality",
+  "level": "advanced",
+  "quiz": [
+   {
+    "q": "In Arcade, how do you reference a field called POP?",
+    "a": "$feature.POP",
+    "w": [
+     "!POP!",
+     "[POP]",
+     "@POP"
+    ],
+    "x": "Arcade uses $feature to access the current feature's fields."
+   },
+   {
+    "q": "A topology rule \"Must Not Overlap\" finds…",
+    "a": "Polygons in the same layer that overlap",
+    "w": [
+     "Missing coordinate systems",
+     "Labels that collide",
+     "Unmatched addresses"
+    ],
+    "x": "Topology rules flag spatial errors like overlaps."
+   },
+   {
+    "q": "Which tool fixes problems like self-intersections?",
+    "a": "Repair Geometry",
+    "w": [
+     "Define Projection",
+     "Dissolve",
+     "Hillshade"
+    ],
+    "x": "Repair Geometry fixes invalid geometry found by Check Geometry."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "22.1",
+    "title": "Arcade Expressions for Pop-ups, Labels and Symbology",
+    "dur": "7 min",
+    "obj": "Write Arcade expressions that work across ArcGIS Pro and ArcGIS Online.",
+    "tip": "Use Console() inside an expression to print values while you debug.",
+    "body": [
+     "[ON SCREEN: Arcade expression builder]",
+     "Arcade is Esri's expression language. Write it once and it works in ArcGIS Pro, ArcGIS Online and mobile apps.",
+     "[ON SCREEN: label expression]",
+     "Reference fields with $feature. Round(($feature.POP / $feature.AREA_KM2), 1) + \" people/km²\" makes a tidy density label.",
+     "[ON SCREEN: symbology expression with When]",
+     "In Symbology, click the expression button next to the field to classify by a calculated value. When($feature.POP > 1000000, \"Large\", $feature.POP > 100000, \"Medium\", \"Small\") creates categories on the fly — no new field needed.",
+     "[ON SCREEN: pop-up expression]",
+     "In pop-ups, add Arcade expressions to show calculated values or friendlier text."
+    ]
+   },
+   {
+    "id": "22.2",
+    "title": "Topology and Geometry Checks",
+    "dur": "7 min",
+    "obj": "Find and fix spatial errors in your data.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Check Geometry tool]",
+     "Start with Check Geometry. It lists problems like self-intersections, null geometry and bad ring order. Repair Geometry fixes most of them automatically.",
+     "[ON SCREEN: Create Topology in a feature dataset]",
+     "For rules between features, create a geodatabase topology inside a feature dataset. Add the participating feature classes and rules — parcels Must Not Overlap, Must Not Have Gaps, or roads Must Not Have Dangles.",
+     "[ON SCREEN: Validate and Error Inspector]",
+     "Validate the topology. Errors appear on the map, and the Error Inspector on the Edit tab lists them. Select an error to see fixes like Subtract or Merge, or mark true exceptions.",
+     "[ON SCREEN: map topology]",
+     "For quick shared-edge editing without a geodatabase topology, use map topology on the Edit tab."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M23",
+  "title": "Sharing and Capstone Project",
+  "level": "advanced",
+  "quiz": [
+   {
+    "q": "Which item lets you share data plus maps as one file?",
+    "a": "A project or map package",
+    "w": [
+     "A layer's definition query",
+     "A label class",
+     "A domain"
+    ],
+    "x": "Packages bundle data and maps for sharing."
+   },
+   {
+    "q": "Where do you publish a web layer?",
+    "a": "Share tab",
+    "w": [
+     "Imagery tab",
+     "Labeling tab",
+     "Navigator"
+    ],
+    "x": "The Share tab holds web layer, web map and package options."
+   },
+   {
+    "q": "Before publishing, the Analyze step…",
+    "a": "Reports errors and warnings to fix",
+    "w": [
+     "Deletes the data",
+     "Creates a hillshade",
+     "Changes the basemap"
+    ],
+    "x": "Analyze checks the content for problems before sharing."
+   }
+  ],
+  "lessons": [
+   {
+    "id": "23.1",
+    "title": "Publishing Web Layers and Web Maps",
+    "dur": "7 min",
+    "obj": "Share your work to ArcGIS Online or ArcGIS Enterprise.",
+    "tip": "Use Overwrite Web Layer to update a published layer without breaking links.",
+    "body": [
+     "[ON SCREEN: Share tab > Web Layer > Publish Web Layer]",
+     "Make sure you're signed in to your portal. Select a layer and click Web Layer, Publish Web Layer on the Share tab.",
+     "[ON SCREEN: General tab: name, summary, tags, layer type]",
+     "Give it a name, summary and tags. Choose Feature for interactive data or Tile for fast basemap-style display. Choose where to save it and who to share with.",
+     "[ON SCREEN: Analyze, then Publish]",
+     "Click Analyze. Fix errors; review warnings. Then Publish.",
+     "[ON SCREEN: Share Web Map]",
+     "To share a whole map with its layers and symbology, use Web Map. The map opens in ArcGIS Online Map Viewer, ready for dashboards, apps and StoryMaps."
+    ]
+   },
+   {
+    "id": "23.2",
+    "title": "Packages: Sharing Projects and Maps Offline",
+    "dur": "5 min",
+    "obj": "Bundle maps and data into a single shareable file.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: Share tab > Package group]",
+     "Packages bundle everything someone needs into one file. A map package (.mpkx) holds a map and its data. A project package (.ppkx) holds the whole project — maps, layouts, data, toolboxes.",
+     "[ON SCREEN: Package Project dialog]",
+     "Click Project Package, choose to save it to a file or upload it to your portal, fill in summary and tags, Analyze, and Package.",
+     "[ON SCREEN: opening a package]",
+     "Your colleague just double-clicks the package; ArcGIS Pro unpacks it with all paths working.",
+     "This is the reliable way to hand over a project — no more broken links."
+    ]
+   },
+   {
+    "id": "23.3",
+    "title": "Capstone: An End-to-End Site Selection Project",
+    "dur": "10 min",
+    "obj": "Combine skills from every level into one complete project.",
+    "tip": "",
+    "body": [
+     "[ON SCREEN: brief: choose a site for a new clinic]",
+     "Let's bring it all together. Our brief: choose the best site for a new health clinic.",
+     "[ON SCREEN: geodatabase with inputs]",
+     "Basics: create a project and a file geodatabase, add districts, roads, existing clinics, population and a DEM.",
+     "[ON SCREEN: select and join]",
+     "Intermediate: join population data to districts, calculate density, and use Select By Location to find districts more than 5 kilometres from any clinic.",
+     "[ON SCREEN: service areas and suitability]",
+     "Advanced: build 10-minute service areas for existing clinics, find underserved areas, compute slope, and run a weighted overlay favouring high density, gentle slope and road access.",
+     "[ON SCREEN: ModelBuilder of the whole workflow]",
+     "Wrap the workflow in a model so it can be rerun with new data.",
+     "[ON SCREEN: final layout and web map]",
+     "Finish with a print layout and a web map shared to your team.",
+     "Congratulations — you've gone from installing ArcGIS Pro to running a full spatial analysis project."
     ]
    }
   ]

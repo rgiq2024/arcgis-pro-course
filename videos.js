@@ -1,9 +1,10 @@
 // Add your videos here. For each lesson, set ONE of:
-//   youtube: a YouTube link (watch, youtu.be or share link) - recommended for full lessons
-//   file:    a path to a video in the /videos folder, e.g. "videos/1-1.mp4" (keep files under 100 MB for GitHub)
-//   linkedin: a link to the lesson on LinkedIn Learning (shown as a button)
+//   youtube: a YouTube link (watch, youtu.be, shorts or live) - recommended
+//   file:    a path to a video in the /videos folder, e.g. "videos/1-1.mp4" (keep files under 100 MB)
+//   linkedin: a link to the lesson on LinkedIn Learning
 // status: "todo" | "recording" | "editing" | "published"
 window.VIDEOS = {
+  // ---------- BASICS ----------
   "1.1": { youtube: "", file: "", linkedin: "", status: "todo" },
   "1.2": { youtube: "", file: "", linkedin: "", status: "todo" },
   "1.3": { youtube: "", file: "", linkedin: "", status: "todo" },
@@ -43,4 +44,56 @@ window.VIDEOS = {
   "7.7": { youtube: "", file: "", linkedin: "", status: "todo" },
   "7.8": { youtube: "", file: "", linkedin: "", status: "todo" },
   "7.9": { youtube: "", file: "", linkedin: "", status: "todo" },
+  // ---------- INTERMEDIATE ----------
+  "8.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "8.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "8.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "9.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "9.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "9.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "10.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "10.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "10.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "10.4": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "11.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "11.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "11.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "12.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "12.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "12.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "12.4": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "13.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "13.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "13.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "14.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "14.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "14.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "15.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "15.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "15.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  // ---------- ADVANCED ----------
+  "16.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "16.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "16.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "17.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "17.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "17.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "18.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "18.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "19.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "19.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "19.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "20.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "20.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "20.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "20.4": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "21.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "21.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "21.3": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "21.4": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "22.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "22.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "23.1": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "23.2": { youtube: "", file: "", linkedin: "", status: "todo" },
+  "23.3": { youtube: "", file: "", linkedin: "", status: "todo" },
 };
