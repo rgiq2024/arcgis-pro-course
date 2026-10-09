@@ -1,6 +1,6 @@
 # Introduction to ArcGIS Pro — Video Course
 
-A free ArcGIS Pro video course from first install to Python automation: **89 lessons in 23 modules across three levels**, about 9 hours of video. Every lesson has a full narration script with on-screen recording cues, and every module ends with a quiz.
+A free ArcGIS video course from first install to Python automation, web apps and field data collection: **115 lessons in 33 modules across four tracks**, about 12 hours of video. Every lesson has a full narration script with on-screen recording cues, and every module ends with a quiz.
 
 **Live site:** https://rgiq2024.github.io/arcgis-pro-course/
 
@@ -9,12 +9,13 @@ A free ArcGIS Pro video course from first install to Python automation: **89 les
 | **Basics** (39 lessons) | M1–M7 | Install and sign in, projects, the interface, navigating maps and scenes, shapefiles, adding data, the Contents pane, symbology |
 | **Intermediate** (26 lessons) | M8–M15 | Geodatabases, domains and subtypes, editing, Select By Attributes/Location, charts, Calculate Field, joins, coordinate systems, georeferencing, labeling and annotation, layouts and map series, geoprocessing and overlay tools |
 | **Advanced** (24 lessons) | M16–M23 | Spatial Analyst terrain and suitability, imagery and classification, hot spots and spatial statistics, geocoding and network analysis, 3D, lidar and animation, ModelBuilder, ArcPy and notebooks, Arcade, topology, publishing and a capstone project |
+| **ArcGIS Online & Apps** (26 lessons) | M24–M33 | ArcGIS Online organizations and content, Map Viewer, Scene Viewer, Living Atlas, StoryMaps, Dashboards, Experience Builder, Instant Apps, Field Maps (including Tasks), QuickCapture, Survey123, Hub, web analysis, Notebooks, Data Pipelines, ArcGIS Enterprise, Earth, Urban, Business Analyst, Velocity, Maps SDKs, and a field-to-dashboard capstone |
 
 ## Features
 
 - **Learning path home** with overall and per-level progress
 - **Progress tracking**: mark lessons complete (button or `C`); progress, quiz scores and notes are saved in the learner's browser
-- **Module quizzes**: 69 questions with instant feedback and explanations
+- **Module quizzes**: 99 questions with instant feedback and explanations
 - **Search** across every lesson and script (`Ctrl K` or `/`)
 - **Teleprompter** for recording: auto-scroll, speed and size controls, mirror mode, cue toggle (`T`, `Space` to play/pause)
 - **YouTube / LinkedIn script versions**: switches each lesson's intro and outro

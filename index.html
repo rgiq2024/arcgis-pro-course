@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Introduction to ArcGIS Pro</title>
-<meta name="description" content="A free video course from basics to advanced: 89 ArcGIS Pro lessons with scripts, quizzes and progress tracking.">
+<meta name="description" content="A free ArcGIS video course: ArcGIS Pro basics to advanced, plus ArcGIS Online, StoryMaps, Dashboards, Experience Builder, Field Maps, QuickCapture and Survey123.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -18,7 +18,7 @@
 :root{
   --bg:#F2F5F4; --surface:#FFFFFF; --surface-2:#F7F9F8; --ink:#0F1E1B; --muted:#5C6C67; --line:#DCE3E0; --contour:#C9D6D1;
   --accent:#0E7C86; --accent-ink:#FFFFFF; --accent-soft:#DDF0F1;
-  --basics:#2E8A57; --basics-soft:#E0F1E7; --inter:#2760A6; --inter-soft:#E1EAF6; --adv:#B9561B; --adv-soft:#F7E6DA;
+  --basics:#2E8A57; --basics-soft:#E0F1E7; --inter:#2760A6; --inter-soft:#E1EAF6; --adv:#B9561B; --adv-soft:#F7E6DA; --apps:#8B3A8F; --apps-soft:#F3E3F2;
   --good:#2E8A57; --bad:#C2412D; --bad-soft:#F8E3DF;
   --shadow:0 1px 2px rgba(15,30,27,.06),0 8px 24px -12px rgba(15,30,27,.18);
   --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
@@ -30,14 +30,14 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0B1211; --surface:#121B19; --surface-2:#172220; --ink:#E3ECE9; --muted:#93A5A0; --line:#24322F; --contour:#1D2A27;
   --accent:#4FC0C9; --accent-ink:#06201F; --accent-soft:#15333A;
-  --basics:#6BC891; --basics-soft:#173024; --inter:#7EAEEB; --inter-soft:#18273B; --adv:#F0A06A; --adv-soft:#352418;
+  --basics:#6BC891; --basics-soft:#173024; --inter:#7EAEEB; --inter-soft:#18273B; --adv:#F0A06A; --adv-soft:#352418; --apps:#D99BDB; --apps-soft:#33203A;
   --good:#6BC891; --bad:#F0806B; --bad-soft:#3A1F1A;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6);
   color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0B1211; --surface:#121B19; --surface-2:#172220; --ink:#E3ECE9; --muted:#93A5A0; --line:#24322F; --contour:#1D2A27;
   --accent:#4FC0C9; --accent-ink:#06201F; --accent-soft:#15333A;
-  --basics:#6BC891; --basics-soft:#173024; --inter:#7EAEEB; --inter-soft:#18273B; --adv:#F0A06A; --adv-soft:#352418;
+  --basics:#6BC891; --basics-soft:#173024; --inter:#7EAEEB; --inter-soft:#18273B; --adv:#F0A06A; --adv-soft:#352418; --apps:#D99BDB; --apps-soft:#33203A;
   --good:#6BC891; --bad:#F0806B; --bad-soft:#3A1F1A;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6);
   color-scheme:dark}
@@ -95,12 +95,12 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-b
 .ring svg{transform:rotate(-90deg)}
 .ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:22px;font-variant-numeric:tabular-nums}
 .lvlbars{display:grid;gap:10px}
-.lvlbar{display:grid;grid-template-columns:96px minmax(0,1fr) 46px;gap:10px;align-items:center;font-size:13px}
+.lvlbar{display:grid;grid-template-columns:104px minmax(0,1fr) 46px;gap:10px;align-items:center;font-size:13px}
 .lvlbar .t{height:7px;border-radius:4px;background:var(--line);overflow:hidden}
 .lvlbar .t i{display:block;height:100%;border-radius:4px;transition:width .5s}
 .lvlbar .n{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
 
-.levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}
+.levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:20px;margin-top:28px}
 .level{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0}
 .level header{display:flex;justify-content:space-between;align-items:start;gap:10px}
 .level h2{font-family:var(--display);font-size:24px;font-weight:800;margin:4px 0 0;letter-spacing:-.01em}
@@ -109,6 +109,7 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-b
 .lv-basics{--lv:var(--basics);--lv-soft:var(--basics-soft)}
 .lv-intermediate{--lv:var(--inter);--lv-soft:var(--inter-soft)}
 .lv-advanced{--lv:var(--adv);--lv-soft:var(--adv-soft)}
+.lv-apps{--lv:var(--apps);--lv-soft:var(--apps-soft)}
 .badge.lv{background:var(--lv-soft);color:var(--lv)}
 .modlist{display:grid;gap:8px;list-style:none;margin:0;padding:0}
 .modcard{width:100%;text-align:left;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:12px 14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center;transition:border-color .15s,transform .15s}
@@ -122,8 +123,8 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-b
 /* Lesson layout */
 .app{display:grid;grid-template-columns:330px minmax(0,1fr);gap:24px;margin-top:20px;align-items:start}
 .rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px);max-height:calc(100vh - 92px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px;overscroll-behavior:contain}
-.rail .tabs3{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:3px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;margin-bottom:12px}
-.rail .tabs3 button{border:0;background:none;border-radius:7px;padding:6px 4px;font-size:12.5px;font-weight:700;color:var(--muted)}
+.rail .tabs3{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:3px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;margin-bottom:12px}
+.rail .tabs3 button{border:0;background:none;border-radius:7px;padding:6px 2px;font-size:12px;font-weight:700;color:var(--muted)}
 .rail .tabs3 button[aria-pressed="true"]{background:var(--surface);color:var(--lv);box-shadow:var(--shadow)}
 details.mod{border-radius:12px}
 details.mod+details.mod{margin-top:4px}
@@ -230,7 +231,6 @@ textarea{width:100%;min-height:220px;resize:vertical;border:1px solid var(--line
 footer{max-width:1320px;margin:40px auto 0;color:var(--muted);font-size:13px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
 
 @media (max-width:1020px){
-  .levels{grid-template-columns:minmax(0,1fr)}
   .hero .in{grid-template-columns:minmax(0,1fr)}
   .progresscard{justify-self:stretch;width:auto}
 }
@@ -260,7 +260,7 @@ footer{max-width:1320px;margin:40px auto 0;color:var(--muted);font-size:13px;dis
     <b>Introduction to ArcGIS Pro</b>
   </a>
   <span class="spacer"></span>
-  <button class="searchbtn" id="searchBtn" aria-label="Search lessons"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search 89 lessons…</span><kbd>Ctrl K</kbd></button>
+  <button class="searchbtn" id="searchBtn" aria-label="Search lessons"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span id="searchLbl">Search lessons…</span><kbd>Ctrl K</kbd></button>
   <div class="seg" id="pfSeg" role="group" aria-label="Script version"><button id="pfYT" aria-pressed="true">YouTube</button><button id="pfLI" aria-pressed="false">LinkedIn</button></div>
   <button class="iconbtn" id="themeBtn" aria-label="Change theme" title="Theme"></button>
   <button class="iconbtn" id="helpBtn" aria-label="Keyboard shortcuts" title="Keyboard shortcuts"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></button>
@@ -303,7 +303,8 @@ const VIDEOS = window.VIDEOS || {};
 const LEVELS = [
   {id:"basics", name:"Basics", blurb:"Install ArcGIS Pro, learn the interface, create shapefiles, add data and design maps with symbology."},
   {id:"intermediate", name:"Intermediate", blurb:"Geodatabases, editing, queries, joins, coordinate systems, labeling, layouts and geoprocessing."},
-  {id:"advanced", name:"Advanced", blurb:"Raster and imagery analysis, spatial statistics, networks, 3D and lidar, automation with Python, and sharing."}
+  {id:"advanced", name:"Advanced", blurb:"Raster and imagery analysis, spatial statistics, networks, 3D and lidar, automation with Python, and sharing."},
+  {id:"apps", name:"Online & Apps", short:"Apps", blurb:"ArcGIS Online, Living Atlas, StoryMaps, Dashboards, Experience Builder, Field Maps, QuickCapture, Survey123, Hub and more."}
 ];
 COURSE.forEach(m => m.lessons.forEach(l => l.mod = m));
 const LESSONS = COURSE.flatMap(m => m.lessons);
@@ -359,8 +360,9 @@ function scriptText(l){
   return out.join("\n");
 }
 function meta(l){
-  const title = `ArcGIS Pro Tutorial ${l.id}: ${l.title} (${lvName(l.mod.level)})`;
-  const tags = ["ArcGIS Pro", "ArcGIS Pro tutorial", "GIS", "Esri", `ArcGIS Pro ${lvName(l.mod.level).toLowerCase()}`, l.mod.title, l.title].join(", ");
+  const web = l.mod.level === "apps";
+  const title = web ? `ArcGIS Tutorial ${l.id}: ${l.title}` : `ArcGIS Pro Tutorial ${l.id}: ${l.title} (${lvName(l.mod.level)})`;
+  const tags = (web ? ["ArcGIS Online", "ArcGIS tutorial", "GIS", "Esri", l.mod.title, l.title] : ["ArcGIS Pro", "ArcGIS Pro tutorial", "GIS", "Esri", `ArcGIS Pro ${lvName(l.mod.level).toLowerCase()}`, l.mod.title, l.title]).join(", ");
   const desc = `${l.obj}\n\nPart of the free "Introduction to ArcGIS Pro" course — ${lvName(l.mod.level)} level, ${l.mod.title}.\n\nIn this lesson:\n` +
     l.body.filter(b => /^\[ON SCREEN/.test(b)).map(b => "• " + b.replace(/^\[ON SCREEN:\s*|\]$/g, "")).join("\n") + `\n\n#ArcGISPro #GIS #Esri`;
   const li = `${l.title}\n\n${l.obj} This video is part of the Introduction to ArcGIS Pro course (${lvName(l.mod.level)}), chapter "${l.mod.title}".`;
@@ -384,15 +386,15 @@ function showHome(focusLevel){
   $("menuBtn").hidden = true;
   const total = pct(LESSONS);
   const cont = lastLesson && byId[lastLesson] ? byId[lastLesson] : LESSONS.find(l => !done.has(l.id)) || LESSONS[0];
-  const lvColor = {basics:"var(--basics)", intermediate:"var(--inter)", advanced:"var(--adv)"};
+  const lvColor = {basics:"var(--basics)", intermediate:"var(--inter)", advanced:"var(--adv)", apps:"var(--apps)"};
   $("view").innerHTML = `
   <section class="hero">
     <canvas id="topo" aria-hidden="true"></canvas>
     <div class="in">
       <div>
-        <div class="eyebrow">Free video course · ArcGIS Pro 3.x</div>
+        <div class="eyebrow">Free video course · ArcGIS Pro · ArcGIS Online · Field apps</div>
         <h1>Introduction to ArcGIS&nbsp;Pro</h1>
-        <p class="lead">From your first project to Python automation. ${LESSONS.length} short lessons in three levels, each with a full script, on-screen cues and a quiz at the end of every module.</p>
+        <p class="lead">From your first ArcGIS Pro project to Python automation, web apps and field data collection. ${LESSONS.length} short lessons in four tracks, each with a full script, on-screen cues and a quiz at the end of every module.</p>
         <div class="ctas">
           <a class="btn primary" href="#lesson-${slug(cont.id)}">${done.size ? "Continue" : "Start"}: ${cont.id} ${esc(cont.title)}</a>
           <button class="btn" data-act="search">Find a topic</button>
@@ -471,7 +473,7 @@ function drawTopo(){
 function renderRail(curLesson, curQuiz){
   const lv = railLevel;
   return `<aside class="rail lv-${lv}" id="rail" aria-label="Course contents">
-    <div class="tabs3" role="group" aria-label="Level">${LEVELS.map(x => `<button data-level="${x.id}" aria-pressed="${x.id===lv}">${x.name}</button>`).join("")}</div>
+    <div class="tabs3" role="group" aria-label="Level">${LEVELS.map(x => `<button data-level="${x.id}" aria-pressed="${x.id===lv}" title="${x.name}">${x.short || x.name}</button>`).join("")}</div>
     ${COURSE.filter(m => m.level === lv).map(m => {
       const open = (curLesson && curLesson.mod === m) || curQuiz === m.id;
       const n = m.lessons.filter(l => done.has(l.id)).length;
@@ -721,6 +723,7 @@ document.addEventListener("keydown", e => {
 });
 let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(drawTopo, 150); });
 
+$("searchLbl").textContent = `Search ${LESSONS.length} lessons…`;
 applyPlatform(); applyTheme(); route();
 </script>
 </body>

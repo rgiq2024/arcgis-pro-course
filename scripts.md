@@ -1,5 +1,5 @@
 # Introduction to ArcGIS Pro — Lesson Scripts
-Basics → Intermediate → Advanced. Each lesson: objective, narration with [ON SCREEN] recording cues, and a tip. Intro/outro templates are at the end.
+Four tracks: Basics, Intermediate, Advanced, and ArcGIS Online & Apps. Each lesson: objective, narration with [ON SCREEN] recording cues, and a tip. Intro/outro templates are at the end.
 
 # Basics
 
@@ -2145,6 +2145,696 @@ Congratulations — you've gone from installing ArcGIS Pro to running a full spa
 
 3. Before publishing, the Analyze step…  
    **Answer:** Reports errors and warnings to fix — Analyze checks the content for problems before sharing.
+
+# ArcGIS Online & Apps
+
+## M24 — ArcGIS Online Essentials
+
+### Lesson 24.1: Your ArcGIS Online Organization: Users, Roles and Credits  (6 min)
+
+**Objective:** Understand how an ArcGIS Online organization, its users and its credits work.
+
+*[ON SCREEN: sign in at arcgis.com, home page]*
+
+ArcGIS Online is Esri's cloud platform for maps, apps and data. Sign in at arcgis.com with the same account you use in ArcGIS Pro.
+
+*[ON SCREEN: Organization > Members]*
+
+Your organization is the shared space for your team. Each member has a user type, which decides which apps they can use, and a role, which decides what they can do — Viewer, Data Editor, User, Publisher or Administrator.
+
+*[ON SCREEN: Organization > Overview > Credits]*
+
+Credits are ArcGIS Online's currency. Storing data, running analysis, geocoding and routing use credits; viewing maps doesn't. Administrators can set credit budgets per user.
+
+*[ON SCREEN: app launcher]*
+
+The app launcher at the top right opens every app you're licensed for: Map Viewer, Scene Viewer, StoryMaps, Dashboards, Experience Builder, Survey123, Field Maps and more.
+
+> **Tip:** Ask your administrator which user type you have before planning a project; it decides which apps you can use.
+
+### Lesson 24.2: Content, Items and Hosted Feature Layers  (7 min)
+
+**Objective:** Upload data and manage items in My Content.
+
+*[ON SCREEN: Content > My Content]*
+
+Everything in ArcGIS Online is an item: web maps, layers, apps, files. They live in Content, My Content, organised in folders.
+
+*[ON SCREEN: New item > drag a CSV]*
+
+Click New item and drag in a CSV with addresses or coordinates, a zipped shapefile, a file geodatabase or a GeoJSON file. Choose to create a hosted feature layer, check the location fields, and click Next.
+
+*[ON SCREEN: item details page]*
+
+The item page is the item's home. Add a summary, description, tags and terms of use — good item details make your content findable and trustworthy.
+
+*[ON SCREEN: Settings tab: Enable editing]*
+
+On the Settings tab of a hosted feature layer you can enable editing, allow exports, turn on sync for offline use, and enable delete protection.
+
+*[ON SCREEN: Data tab]*
+
+The Data tab shows the table and fields, where you can add fields and calculate values online.
+
+### Lesson 24.3: Making Web Maps in Map Viewer  (8 min)
+
+**Objective:** Build a web map with styled layers and configured pop-ups.
+
+*[ON SCREEN: Map Viewer, Add > Browse layers]*
+
+Open Map Viewer from the app launcher. Click Add, Browse layers, and add your hosted layer or search Living Atlas.
+
+*[ON SCREEN: Styles pane]*
+
+Click Styles. Choose an attribute and Map Viewer suggests smart styles — Counts and Amounts, Types, Color and Size, Heat map, Dot density. It's the same thinking as symbology in ArcGIS Pro, with live suggestions.
+
+*[ON SCREEN: Pop-ups pane]*
+
+Click Pop-ups to choose fields, add text, charts, images and Arcade expressions.
+
+*[ON SCREEN: Filter, Labels, Basemap]*
+
+Add a filter, turn on labels, and choose a basemap.
+
+*[ON SCREEN: Save as]*
+
+Save the web map with a title, tags and summary. This web map is the building block for dashboards, story maps and apps.
+
+> **Tip:** Use Review map to check your map's performance before sharing it widely.
+
+### Lesson 24.4: Sharing, Groups and Scene Viewer  (6 min)
+
+**Objective:** Share content safely and create 3D web scenes.
+
+*[ON SCREEN: Share dialog]*
+
+Every item starts private. Click Share to choose who can see it: only you, groups, your organization, or everyone. Sharing a map or app also asks to update the sharing of the layers inside it — say yes, or viewers will see blank maps.
+
+*[ON SCREEN: Groups > Create group]*
+
+Groups are the safest way to share with a team. Create a group, invite members, and share items to it. Shared update groups let members edit each other's items.
+
+*[ON SCREEN: Scene Viewer]*
+
+For 3D, open Scene Viewer. Add 3D buildings, trees and terrain, set lighting and daylight, and save a web scene. You can also publish scenes from ArcGIS Pro with Share, Web Layer.
+
+*[ON SCREEN: Pro Portal tab]*
+
+In ArcGIS Pro, the Catalog pane's Portal tab shows the same content, so you can open web maps and layers on your desktop.
+
+#### Module quiz
+
+1. What is a hosted feature layer?  
+   **Answer:** Data stored in ArcGIS Online that you can query and edit — Hosted feature layers live in your organization's ArcGIS Online storage.
+
+2. Which analysis tools in Map Viewer can consume credits?  
+   **Answer:** Most analysis tools — Analysis, geocoding and routing use credits; viewing maps does not.
+
+3. The best way to share content with a project team only is…  
+   **Answer:** A group — Groups control who can see and use items.
+
+## M25 — ArcGIS Living Atlas of the World
+
+### Lesson 25.1: Finding and Using Living Atlas Content  (6 min)
+
+**Objective:** Find authoritative data in Living Atlas and use it in your maps.
+
+*[ON SCREEN: livingatlas.arcgis.com]*
+
+ArcGIS Living Atlas of the World is a curated collection of maps, layers, imagery and apps from Esri and its partners: demographics, boundaries, land cover, weather, satellite imagery and much more.
+
+*[ON SCREEN: Map Viewer > Add > Living Atlas]*
+
+In Map Viewer, click Add, then switch the source to Living Atlas. Search "land cover" or "population" and add a layer in one click.
+
+*[ON SCREEN: ArcGIS Pro Catalog > Portal > Living Atlas]*
+
+In ArcGIS Pro, find the same content in the Catalog pane, Portal tab, Living Atlas.
+
+*[ON SCREEN: item badges]*
+
+Check the item page for the source, update frequency and badges. Subscriber content needs an organizational sign-in; premium content can also use credits.
+
+> **Tip:** Live feeds like current weather and earthquakes update automatically — great for dashboards.
+
+### Lesson 25.2: Basemaps and the Vector Tile Style Editor  (5 min)
+
+**Objective:** Choose and customise basemaps for your brand.
+
+*[ON SCREEN: Basemap gallery]*
+
+Basemaps set the tone. Light and dark grey canvases make your data stand out. Imagery gives real-world context. Topographic and streets help orientation.
+
+*[ON SCREEN: open a vector basemap in the Vector Tile Style Editor]*
+
+Esri's vector basemaps can be restyled. Open one in the Vector Tile Style Editor, change colours for water, roads and land, hide layers you don't need, and save it as your own basemap.
+
+*[ON SCREEN: Organization > Settings > Map: custom basemap gallery]*
+
+Administrators can set a custom basemap gallery so everyone in the organization uses the same branded basemaps.
+
+#### Module quiz
+
+1. What is ArcGIS Living Atlas?  
+   **Answer:** A curated collection of ready-to-use maps, layers and imagery — Living Atlas offers authoritative content from Esri and partners.
+
+2. Some Living Atlas layers are marked as subscriber or premium. Premium content…  
+   **Answer:** Can consume credits — Premium content needs an organizational account and may use credits.
+
+3. A vector tile basemap can be restyled with…  
+   **Answer:** The Vector Tile Style Editor — The style editor changes colours and labels of vector basemaps.
+
+## M26 — ArcGIS StoryMaps
+
+### Lesson 26.1: Building Your First Story  (8 min)
+
+**Objective:** Create a story with text, media and maps.
+
+*[ON SCREEN: StoryMaps home > New story]*
+
+ArcGIS StoryMaps combines narrative text with maps, images, video and embedded content. From the app launcher, open StoryMaps and click New story. You can also start from a template, or import a PDF or Word document to get a draft.
+
+*[ON SCREEN: cover and block palette]*
+
+Add a title and cover image. Then use the plus button to add blocks: text, image, video, map, embed, button, timeline, infographic.
+
+*[ON SCREEN: adding a web map, configuring map view]*
+
+Add a map block, choose your web map, and set the exact extent, visible layers and pop-ups for that moment in the story.
+
+*[ON SCREEN: Express map]*
+
+For quick annotations, use an express map: draw points, routes and areas directly, with numbered places and pop-up images.
+
+*[ON SCREEN: Design panel]*
+
+In Design, choose a theme and fonts, or apply your organization's theme.
+
+### Lesson 26.2: Immersive Blocks: Sidecar, Slideshow and Map Tour  (7 min)
+
+**Objective:** Create scroll-driven, immersive storytelling sections.
+
+*[ON SCREEN: insert Sidecar]*
+
+Immersive blocks make stories cinematic. A sidecar keeps a map or image fixed on one side while text scrolls on the other. Each slide can change the map's extent and layers.
+
+*[ON SCREEN: Docked vs floating layout]*
+
+Choose docked or floating panel layouts; floating suits full-screen imagery.
+
+*[ON SCREEN: Guided map tour]*
+
+A map tour links a list of places with photos to points on a map — perfect for field trips, heritage trails and site visits. Choose a guided or explorer layout.
+
+*[ON SCREEN: Swipe block]*
+
+A swipe block compares two maps or images, like before-and-after a flood.
+
+*[ON SCREEN: Outline drag-and-drop]*
+
+Use the outline panel to reorder sections by dragging.
+
+### Lesson 26.3: Collections, Briefings and Frames  (6 min)
+
+**Objective:** Pick the right StoryMaps format for each audience.
+
+*[ON SCREEN: Collection builder]*
+
+A collection groups stories, maps, apps and files into one browsable experience — a portfolio or a course hub.
+
+*[ON SCREEN: Briefing builder]*
+
+A briefing is slide-based, built for presenting to decision-makers. Each slide has a layout with map, media and text, and briefings can be used offline in the ArcGIS StoryMaps Briefings app.
+
+*[ON SCREEN: Frames on a phone]*
+
+Frames is the newest format: short, mobile-first stories that work like social media posts, with embedded maps and apps.
+
+*[ON SCREEN: Publish options]*
+
+When you publish, choose the audience. Remember that the maps and layers in the story must be shared with the same audience.
+
+#### Module quiz
+
+1. In a story, an immersive block that keeps a map fixed while text scrolls past is a…  
+   **Answer:** Sidecar — Sidecars pair a fixed media panel with scrolling narrative.
+
+2. Which story type is designed for slide-style presentations?  
+   **Answer:** Briefing — Briefings are slide-based stories built for presenting.
+
+3. Express maps in StoryMaps are…  
+   **Answer:** Simple maps you draw directly in the story — Express maps let you sketch points, lines and areas inside the builder.
+
+## M27 — ArcGIS Dashboards
+
+### Lesson 27.1: Creating a Dashboard  (7 min)
+
+**Objective:** Build a dashboard from a web map with indicators, charts and lists.
+
+*[ON SCREEN: Dashboards > Create dashboard]*
+
+ArcGIS Dashboards shows key numbers, charts and maps on one screen for monitoring operations — incidents, assets, inspections, sales. From the app launcher, open Dashboards and click Create dashboard.
+
+*[ON SCREEN: Add element > Map]*
+
+Add a Map element and choose your web map. Then add an Indicator: pick the layer, choose Statistic — count or sum of a field — and set a title and icon.
+
+*[ON SCREEN: Serial chart and Pie chart]*
+
+Add a Serial chart to show values by category or over time, and a List for the latest records.
+
+*[ON SCREEN: Layout: drag and dock elements]*
+
+Drag elements to dock them into a grid. Use the Header for a title and logo, and the Sidebar for selectors.
+
+> **Tip:** Set a refresh interval on layers that update often, so the dashboard stays current without reloading.
+
+### Lesson 27.2: Interactivity: Selectors, Actions and Focus Mode  (7 min)
+
+**Objective:** Make a dashboard respond to the user's choices.
+
+*[ON SCREEN: Category selector in header]*
+
+Selectors let viewers filter the dashboard. Add a category selector for district, a date selector for time period, or a number selector for thresholds.
+
+*[ON SCREEN: Actions tab]*
+
+On each element's Actions tab, choose what it controls. A selector filters the map, indicator and chart. A map extent change can filter the list to what's on screen. Clicking a chart bar can zoom the map.
+
+*[ON SCREEN: Focus mode]*
+
+Focus mode lets viewers expand one element to full screen for detail, then return.
+
+*[ON SCREEN: Advanced formatting with Arcade]*
+
+Use Advanced formatting with Arcade to colour indicators red or green based on targets.
+
+### Lesson 27.3: Layout, Mobile Views and Sharing  (5 min)
+
+**Objective:** Make dashboards readable on any screen and share them.
+
+*[ON SCREEN: desktop vs phone preview]*
+
+Dashboards adapt to screen size. Preview at tablet and phone widths and stack elements so the most important number shows first.
+
+*[ON SCREEN: Theme settings]*
+
+Choose a light or dark theme, set colours that match your brand, and keep charts consistent.
+
+*[ON SCREEN: Share and embed]*
+
+Share the dashboard to a group, the organization or the public, together with its web map and layers. Embed it in a StoryMap or a website with the URL.
+
+> **Tip:** A good operations dashboard answers three questions in five seconds: what's happening, where, and is it getting better or worse?
+
+#### Module quiz
+
+1. A dashboard element that shows a single headline number is an…  
+   **Answer:** Indicator — Indicators summarise one value, such as a count or sum.
+
+2. Selectors in a dashboard…  
+   **Answer:** Filter other elements based on a user's choice — Category, number and date selectors filter connected elements.
+
+3. Map actions let a dashboard…  
+   **Answer:** Filter charts and lists to the features in the map's extent — Actions link elements so they respond to each other.
+
+## M28 — Experience Builder and Instant Apps
+
+### Lesson 28.1: Your First Web App in Experience Builder  (8 min)
+
+**Objective:** Build a responsive web app with widgets and pages.
+
+*[ON SCREEN: Experience Builder > Create new > template gallery]*
+
+Experience Builder is a drag-and-drop builder for web apps and websites. It replaced Web AppBuilder in ArcGIS Online. Open it, click Create new, and choose a template, such as Keystone, or a blank layout.
+
+*[ON SCREEN: Insert panel: Map, List, Text, Legend, Search]*
+
+Drag widgets onto the page: Map, Legend, Layer List, Search, List, Chart, Text, Button. Connect each data widget to your web map or layers.
+
+*[ON SCREEN: Page panel, multiple pages and views]*
+
+Use pages for separate screens — Home, Map, About — and views inside a section for tabs.
+
+*[ON SCREEN: device preview: large, medium, small]*
+
+Switch between large, medium and small screen layouts and arrange widgets for each.
+
+*[ON SCREEN: Publish]*
+
+Click Save, then Publish. Share the app item and its data with your audience.
+
+### Lesson 28.2: Data, Actions and Interactive Widgets  (7 min)
+
+**Objective:** Connect widgets so the app responds to users.
+
+*[ON SCREEN: Data panel, add data and views]*
+
+In the Data panel, add layers and create data views — filtered versions of a layer, such as "Open requests".
+
+*[ON SCREEN: List widget bound to data]*
+
+Configure a List to show features with their attributes. Format cards with text, images and buttons bound to fields.
+
+*[ON SCREEN: Action tab: Record selection changes > Zoom to]*
+
+On a widget's Action tab, set message actions: when a record is selected in the list, zoom the map to it and filter the chart.
+
+*[ON SCREEN: Filter, Query, Edit, Near Me widgets]*
+
+Add Filter, Query, Edit or Near Me widgets for richer tools. A QuickCapture widget can even bring field collection into the app.
+
+### Lesson 28.3: ArcGIS Instant Apps  (5 min)
+
+**Objective:** Build a focused app in minutes from a template.
+
+*[ON SCREEN: Instant Apps gallery]*
+
+ArcGIS Instant Apps are ready-made templates for common jobs. Pick one by purpose: Basic for simple maps, Sidebar for map plus details, Media Map, Nearby to find what's close, Category for browsing by type, Attachment Viewer for photos, Countdown, Chart Viewer and more.
+
+*[ON SCREEN: Express setup vs full setup]*
+
+Choose your web map, step through the express setup, and publish. Full setup offers more options like search, theme and interactivity.
+
+*[ON SCREEN: comparison table: Instant Apps vs Experience Builder]*
+
+Use Instant Apps for a quick, single-purpose app. Use Experience Builder when you need multiple pages, custom layouts or many connected widgets.
+
+#### Module quiz
+
+1. In Experience Builder, what links one widget to another, such as a list filtering a map?  
+   **Answer:** Message actions — Widgets talk to each other through message actions.
+
+2. When is an Instant App the better choice?  
+   **Answer:** You need a focused app quickly with no layout design — Instant Apps are configurable templates for common jobs.
+
+3. Which product replaced Web AppBuilder in ArcGIS Online?  
+   **Answer:** Experience Builder (and Instant Apps) — Web AppBuilder was retired from ArcGIS Online; Experience Builder is its successor.
+
+## M29 — Field Data Collection
+
+### Lesson 29.1: ArcGIS Field Maps: Preparing Maps for the Field  (8 min)
+
+**Objective:** Configure a web map for mobile data collection.
+
+*[ON SCREEN: Field Maps Designer]*
+
+ArcGIS Field Maps is Esri's main mobile app for viewing maps, collecting and editing data, and tracking location. Preparation happens in Field Maps Designer on the web.
+
+*[ON SCREEN: hosted layer with editing enabled]*
+
+Start with a web map whose layers have editing enabled.
+
+*[ON SCREEN: Forms builder]*
+
+In Designer, open Forms. Drag in fields, group them, add choice lists, mark fields required, set default values, and use Arcade for calculated values and conditional visibility.
+
+*[ON SCREEN: Offline > add map area]*
+
+On Offline, enable offline use and define map areas so crews can download data before going out of coverage.
+
+*[ON SCREEN: Tasks]*
+
+Use Tasks in Field Maps to assign work to mobile workers. Tasks replaces ArcGIS Workforce, which is being retired.
+
+> **Tip:** Test your form on a phone before you send it to the field; a long form on a small screen is hard to use.
+
+### Lesson 29.2: Collecting and Editing Data with Field Maps  (6 min)
+
+**Objective:** Collect features, photos and offline edits on a mobile device.
+
+*[ON SCREEN: phone: Field Maps map list]*
+
+Sign in to the Field Maps app on iOS or Android. Your maps appear in the list. Tap one to open it, or download an offline area.
+
+*[ON SCREEN: tap plus, choose layer, collect point at GPS location]*
+
+Tap the plus button, choose a layer, and collect at your GPS location or a point on the map. Fill in the form, add photos, and submit.
+
+*[ON SCREEN: streaming a line]*
+
+For lines and polygons, add vertices by tapping or stream them while walking.
+
+*[ON SCREEN: sync]*
+
+Offline edits are saved on the device and sync when you reconnect.
+
+*[ON SCREEN: location sharing]*
+
+With location sharing turned on by an admin, supervisors can see where crews have been, for safety and reporting.
+
+### Lesson 29.3: ArcGIS QuickCapture: High-Speed Data Collection  (5 min)
+
+**Objective:** Design a QuickCapture project for one-tap collection.
+
+*[ON SCREEN: QuickCapture web designer > Create project]*
+
+ArcGIS QuickCapture is built for speed: big buttons that record a feature with one tap, ideal from a moving vehicle — road damage, wildlife sightings, debris after a storm.
+
+*[ON SCREEN: buttons grid]*
+
+Create a project from a feature layer. Each button records a feature type. Set colours, a grid layout and default attribute values for each button.
+
+*[ON SCREEN: line button streaming]*
+
+Line and polygon buttons can stream your GPS track while held on.
+
+*[ON SCREEN: user input and photos]*
+
+Add user inputs for values you type before tapping, and enable photos when needed.
+
+> **Tip:** Pair QuickCapture for fast observation with Field Maps for detailed follow-up inspections.
+
+### Lesson 29.4: ArcGIS Survey123: Forms and Surveys  (8 min)
+
+**Objective:** Build smart forms with the web designer and Survey123 Connect.
+
+*[ON SCREEN: Survey123 website > New survey > web designer]*
+
+ArcGIS Survey123 is a form-centric app. On survey123.arcgis.com, create a survey in the web designer: drag in questions — single choice, number, date, image, signature, geopoint.
+
+*[ON SCREEN: rules, required, default values]*
+
+Add rules to show questions only when relevant, and set required answers. The Survey123 assistant can draft a survey from a description.
+
+*[ON SCREEN: Survey123 Connect with XLSForm]*
+
+For advanced surveys, use Survey123 Connect on the desktop. You design in an Excel spreadsheet called an XLSForm: calculations, repeats for multiple records, cascading selects and pulling data from existing layers.
+
+*[ON SCREEN: Data tab, analyze, feature report]*
+
+Publish, then share the survey link or QR code. Responses go into a hosted feature layer. The website's Analyze and Data tabs summarise results, and feature reports turn each response into a formatted PDF.
+
+#### Module quiz
+
+1. Where do you build forms and offline areas for ArcGIS Field Maps?  
+   **Answer:** Field Maps Designer — Field Maps Designer configures forms, offline areas and tasks.
+
+2. QuickCapture is best for…  
+   **Answer:** Collecting data very quickly with big buttons, often while moving — QuickCapture is designed for one-tap, high-speed collection.
+
+3. In Survey123, advanced logic like calculations and repeats is built with…  
+   **Answer:** Survey123 Connect and XLSForm — Connect uses an Excel-based XLSForm for advanced surveys.
+
+## M30 — ArcGIS Hub and Sharing with the Public
+
+### Lesson 30.1: ArcGIS Hub Sites and Open Data  (7 min)
+
+**Objective:** Build a public website with open data, maps and apps.
+
+*[ON SCREEN: Hub home > Sites > Create site]*
+
+ArcGIS Hub creates websites for sharing data, maps and apps with the public, and for engaging communities. Hub Basic is included with ArcGIS Online; Hub Premium adds engagement tools like events and discussions.
+
+*[ON SCREEN: site editor: rows, cards]*
+
+Create a site, choose a layout, and add cards: text, images, maps, charts, apps and a search bar for data.
+
+*[ON SCREEN: content catalog]*
+
+Add content to the site's catalog. Public items become searchable open data, with downloads in formats like CSV, shapefile, GeoJSON and KML, and API links for developers.
+
+*[ON SCREEN: workspaces]*
+
+Manage everything from your Hub workspaces.
+
+*[ON SCREEN: custom domain, theme]*
+
+Set a theme and a friendly site address that matches your organization.
+
+#### Module quiz
+
+1. ArcGIS Hub is mainly used for…  
+   **Answer:** Public-facing sites, open data and community engagement — Hub builds sites and initiatives for engaging the public.
+
+2. Open data published through a Hub site can be…  
+   **Answer:** Downloaded in formats like CSV and shapefile — Hub provides downloads and APIs for shared data.
+
+3. In Hub, which feature replaced classic edit mode?  
+   **Answer:** Workspaces — Hub's workspaces replaced the retired classic edit mode.
+
+## M31 — Web Analysis, Notebooks and Data Pipelines
+
+### Lesson 31.1: Analysis Tools in Map Viewer  (7 min)
+
+**Objective:** Run spatial analysis in the browser.
+
+*[ON SCREEN: Map Viewer > Analysis button]*
+
+Map Viewer has a full set of analysis tools — no desktop needed. Click Analysis, then Tools.
+
+*[ON SCREEN: tool categories]*
+
+Tools are grouped by question: Summarize data, Find locations, Use proximity — including Create buffers and Create drive-time areas — Enrich data, Analyze patterns and raster analysis.
+
+*[ON SCREEN: Create drive-time areas, credit estimate]*
+
+Run Create drive-time areas around clinics. Before running, Map Viewer estimates the credits. The result becomes a new hosted layer in your content.
+
+*[ON SCREEN: ModelBuilder in Map Viewer]*
+
+Chain tools with ModelBuilder in Map Viewer, and publish models as web tools so others can run them.
+
+### Lesson 31.2: ArcGIS Notebooks and Data Pipelines  (7 min)
+
+**Objective:** Automate web GIS with Python and no-code pipelines.
+
+*[ON SCREEN: Notebook in ArcGIS Online]*
+
+ArcGIS Notebooks run Python in the browser with the ArcGIS API for Python. Create one from the app launcher and connect with gis = GIS("home").
+
+*[ON SCREEN: search content, update layer, schedule task]*
+
+Script admin jobs: list inactive users, update a layer from an external source, or generate reports. Notebooks can run on a schedule as tasks.
+
+*[ON SCREEN: Data Pipelines editor]*
+
+Data Pipelines is a no-code alternative for data integration. Connect inputs — CSV and Parquet files, cloud storage, databases, or feature layers — then add tools like filter, join, calculate field, create buffers and find and replace, and output to a hosted feature layer.
+
+*[ON SCREEN: schedule and email notifications]*
+
+Schedule the pipeline to run daily and get an email when it finishes or fails.
+
+#### Module quiz
+
+1. Data Pipelines in ArcGIS Online are for…  
+   **Answer:** Connecting, cleaning and loading data on a schedule without code — Data Pipelines is a no-code ETL tool.
+
+2. ArcGIS Notebooks in ArcGIS Online run…  
+   **Answer:** Python with the ArcGIS API for Python — Hosted notebooks run Python in the browser.
+
+3. Before running a Map Viewer analysis tool you should check…  
+   **Answer:** The estimated credits — Map Viewer shows a credit estimate before running.
+
+## M32 — More of the ArcGIS System
+
+### Lesson 32.1: ArcGIS Enterprise vs ArcGIS Online  (6 min)
+
+**Objective:** Explain when an organization chooses ArcGIS Enterprise.
+
+*[ON SCREEN: diagram: Online (SaaS) vs Enterprise (self-hosted)]*
+
+ArcGIS Online is software as a service — Esri runs it for you. ArcGIS Enterprise is the same idea installed on your own servers or private cloud.
+
+*[ON SCREEN: Enterprise components: Portal, Server, Data Store, Web Adaptor]*
+
+Enterprise includes Portal for ArcGIS, ArcGIS Server, ArcGIS Data Store and a Web Adaptor. Most apps you've seen — Map Viewer, Dashboards, Experience Builder, StoryMaps, Survey123, Field Maps — also run in Enterprise.
+
+*[ON SCREEN: reasons]*
+
+Organizations choose Enterprise for data that must stay on their network, integration with in-house databases, or strict security rules. Many use both, sharing between them with distributed collaboration.
+
+### Lesson 32.2: ArcGIS Earth, Urban, Business Analyst and Velocity  (7 min)
+
+**Objective:** Know what other ArcGIS products do and when to use them.
+
+*[ON SCREEN: ArcGIS Earth]*
+
+ArcGIS Earth is a free 3D globe for desktop and mobile. Open KML, shapefiles and web layers, measure, and sketch — great for sharing 3D views with non-GIS colleagues.
+
+*[ON SCREEN: ArcGIS Urban]*
+
+ArcGIS Urban is for city planning in 3D: zoning, development projects and scenario comparisons.
+
+*[ON SCREEN: ArcGIS Business Analyst Web App]*
+
+ArcGIS Business Analyst combines demographic and spending data with analysis for site selection, market areas and infographic reports.
+
+*[ON SCREEN: ArcGIS Velocity]*
+
+ArcGIS Velocity ingests real-time feeds — vehicle locations, sensors, weather — analyses them as they stream, and triggers alerts.
+
+*[ON SCREEN: ArcGIS Solutions gallery]*
+
+ArcGIS Solutions deploys ready-made sets of maps, apps and workflows for local government, utilities, public safety and more, in a few clicks.
+
+### Lesson 32.3: Building Your Own Apps with ArcGIS Maps SDKs  (5 min)
+
+**Objective:** Understand the developer path in the ArcGIS system.
+
+*[ON SCREEN: developers.arcgis.com]*
+
+When configurable apps aren't enough, developers use the ArcGIS Maps SDKs. The Maps SDK for JavaScript builds web apps; native SDKs cover Kotlin, Swift, .NET, Qt and game engines.
+
+*[ON SCREEN: short JavaScript snippet loading a web map by ID]*
+
+Every web map and layer you made in this course can be loaded in code by its item ID, so the work in ArcGIS Online is reused directly.
+
+*[ON SCREEN: Experience Builder Developer edition]*
+
+Experience Builder Developer edition lets developers write custom widgets and host apps themselves — a bridge between no-code and full development.
+
+#### Module quiz
+
+1. ArcGIS Enterprise is…  
+   **Answer:** Esri's software you run on your own infrastructure — Enterprise gives organizations a self-hosted portal and servers.
+
+2. Which product is a free desktop globe for exploring 3D and KML?  
+   **Answer:** ArcGIS Earth — ArcGIS Earth is a lightweight 3D globe viewer.
+
+3. ArcGIS Velocity is designed for…  
+   **Answer:** Real-time and big data from sensors and feeds — Velocity ingests and analyses streaming data.
+
+## M33 — Capstone: From Field to Dashboard
+
+### Lesson 33.1: Capstone: A Complete Field-to-Dashboard Workflow  (10 min)
+
+**Objective:** Connect ArcGIS Pro, ArcGIS Online and the field apps in one project.
+
+*[ON SCREEN: brief: city tree inventory]*
+
+Our final project: a city tree inventory, from data model to public story.
+
+*[ON SCREEN: ArcGIS Pro: geodatabase with domains, publish web layer]*
+
+Step one, ArcGIS Pro: design a Trees feature class with species and condition domains, then publish it as a hosted feature layer with editing enabled.
+
+*[ON SCREEN: Field Maps Designer form, QuickCapture project, Survey123 form]*
+
+Step two, field apps: build a Field Maps form for inspectors, a QuickCapture project for fast street surveys, and a Survey123 form for residents to report damaged trees.
+
+*[ON SCREEN: Dashboard with indicators and map]*
+
+Step three, monitoring: a dashboard with total trees, trees in poor condition, and reports this week, filtered by district.
+
+*[ON SCREEN: Experience Builder app and StoryMap]*
+
+Step four, sharing: an Experience Builder app for city staff and a StoryMap explaining the urban forest to the public, with live maps from Living Atlas for context.
+
+*[ON SCREEN: course recap]*
+
+That's the whole ArcGIS system working together. Congratulations on completing the course!
+
+#### Module quiz
+
+1. In the capstone, where does field data from Survey123 and Field Maps end up?  
+   **Answer:** A hosted feature layer — Both apps write to hosted feature layers in ArcGIS Online.
+
+2. Which app shares the final results as a narrative for the public?  
+   **Answer:** ArcGIS StoryMaps — StoryMaps tells the story with maps and media.
+
+3. Why prepare the data model in ArcGIS Pro first?  
+   **Answer:** To design fields, domains and layers once for every app — A good data model makes forms, dashboards and apps consistent.
 
 ---
 ## Intro / outro templates
